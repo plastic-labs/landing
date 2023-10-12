@@ -1,113 +1,137 @@
-import Image from 'next/image'
+'use client'
 
-export default function Home() {
+import React from "react";
+
+export default function Light(): JSX.Element {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
+    <div className="bg-white flex flex-row justify-center w-full">
+      <div className="bg-white w-[1280px] h-[2593px] relative">
+        <div className="absolute w-[1164px] h-[1324px] top-[140px] left-[58px]">
+          <div className="absolute w-[1164px] h-[1164px] top-[90px] left-0 rounded-[582px] [background:linear-gradient(180deg,rgb(246,246,246)_0%,rgba(246,246,246,0)_100%)]" />
+          <p className="absolute w-[991px] top-[525px] left-[87px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[35px] text-center tracking-[0] leading-[normal]">
+            We’re a research and development group working at the intersection of human and machine learning.
+          </p>
+          <img className="absolute w-[673px] h-[129px] top-[320px] left-[246px]" alt="Group" src="Group.svg" />
+          <div className="absolute w-[276px] h-[276px] top-0 left-[444px] bg-[#161616] rounded-[138px] shadow-[5px_14px_17px_#00000040]" />
+          <img className="absolute w-[181px] h-[130px] top-[74px] left-[488px]" alt="Vector" src="vector.svg" />
+          <div className="absolute w-[396px] top-[689px] left-[199px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
+            Executives
+          </div>
+          <p className="w-[436px] top-[731px] left-[199px] leading-[21px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            <span className="leading-[17.6px]">
+              David Holz
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
+              Previously: Founder Leap Motion, <br />
+              Researcher at NASA, Max Planck
+            </span>
+          </p>
+          <p className="w-[132px] top-[1220px] left-[614px] leading-[17.6px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[17.6px]">
+              Max Sills
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">legal advisor</span>
+          </p>
+          <div className="w-[132px] top-[1220px] left-[816px] leading-[17.6px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            Nadia Ali
+          </div>
+          <p className="w-[326px] top-[910px] left-[201px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+              Jim Keller
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
+              Lead Silicon at Apple, AMD, Tesla, Intel, Coauthor X86-64, CTO Tenstorrent
+            </span>
+          </p>
+          <p className="w-[326px] top-[931px] left-[560px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+              Philip Rosedale
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
+              Founder of Second Life, CTO RealNetworks
+            </span>
+          </p>
+          <p className="absolute w-[326px] top-[1039px] left-[560px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
+            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+              Nat Friedman
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
+              CEO Github, Chairman of GNOME Foundation
+            </span>
+          </p>
+          <p className="w-[326px] top-[1039px] left-[201px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
+              Bill Warner
+              <br />
+            </span>
+            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
+              Founder of Avid Technology, inventor of nonlinear video editing
+              <br />
+            </span>
+          </p>
+          <div className="absolute w-[410px] top-[866px] left-[201px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
+            Advisors
+          </div>
+          <div className="absolute w-[104px] top-[1220px] left-[201px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
+            Daniel
+            <br />
+            Max
+            <br />
+            Jack
+            <br />
+            Thomas
+          </div>
+          <div className="absolute w-[104px] top-[1220px] left-[406px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
+            Red
+            <br />
+            Sam
+            <br />
+            Nadir
+            <br />
+            Sebastian
+          </div>
+          <div className="absolute w-[410px] top-[1173px] left-[201px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
+            Research and Engineering
+          </div>
+          <div className="absolute w-[410px] top-[1173px] left-[611px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
+            Legal and Finance
+          </div>
+        </div>
+        <div className="absolute w-[1280px] h-[74px] top-[2519px] left-0 bg-[#161616]">
+          <p className="absolute w-[389px] top-[25px] left-[24px] [font-family:'Exo_2-SemiBold',Helvetica] font-semibold text-white text-[16px] tracking-[0] leading-[normal]">
+            Made by Plastic Labs using Quartz, © 2023
+          </p>
+          <img className="absolute w-[114px] h-[35px] top-[21px] left-[1153px]" alt="Group" src="group-2.png" />
+        </div>
+        <div className="absolute w-[64px] h-[75px] top-[24px] left-[26px]">
+          <div className="absolute w-[64px] h-[64px] top-0 left-0 bg-[#161616] rounded-[32px] shadow-[3px_4px_4px_#00000040]" />
+          <img className="absolute w-[43px] h-[43px] top-[32px] left-[11px]" alt="Vector" src="vector.svg" />
+        </div>
+        <div className="absolute w-[49px] h-[37px] top-[25px] left-[1208px]">
+          <div className="top-0 absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
+          <div className="top-[15px] absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
+          <div className="top-[30px] absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
+        </div>
+        <p className="absolute w-[437px] top-[1600px] left-[163px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[35px] text-right tracking-[0] leading-[normal]">
+          Most recently, we built Bloom – a reading and writing tutor.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <p className="absolute w-[437px] top-[1600px] left-[680px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
+          On this journey we realized that AI tools need a framework for securely and privately handling the intimate
+          data required to unlock deeply personalized, autonomous agents. It’s our mission to realize this future.
+        </p>
+        <img className="absolute w-[11px] h-[353px] top-[1523px] left-[635px]" alt="Vector" src="line.svg" />
+        <div className="absolute w-[815px] h-[460px] top-[1965px] left-[236px]">
+          <div className="absolute w-[283px] top-0 left-[259px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-[#161616] text-[85px] text-center tracking-[0] leading-[normal]">
+            #BLOG
+          </div>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
