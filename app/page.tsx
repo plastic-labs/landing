@@ -1,137 +1,140 @@
-'use client'
-
 import React from "react";
+import { ImBubble } from "react-icons/im";
 
 export default function Light(): JSX.Element {
   return (
-    <div className="bg-white flex flex-row justify-center w-full">
-      <div className="bg-white w-[1280px] h-[2593px] relative">
-        <div className="absolute w-[1164px] h-[1324px] top-[140px] left-[58px]">
-          <div className="absolute w-[1164px] h-[1164px] top-[90px] left-0 rounded-[582px] [background:linear-gradient(180deg,rgb(246,246,246)_0%,rgba(246,246,246,0)_100%)]" />
-          <p className="absolute w-[991px] top-[525px] left-[87px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[35px] text-center tracking-[0] leading-[normal]">
-            We’re a research and development group working at the intersection of human and machine learning.
-          </p>
-          <img className="absolute w-[673px] h-[129px] top-[320px] left-[246px]" alt="Group" src="Group.svg" />
-          <div className="absolute w-[276px] h-[276px] top-0 left-[444px] bg-[#161616] rounded-[138px] shadow-[5px_14px_17px_#00000040]" />
-          <img className="absolute w-[181px] h-[130px] top-[74px] left-[488px]" alt="Vector" src="vector.svg" />
-          <div className="absolute w-[396px] top-[689px] left-[199px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
-            Executives
+    <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
+      <section className="w-full h-screen flex flex-col items-center justify-center [background:linear-gradient(180deg,rgb(217,217,217)_0%,rgba(217,217,217,0)_100%)]">
+        <img className="w-[276px] h-[276px]" alt="Pl mark" src="PlasticLabsAssets-03.svg" />
+        <img className="w-[673px] h-[129px]" alt="Plastic Lab Word" src="Group.svg" />
+      </section>
+      <section className="w-full  flex flex-col items-center [background:linear-gradient(180deg,rgba(217,217,217,0.3)_0%,rgba(217,217,217,0)_100%)]">
+        <a className="mb-[50px] mt-[50px]" href="https://blog.plasticlabs.ai" target="_blank" rel="noreferrer">
+          <button className="w-[193px] h-[58px] flex flex-row items-center gap-2 justify-center bg-white text-black font-bold rounded-[52px]">
+            <ImBubble />
+            <p>Blog</p>
+          </button>
+        </a>
+        <div className="md:w-3/4 w-11/12 flex flex-col items-center">
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 [font-family:'Exo_2-Bold',Helvetica] font-bold tracking-[0] leading-[normal]">
+              About
+            </h1>
+            <p className="font-normal tracking-[0] leading-[normal]">
+              Plastic Labs is a research-driven product company building at the intersection of human and machine
+              learning.
+              <br />
+              <br />
+              Our mission is to eliminate the principal-agent problem in human-AI interaction, powering a future of
+              abundant, autonomous, individually-aligned agents.
+            </p>
           </div>
-          <p className="w-[436px] top-[731px] left-[199px] leading-[21px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            <span className="leading-[17.6px]">
-              David Holz
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
-              Previously: Founder Leap Motion, <br />
-              Researcher at NASA, Max Planck
-            </span>
-          </p>
-          <p className="w-[132px] top-[1220px] left-[614px] leading-[17.6px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[17.6px]">
-              Max Sills
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">legal advisor</span>
-          </p>
-          <div className="w-[132px] top-[1220px] left-[816px] leading-[17.6px] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            Nadia Ali
+          <div className="w-full flex flex-col items-start mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Products
+            </h1>
+            <div className="flex flex-row gap-x-8">
+              <p>Bloom</p>
+              <p>Honcho (coming soon...)</p>
+            </div>
           </div>
-          <p className="w-[326px] top-[910px] left-[201px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-              Jim Keller
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
-              Lead Silicon at Apple, AMD, Tesla, Intel, Coauthor X86-64, CTO Tenstorrent
-            </span>
-          </p>
-          <p className="w-[326px] top-[931px] left-[560px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-              Philip Rosedale
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
-              Founder of Second Life, CTO RealNetworks
-            </span>
-          </p>
-          <p className="absolute w-[326px] top-[1039px] left-[560px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
-            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-              Nat Friedman
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
-              CEO Github, Chairman of GNOME Foundation
-            </span>
-          </p>
-          <p className="w-[326px] top-[1039px] left-[201px] leading-[normal] absolute [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-            <span className="[font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0]">
-              Bill Warner
-              <br />
-            </span>
-            <span className="[font-family:'Exo_2-LightItalic',Helvetica] font-light italic">
-              Founder of Avid Technology, inventor of nonlinear video editing
-              <br />
-            </span>
-          </p>
-          <div className="absolute w-[410px] top-[866px] left-[201px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
-            Advisors
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Founders
+            </h1>
+            <div className="flex flex-row gap-x-8">
+              <p>Courtland Leer</p>
+              <p>Vince Trost</p>
+              <p>Vineeth Voruganti</p>
+            </div>
           </div>
-          <div className="absolute w-[104px] top-[1220px] left-[201px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
-            Daniel
-            <br />
-            Max
-            <br />
-            Jack
-            <br />
-            Thomas
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium  tracking-[0] leading-[normal]">
+              Research & Engineering
+            </h1>
+            <div className="flex flex-row gap-x-8">
+              <p>Ayush Paul</p>
+              <p>Jacob Van Meter</p>
+            </div>
           </div>
-          <div className="absolute w-[104px] top-[1220px] left-[406px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
-            Red
-            <br />
-            Sam
-            <br />
-            Nadir
-            <br />
-            Sebastian
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Community
+            </h1>
+            <div className="flex flex-row gap-x-8">
+              <p>Leyla Sarper</p>
+            </div>
           </div>
-          <div className="absolute w-[410px] top-[1173px] left-[201px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
-            Research and Engineering
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Advisors & Angels
+            </h1>
+            <div className="flex flex-row gap-x-8">
+              <p>Thomas Howell</p>
+              <p>Zach Seward</p>
+            </div>
           </div>
-          <div className="absolute w-[410px] top-[1173px] left-[611px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-black text-[26px] tracking-[0] leading-[21.8px]">
-            Legal and Finance
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Backed By
+            </h1>
+            <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-8">
+              <p>Betaworks</p>
+              <p>Mozilla</p>
+              <p>Greycroft</p>
+              <p>Differential</p>
+              <p>Algovera</p>
+            </div>
+          </div>
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Discord Testers
+            </h1>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4">
+              <p>a_vidb</p>
+              <p>bhaumik</p>
+              <p>butlermuwo</p>
+              <p>clementlo</p>
+              <p>dblurj05832</p>
+              <p>d.plummer</p>
+              <p>danibalcells</p>
+              <p>deividrocha_</p>
+              <p>Emmaheineman</p>
+              <p>eseoghene</p>
+              <p>.greypilgrim</p>
+              <p>gustavbronelius</p>
+              <p>jas225</p>
+              <p>levati</p>
+              <p>magisterfalk</p>
+              <p>mani</p>
+              <p>Maxwell</p>
+              <p>mca248</p>
+              <p>pr1mordial</p>
+              <p>_stevengao</p>
+              <p>temisan.</p>
+              <p>tylerokada</p>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="12" viewBox="0 0 1064 12" fill="none" className="w-full mb-[50px]">
+            <path d="M1058 0.666667C1055.05 0.666667 1052.67 3.05448 1052.67 6C1052.67 8.94552 1055.05 11.3333 1058 11.3333C1060.95 11.3333 1063.33 8.94552 1063.33 6C1063.33 3.05448 1060.95 0.666667 1058 0.666667ZM6 0.666667C3.05444 0.666667 0.666626 3.05448 0.666626 6C0.666626 8.94552 3.05444 11.3333 6 11.3333C8.94543 11.3333 11.3333 8.94552 11.3333 6C11.3333 3.05448 8.94543 0.666667 6 0.666667ZM1058 5L6 5V7L1058 7V5Z" fill="black" />
+          </svg>
+          <div className="w-full flex flex-col mb-[50px]">
+            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
+              Contact Us
+            </h1>
+            <p>For questions about our AI tutor, <a className="underline" href="https://discord.gg/bloombotai" target="_blank" rel="noreferrer">join the Bloom Discord</a>.</p>
+            <p>For company alpha, <a className="underline" href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer">join the Plastic Discord</a>.</p>
+            <p>For all other inquiries, email us at <a className="underline" href="mailto:hello@plasticlabs.ai" target="_blank" rel="noreferrer">hello@plasticlabs.ai</a></p>
           </div>
         </div>
-        <div className="absolute w-[1280px] h-[74px] top-[2519px] left-0 bg-[#161616]">
-          <p className="absolute w-[389px] top-[25px] left-[24px] [font-family:'Exo_2-SemiBold',Helvetica] font-semibold text-white text-[16px] tracking-[0] leading-[normal]">
-            Made by Plastic Labs using Quartz, © 2023
-          </p>
-          <img className="absolute w-[114px] h-[35px] top-[21px] left-[1153px]" alt="Group" src="group-2.png" />
-        </div>
-        <div className="absolute w-[64px] h-[75px] top-[24px] left-[26px]">
-          <div className="absolute w-[64px] h-[64px] top-0 left-0 bg-[#161616] rounded-[32px] shadow-[3px_4px_4px_#00000040]" />
-          <img className="absolute w-[43px] h-[43px] top-[32px] left-[11px]" alt="Vector" src="vector.svg" />
-        </div>
-        <div className="absolute w-[49px] h-[37px] top-[25px] left-[1208px]">
-          <div className="top-0 absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
-          <div className="top-[15px] absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
-          <div className="top-[30px] absolute w-[49px] h-[7px] left-0 bg-[#161616] rounded-[62px]" />
-        </div>
-        <p className="absolute w-[437px] top-[1600px] left-[163px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[35px] text-right tracking-[0] leading-[normal]">
-          Most recently, we built Bloom – a reading and writing tutor.
+
+      </section >
+      <section className="w-full h-[74px] bg-[#161616] flex flex-row items-center">
+        <p className="w-[389px] ml-2 font-semibold text-white text-[16px] tracking-[0] leading-[normal]">
+          Made by Plastic Labs using Quartz, © 2023
         </p>
-        <p className="absolute w-[437px] top-[1600px] left-[680px] [font-family:'Exo_2-Regular',Helvetica] font-normal text-black text-[21px] tracking-[0] leading-[normal]">
-          On this journey we realized that AI tools need a framework for securely and privately handling the intimate
-          data required to unlock deeply personalized, autonomous agents. It’s our mission to realize this future.
-        </p>
-        <img className="absolute w-[11px] h-[353px] top-[1523px] left-[635px]" alt="Vector" src="line.svg" />
-        <div className="absolute w-[815px] h-[460px] top-[1965px] left-[236px]">
-          <div className="absolute w-[283px] top-0 left-[259px] [font-family:'Exo_2-Bold',Helvetica] font-bold text-[#161616] text-[85px] text-center tracking-[0] leading-[normal]">
-            #BLOG
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </div >
   );
 };
 

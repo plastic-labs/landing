@@ -1,8 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Exo_2 } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const exo2 = Exo_2({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-exo2',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={exo2.variable}>{children}</body>
     </html>
   )
 }
