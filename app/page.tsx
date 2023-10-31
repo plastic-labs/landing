@@ -1,22 +1,26 @@
 import React from "react";
 import { ImBubble } from "react-icons/im";
+import { BsChevronDown } from 'react-icons/bs'
 
 export default function Light(): JSX.Element {
   return (
     <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
-      <section className="w-full h-screen flex flex-col items-center justify-center [background:linear-gradient(180deg,rgb(217,217,217)_0%,rgba(217,217,217,0)_100%)]">
-        <img className="w-[276px] h-[276px]" alt="Pl mark" src="PlasticLabsAssets-03.svg" />
-        <img className="w-[673px] h-[129px]" alt="Plastic Lab Word" src="Group.svg" />
+      <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gradient-grey-transparent to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616]">
+        <img className="w-full max-w-[276px] h-auto" alt="Pl mark" src="PlasticLabsAssets-03.svg" />
+        <img className="w-full max-w-[673px] h-auto" alt="Plastic Lab Word" src="Group.svg" />
+        <a href="#main">
+         <button className="w-[100px] h-[100px] flex flex-row items-center justify-center rounded-full bg-white text-black text-[48px] "><BsChevronDown /></button> 
+        </a>
       </section>
-      <section className="w-full  flex flex-col items-center [background:linear-gradient(180deg,rgba(217,217,217,0.3)_0%,rgba(217,217,217,0)_100%)]">
+      <section id="main" className="w-full flex flex-col items-center bg-gradient-to-r from-gradient-grey-between to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616] dark:text-white">
         <a className="mb-[50px] mt-[50px]" href="https://blog.plasticlabs.ai" target="_blank" rel="noreferrer">
           <button className="w-[193px] h-[58px] flex flex-row items-center gap-2 justify-center bg-white text-black font-bold rounded-[52px]">
             <ImBubble />
             <p>Blog</p>
           </button>
         </a>
-        <div className="md:w-3/4 w-11/12 flex flex-col items-center">
-          <div className="w-full flex flex-col mb-[50px]">
+        <div className="md:w-3/4 w-11/12 flex flex-col items-center justify-center">
+          <div className="flex flex-col mb-[50px]">
             <h1 className="pb-4 [font-family:'Exo_2-Bold',Helvetica] font-bold tracking-[0] leading-[normal]">
               About
             </h1>
@@ -129,9 +133,9 @@ export default function Light(): JSX.Element {
         </div>
 
       </section >
-      <section className="w-full h-[74px] bg-[#161616] flex flex-row items-center">
-        <p className="w-[389px] ml-2 font-semibold text-white text-[16px] tracking-[0] leading-[normal]">
-          Made by Plastic Labs using Quartz, © 2023
+      <section className="w-full h-[74px] bg-[#161616] dark:bg-white  flex flex-row items-center">
+        <p className="w-[389px] ml-2 font-semibold text-white dark:text-black text-[16px] tracking-[0] leading-[normal]">
+          Made by Plastic Labs, © 2023
         </p>
       </section>
     </div >
