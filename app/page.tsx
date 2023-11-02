@@ -69,14 +69,6 @@ export default function Light(): JSX.Element {
           </div>
           <div className="w-full flex flex-col mb-[50px]">
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
-              Community
-            </h1>
-            <div className="flex flex-row gap-x-8">
-              <p>Leyla Sarper</p>
-            </div>
-          </div>
-          <div className="w-full flex flex-col mb-[50px]">
-            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Advisors & Angels
             </h1>
             <div className="flex flex-row gap-x-8">
