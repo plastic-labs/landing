@@ -6,10 +6,16 @@ export default function Light(): JSX.Element {
   return (
     <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
       <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gradient-grey-transparent to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616]">
-        <img className="w-full max-w-[276px] h-auto" alt="Pl mark" src="PlasticLabsAssets-03.svg" />
-        <img className="w-full max-w-[673px] h-auto" alt="Plastic Lab Word" src="Group.svg" />
+        <picture className="w-full max-w-[276px] h-auto">
+          <source srcSet="PlasticLabsAssets-04.svg" media="(prefers-color-scheme:dark)" />
+          <img alt="Pl mark" src="PlasticLabsAssets-03.svg" />
+        </picture>
+        <picture className="w-full max-w-[673px] h-auto">
+          <source srcSet="PlasticLabsAssets-02.svg" media="(prefers-color-scheme:dark)" />
+          <img alt="Pl mark" src="PlasticLabsAssets-01.svg" />
+        </picture>
         <a href="#main">
-         <button className="w-[100px] h-[100px] flex flex-row items-center justify-center rounded-full bg-white text-black text-[48px] "><BsChevronDown /></button> 
+          <button className="w-[50px] h-[50px] text-[24px] md:w-[80px] md:h-[80px] md:text-[48px] flex flex-row items-center justify-center rounded-full dark:bg-white dark:text-black bg-black text-white "><BsChevronDown /></button>
         </a>
       </section>
       <section id="main" className="w-full flex flex-col items-center bg-gradient-to-r from-gradient-grey-between to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616] dark:text-white">
@@ -119,8 +125,8 @@ export default function Light(): JSX.Element {
               <p>tylerokada</p>
             </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="12" viewBox="0 0 1064 12" fill="none" className="w-full mb-[50px]">
-            <path d="M1058 0.666667C1055.05 0.666667 1052.67 3.05448 1052.67 6C1052.67 8.94552 1055.05 11.3333 1058 11.3333C1060.95 11.3333 1063.33 8.94552 1063.33 6C1063.33 3.05448 1060.95 0.666667 1058 0.666667ZM6 0.666667C3.05444 0.666667 0.666626 3.05448 0.666626 6C0.666626 8.94552 3.05444 11.3333 6 11.3333C8.94543 11.3333 11.3333 8.94552 11.3333 6C11.3333 3.05448 8.94543 0.666667 6 0.666667ZM1058 5L6 5V7L1058 7V5Z" fill="black" />
+          <svg xmlns="http://www.w3.org/2000/svg" height="12" viewBox="0 0 1064 12" fill="none" className="w-full mb-[50px] fill-black dark:fill-white">
+            <path d="M1058 0.666667C1055.05 0.666667 1052.67 3.05448 1052.67 6C1052.67 8.94552 1055.05 11.3333 1058 11.3333C1060.95 11.3333 1063.33 8.94552 1063.33 6C1063.33 3.05448 1060.95 0.666667 1058 0.666667ZM6 0.666667C3.05444 0.666667 0.666626 3.05448 0.666626 6C0.666626 8.94552 3.05444 11.3333 6 11.3333C8.94543 11.3333 11.3333 8.94552 11.3333 6C11.3333 3.05448 8.94543 0.666667 6 0.666667ZM1058 5L6 5V7L1058 7V5Z" />
           </svg>
           <div className="w-full flex flex-col mb-[50px]">
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
