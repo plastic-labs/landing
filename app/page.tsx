@@ -1,6 +1,6 @@
 import React from "react";
-import { ImBubble } from "react-icons/im";
-import { BsChevronDown } from 'react-icons/bs'
+import { ImBubble, ImTwitter, ImGithub } from "react-icons/im";
+import { BsChevronDown, BsDiscord } from 'react-icons/bs'
 
 export default function Light(): JSX.Element {
   return (
@@ -124,17 +124,23 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Contact Us
             </h1>
-            <p>For questions about our AI tutor, <a className="underline" href="https://discord.gg/bloombotai" target="_blank" rel="noreferrer">join the Bloom Discord</a>.</p>
-            <p>For company alpha, <a className="underline" href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer">join the Plastic Discord</a>.</p>
-            <p>For all other inquiries, email us at <a className="underline" href="mailto:hello@plasticlabs.ai" target="_blank" rel="noreferrer">hello@plasticlabs.ai</a></p>
+            <p className="pb-1">For questions about our AI tutor, <a className="underline" href="https://discord.gg/bloombotai" target="_blank" rel="noreferrer">join the Bloom Discord</a>.</p>
+            <p className="pb-1">To connect, <a className="underline" href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer">join the Plastic Discord</a>.</p>
+            <p className="pb-1">For all other inquiries, email us at <a className="underline" href="mailto:hello@plasticlabs.ai" target="_blank" rel="noreferrer">hello@plasticlabs.ai</a></p>
           </div>
         </div>
-
       </section >
-      <section className="w-full h-[74px] bg-[#161616] dark:bg-white  flex flex-row items-center">
-        <p className="w-[389px] ml-2 font-semibold text-white dark:text-black text-[16px] tracking-[0] leading-[normal]">
-          Made by Plastic Labs, © 2023
-        </p>
+      <section className="w-full h-[74px] bg-[#161616] dark:bg-white flex flex-col justify-center items-center">
+        <div className="md:w-3/4 w-11/12 flex flex-row justify-between items-center">
+          <p className="w-[389px] ml-2 font-semibold text-white dark:text-black text-[16px] tracking-[0] leading-[normal]">
+            Made by Plastic Labs, © 2023
+          </p>
+          <div className="flex flex-row gap-x-2 text-white dark:text-black">
+            <a href="https://twitter.com/Plastic_Labs" target="_blank" rel="noreferrer"><ImTwitter /></a>
+            <a href="https://github.com/plastic-labs" target="_blank" rel="noreferrer"><ImGithub /></a>
+            <a href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer"><BsDiscord /></a>
+          </div>
+        </div>
       </section>
     </div >
   );
