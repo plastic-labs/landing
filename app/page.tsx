@@ -117,9 +117,7 @@ export default function Light(): JSX.Element {
               <p>tylerokada</p>
             </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" height="12" viewBox="0 0 1064 12" fill="none" className="w-full mb-[50px] fill-black dark:fill-white">
-            <path d="M1058 0.666667C1055.05 0.666667 1052.67 3.05448 1052.67 6C1052.67 8.94552 1055.05 11.3333 1058 11.3333C1060.95 11.3333 1063.33 8.94552 1063.33 6C1063.33 3.05448 1060.95 0.666667 1058 0.666667ZM6 0.666667C3.05444 0.666667 0.666626 3.05448 0.666626 6C0.666626 8.94552 3.05444 11.3333 6 11.3333C8.94543 11.3333 11.3333 8.94552 11.3333 6C11.3333 3.05448 8.94543 0.666667 6 0.666667ZM1058 5L6 5V7L1058 7V5Z" />
-          </svg>
+          <div className="w-full border-t border-black dark:border-white border-t-[1px] p-4"></div>
           <div className="w-full flex flex-col mb-[50px]">
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Contact Us
