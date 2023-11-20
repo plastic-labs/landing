@@ -25,7 +25,7 @@ export default function Light(): JSX.Element {
             <p>Blog</p>
           </button>
         </a>
-        <div className="md:w-3/4 w-11/12 flex flex-col items-center justify-center">
+        <div className="md:w-3/4 w-11/12 max-w-4xl flex flex-col items-center justify-center">
           <div className="flex flex-col mb-[50px]">
             <h1 className="pb-4 [font-family:'Exo_2-Bold',Helvetica] font-bold tracking-[0] leading-[normal]">
               About
@@ -43,7 +43,7 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Products
             </h1>
-            <div className="flex flex-row gap-x-8">
+            <div className="flex flex-row gap-x-12">
               <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
               <p>Honcho (coming soon...)</p>
             </div>
@@ -52,7 +52,7 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Founders
             </h1>
-            <div className="flex flex-row gap-x-8">
+            <div className="flex flex-row gap-x-12">
               <p>Courtland Leer</p>
               <p>Vince Trost</p>
               <p>Vineeth Voruganti</p>
@@ -62,7 +62,7 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium  tracking-[0] leading-[normal]">
               Research & Engineering
             </h1>
-            <div className="flex flex-row gap-x-8">
+            <div className="flex flex-row gap-x-12">
               <p>Ayush Paul</p>
               <p>Jacob Van Meter</p>
             </div>
@@ -71,7 +71,7 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Advisors & Angels
             </h1>
-            <div className="flex flex-row gap-x-8">
+            <div className="flex flex-row gap-x-12">
               <p>Thomas Howell</p>
               <p>Zach Seward</p>
             </div>
@@ -80,7 +80,7 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Backed By
             </h1>
-            <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-8">
+            <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-12">
               <a target="_blank" href="https://www.betaworks.com/"><p>Betaworks</p></a>
               <a target="_blank" href="https://mozilla.vc/"><p>Mozilla</p></a>
               <a target="_blank" href="https://www.greycroft.com/"><p>Greycroft</p></a>
