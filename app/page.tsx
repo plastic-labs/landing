@@ -44,7 +44,7 @@ export default function Light(): JSX.Element {
               Products
             </h1>
             <div className="flex flex-row gap-x-8">
-              <p>Bloom</p>
+              <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
               <p>Honcho (coming soon...)</p>
             </div>
           </div>
@@ -81,11 +81,11 @@ export default function Light(): JSX.Element {
               Backed By
             </h1>
             <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-8">
-              <p>Betaworks</p>
-              <p>Mozilla</p>
-              <p>Greycroft</p>
-              <p>Differential</p>
-              <p>Algovera</p>
+              <a target="_blank" href="https://www.betaworks.com/"><p>Betaworks</p></a>
+              <a target="_blank" href="https://mozilla.vc/"><p>Mozilla</p></a>
+              <a target="_blank" href="https://www.greycroft.com/"><p>Greycroft</p></a>
+              <a target="_blank" href="https://www.differential.vc/"><p>Differential</p></a>
+              <a target="_blank" href="https://www.algovera.ai/"><p>Algovera</p></a>
             </div>
           </div>
           <div className="w-full flex flex-col mb-[50px]">
