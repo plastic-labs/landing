@@ -1,25 +1,42 @@
 import React from "react";
 import { ImBubble, ImTwitter, ImGithub } from "react-icons/im";
-import { BsChevronDown, BsDiscord } from 'react-icons/bs'
+import { BsChevronDown, BsDiscord } from "react-icons/bs";
+import FancyLink from "@/components/FancyLink";
 
 export default function Light(): JSX.Element {
   return (
     <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
       <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gradient-grey-transparent to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616]">
         <picture className="w-full max-w-[276px] h-auto">
-          <source srcSet="PlasticLabsAssets-04.svg" media="(prefers-color-scheme:dark)" />
+          <source
+            srcSet="PlasticLabsAssets-04.svg"
+            media="(prefers-color-scheme:dark)"
+          />
           <img alt="Pl mark" src="PlasticLabsAssets-03.svg" />
         </picture>
         <picture className="w-full max-w-[673px] h-auto">
-          <source srcSet="PlasticLabsAssets-02.svg" media="(prefers-color-scheme:dark)" />
+          <source
+            srcSet="PlasticLabsAssets-02.svg"
+            media="(prefers-color-scheme:dark)"
+          />
           <img alt="Pl mark" src="PlasticLabsAssets-01.svg" />
         </picture>
         <a href="#main">
-          <button className="w-[50px] h-[50px] text-[24px] md:w-[80px] md:h-[80px] md:text-[48px] flex flex-row items-center justify-center rounded-full dark:bg-white dark:text-black bg-black text-white "><BsChevronDown /></button>
+          <button className="w-[50px] h-[50px] text-[24px] md:w-[80px] md:h-[80px] md:text-[48px] flex flex-row items-center justify-center rounded-full dark:bg-white dark:text-black bg-black text-white ">
+            <BsChevronDown />
+          </button>
         </a>
       </section>
-      <section id="main" className="w-full flex flex-col items-center bg-gradient-to-r from-gradient-grey-between to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616] dark:text-white">
-        <a className="mb-[50px] mt-[50px]" href="https://blog.plasticlabs.ai" target="_blank" rel="noreferrer">
+      <section
+        id="main"
+        className="w-full flex flex-col items-center bg-gradient-to-r from-gradient-grey-between to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616] dark:text-white"
+      >
+        <a
+          className="mb-[50px] mt-[50px]"
+          href="https://blog.plasticlabs.ai"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="w-[193px] h-[58px] flex flex-row items-center gap-2 justify-center bg-white text-black font-bold rounded-[52px]">
             <ImBubble />
             <p>Blog</p>
@@ -31,12 +48,13 @@ export default function Light(): JSX.Element {
               About
             </h1>
             <p className="font-normal tracking-[0] leading-[normal]">
-              Plastic Labs is a research-driven product company building at the intersection of human and machine
-              learning.
+              Plastic Labs is a research-driven product company building at the
+              intersection of human and machine learning.
               <br />
               <br />
-              Our mission is to eliminate the principal-agent problem in human-AI interaction, powering a future of
-              abundant, autonomous, individually-aligned agents.
+              Our mission is to eliminate the principal-agent problem in
+              human-AI interaction, powering a future of abundant, autonomous,
+              individually-aligned agents.
             </p>
           </div>
           <div className="w-full flex flex-col items-start mb-[50px]">
@@ -44,7 +62,8 @@ export default function Light(): JSX.Element {
               Products
             </h1>
             <div className="flex flex-row gap-x-12">
-              <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
+              {/* <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a> */}
+              <FancyLink href="https://bloombot.ai">Bloom</FancyLink>
               <p>Honcho (coming soon...)</p>
             </div>
           </div>
@@ -81,11 +100,21 @@ export default function Light(): JSX.Element {
               Backed By
             </h1>
             <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-12">
-              <a target="_blank" href="https://www.betaworks.com/"><p>Betaworks</p></a>
-              <a target="_blank" href="https://mozilla.vc/"><p>Mozilla</p></a>
-              <a target="_blank" href="https://www.greycroft.com/"><p>Greycroft</p></a>
-              <a target="_blank" href="https://www.differential.vc/"><p>Differential</p></a>
-              <a target="_blank" href="https://www.algovera.ai/"><p>Algovera</p></a>
+              <FancyLink href="https://www.betaworks.com/">
+                <p>Betaworks</p>
+              </FancyLink>
+              <FancyLink href="https://mozilla.vc/">
+                <p>Mozilla</p>
+              </FancyLink>
+              <FancyLink href="https://www.greycroft.com/">
+                <p>Greycroft</p>
+              </FancyLink>
+              <FancyLink href="https://www.differential.vc/">
+                <p>Differential</p>
+              </FancyLink>
+              <FancyLink href="https://www.algovera.ai/">
+                <p>Algovera</p>
+              </FancyLink>
             </div>
           </div>
           <div className="w-full flex flex-col mb-[50px]">
@@ -122,25 +151,74 @@ export default function Light(): JSX.Element {
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Contact Us
             </h1>
-            <p className="pb-1">For questions about our AI tutor, <a className="underline" href="https://discord.gg/bloombotai" target="_blank" rel="noreferrer">join the Bloom Discord</a>.</p>
-            <p className="pb-1">To connect, <a className="underline" href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer">join the Plastic Discord</a>.</p>
-            <p className="pb-1">For all other inquiries, email us at <a className="underline" href="mailto:hello@plasticlabs.ai" target="_blank" rel="noreferrer">hello@plasticlabs.ai</a></p>
+            <p className="pb-1">
+              For questions about our AI tutor,{" "}
+              <a
+                className="underline"
+                href="https://discord.gg/bloombotai"
+                target="_blank"
+                rel="noreferrer"
+              >
+                join the Bloom Discord
+              </a>
+              .
+            </p>
+            <p className="pb-1">
+              To connect,{" "}
+              <a
+                className="underline"
+                href="https://discord.gg/plasticlabs"
+                target="_blank"
+                rel="noreferrer"
+              >
+                join the Plastic Discord
+              </a>
+              .
+            </p>
+            <p className="pb-1">
+              For all other inquiries, email us at{" "}
+              <a
+                className="underline"
+                href="mailto:hello@plasticlabs.ai"
+                target="_blank"
+                rel="noreferrer"
+              >
+                hello@plasticlabs.ai
+              </a>
+            </p>
           </div>
         </div>
-      </section >
+      </section>
       <section className="w-full h-[74px] bg-[#161616] dark:bg-white flex flex-col justify-center items-center">
         <div className="md:w-3/4 w-11/12 flex flex-row justify-between items-center">
           <p className="w-[389px] ml-2 font-semibold text-white dark:text-black text-[16px] tracking-[0] leading-[normal]">
             Made by Plastic Labs, © 2023
           </p>
           <div className="flex flex-row gap-x-2 text-white dark:text-black">
-            <a href="https://twitter.com/Plastic_Labs" target="_blank" rel="noreferrer"><ImTwitter /></a>
-            <a href="https://github.com/plastic-labs" target="_blank" rel="noreferrer"><ImGithub /></a>
-            <a href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer"><BsDiscord /></a>
+            <a
+              href="https://twitter.com/Plastic_Labs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ImTwitter />
+            </a>
+            <a
+              href="https://github.com/plastic-labs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ImGithub />
+            </a>
+            <a
+              href="https://discord.gg/plasticlabs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsDiscord />
+            </a>
           </div>
         </div>
       </section>
-    </div >
+    </div>
   );
-};
-
+}
