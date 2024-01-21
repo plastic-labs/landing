@@ -6,13 +6,13 @@ export default function Light(): JSX.Element {
   return (
     <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
       <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gradient-grey-transparent to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616]">
-        <picture className="w-full max-w-[276px] h-auto">
+        <picture className="w-full max-w-[276px] h-auto mb-12"> 
           <source srcSet="PlasticLabsAssets-04.svg" media="(prefers-color-scheme:dark)" />
           <img alt="Pl mark" src="PlasticLabsAssets-03.svg" />
         </picture>
-        <picture className="w-full max-w-[673px] h-auto">
-          <source srcSet="PlasticLabsAssets-02.svg" media="(prefers-color-scheme:dark)" />
-          <img alt="Pl mark" src="PlasticLabsAssets-01.svg" />
+        <picture className="w-full max-w-[673px] h-auto mb-4">
+          <source srcSet="PlasticLabsAssets-06.svg" media="(prefers-color-scheme:dark)" />
+          <img alt="Pl mark" src="PlasticLabsAssets-05.svg" />
         </picture>
         <a href="#main">
           <button className="w-[50px] h-[50px] text-[24px] md:w-[80px] md:h-[80px] md:text-[48px] flex flex-row items-center justify-center rounded-full dark:bg-white dark:text-black bg-black text-white "><BsChevronDown /></button>
