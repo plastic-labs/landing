@@ -27,7 +27,7 @@ export default function Light(): JSX.Element {
         </a>
         <div className="md:w-3/4 w-11/12 max-w-4xl flex flex-col items-center justify-center">
           <div className="flex flex-col mb-[50px]">
-            <h1 className="pb-4 [font-family:'Exo_2-Bold',Helvetica] font-bold tracking-[0] leading-[normal]">
+            <h1 className="pb-4 [font-family:'Exo_2-Bold', Helvetica] font-medium tracking-[0] leading-[normal]">
               About
             </h1>
             <p className="font-normal tracking-[0] leading-[normal]">
