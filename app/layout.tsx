@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://plasticlabs.ai",
     images: [
       {
-        url: "/opengraph-image-new.png",
+        url: "/opengraph-image.png",
         width: 1800,
         height: 1600,
         alt: "Plastic Labs"
