@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Exo_2 } from 'next/font/google'
+import { CSPostHogProvider } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,7 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={exo2.variable}>{children}</body>
+      <CSPostHogProvider>
+        <body className={exo2.variable}>{children}</body>
+      </CSPostHogProvider>
     </html>
   )
 }
