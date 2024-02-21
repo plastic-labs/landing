@@ -6,7 +6,7 @@ export default function Light(): JSX.Element {
   return (
     <div className="bg-white font-exo2 text-black flex flex-col items-center w-full">
       <section className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gradient-grey-transparent to-gradient-grey-opaque dark:from-black dark:to-black dark:bg-[#161616]">
-        <picture className="w-full max-w-[276px] h-auto mb-12"> 
+        <picture className="w-full max-w-[276px] h-auto mb-12">
           <source srcSet="PlasticLabsAssets-04.svg" media="(prefers-color-scheme:dark)" />
           <img alt="Pl mark" src="PlasticLabsAssets-03.svg" />
         </picture>
@@ -44,8 +44,8 @@ export default function Light(): JSX.Element {
               Products
             </h1>
             <div className="flex flex-row gap-x-12">
-              <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
               <a href="https://honcho.dev" target="_blank"><p>Honcho</p></a>
+              <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
             </div>
           </div>
           <div className="w-full flex flex-col mb-[50px]">
