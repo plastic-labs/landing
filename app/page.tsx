@@ -46,6 +46,7 @@ export default function Light(): JSX.Element {
             <div className="flex flex-row gap-x-12">
               <a href="https://honcho.dev" target="_blank"><p>Honcho</p></a>
               <a href="https://bloombot.ai" target="_blank"><p>Bloom</p></a>
+              <a href="https://yousim.ai" target="_blank"><p>YouSim</p></a>
             </div>
           </div>
           <div className="w-full flex flex-col mb-[50px]">
