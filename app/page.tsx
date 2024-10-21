@@ -1,6 +1,7 @@
 import React from "react";
 import { ImBubble, ImTwitter, ImGithub } from "react-icons/im";
 import { BsChevronDown, BsDiscord } from 'react-icons/bs'
+import { SiHuggingface } from "react-icons/si";
 
 export default function Light(): JSX.Element {
   return (
@@ -51,71 +52,30 @@ export default function Light(): JSX.Element {
           </div>
           <div className="w-full flex flex-col mb-[50px]">
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
-              Founders
+              Team
             </h1>
-            <div className="flex flex-row gap-x-12">
-              <p>Courtland Leer</p>
-              <p>Vince Trost</p>
-              <p>Vineeth Voruganti</p>
-            </div>
-          </div>
-          <div className="w-full flex flex-col mb-[50px]">
-            <h1 className="pb-4 font-medium  tracking-[0] leading-[normal]">
-              Research & Engineering
-            </h1>
-            <div className="flex flex-row gap-x-12">
-              <p>Ayush Paul</p>
-              <p>Jacob Van Meter</p>
-            </div>
-          </div>
-          <div className="w-full flex flex-col mb-[50px]">
-            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
-              Advisors & Angels
-            </h1>
-            <div className="flex flex-row gap-x-12">
-              <p>Thomas Howell</p>
-              <p>Zach Seward</p>
+            <div className="grid grid-cols-2 sm:flex sm:flex-row sm:gap-x-12">
+              <a target="_blank" href="https://x.com/courtlandleer"><p>Courtland Leer</p></a>
+              <a target="_blank" href="https://x.com/vintrotweets"><p>Vince Trost</p></a>
+              <a target="_blank" href="https://x.com/TheMarshmalon"><p>Vineeth Voruganti</p></a>
+              <a target="_blank" href="https://x.com/danibalcells"><p>Dani Balcells</p></a>
+              <a target="_blank" href="https://x.com/bengineer10"><p>Ben Lopata</p></a>
+              <a target="_blank" href="https://x.com/hyusapx"><p>Ayush Paul</p></a>
             </div>
           </div>
           <div className="w-full flex flex-col mb-[50px]">
             <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
               Backed By
             </h1>
-            <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-12">
+            <div className="grid grid-cols-2 sm:flex sm:flex-row gap-x-12 sm:text-center">
               <a target="_blank" href="https://www.betaworks.com/"><p>Betaworks</p></a>
-              <a target="_blank" href="https://mozilla.vc/"><p>Mozilla</p></a>
+              <a target="_blank" href="https://mozilla.vc/"><p>Mozilla Ventures</p></a>
               <a target="_blank" href="https://www.greycroft.com/"><p>Greycroft</p></a>
               <a target="_blank" href="https://www.differential.vc/"><p>Differential</p></a>
               <a target="_blank" href="https://www.algovera.ai/"><p>Algovera</p></a>
-            </div>
-          </div>
-          <div className="w-full flex flex-col mb-[50px]">
-            <h1 className="pb-4 font-medium tracking-[0] leading-[normal]">
-              Discord Testers
-            </h1>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4">
-              <p>a_vidb</p>
-              <p>bhaumik</p>
-              <p>butlermuwo</p>
-              <p>clementlo</p>
-              <p>dblurj05832</p>
-              <p>d.plummer</p>
-              <p>danibalcells</p>
-              <p>deividrocha_</p>
-              <p>Emmaheineman</p>
-              <p>eseoghene</p>
-              <p>.greypilgrim</p>
-              <p>gustavbronelius</p>
-              <p>jas225</p>
-              <p>levati</p>
-              <p>magisterfalk</p>
-              <p>mani</p>
-              <p>Maxwell</p>
-              <p>mca248</p>
-              <p>pr1mordial</p>
-              <p>_stevengao</p>
-              <p>temisan.</p>
-              <p>tylerokada</p>
+              <a target="_blank" href="https://whitestarcapital.com/digital-asset-fund/"><p>White Star Capital</p></a>
+              <a target="_blank" href="https://www.seedclub.xyz/getfunded/ventures"><p>Seed Club Ventures</p></a>
+              <a target="_blank" href="https://x.com/seethomasowl"><p>Thomas Howell</p></a>
             </div>
           </div>
           <div className="w-full border-t border-black dark:border-white border-t-[1px] p-4"></div>
@@ -138,6 +98,7 @@ export default function Light(): JSX.Element {
             <a href="https://twitter.com/Plastic_Labs" target="_blank" rel="noreferrer"><ImTwitter /></a>
             <a href="https://github.com/plastic-labs" target="_blank" rel="noreferrer"><ImGithub /></a>
             <a href="https://discord.gg/plasticlabs" target="_blank" rel="noreferrer"><BsDiscord /></a>
+            <a href="https://huggingface.co/plastic-labs" target="_blank" rel="noreferrer"><SiHuggingface /></a>
           </div>
         </div>
       </section>
