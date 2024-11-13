@@ -1,5 +1,8 @@
 /* eslint-disable import/no-default-export */
 import { Metadata } from 'next'
+import { Footer } from '@/components/layout/footer'
+import { Header } from '@/components/layout/header'
+import { Main } from '@/components/layout/main'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -29,7 +32,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <Providers>
-        <body>{children}</body>
+        <body>
+          <Header>header</Header>
+          <Main>{children}</Main>
+          <Footer>footer</Footer>
+        </body>
       </Providers>
     </html>
   )
