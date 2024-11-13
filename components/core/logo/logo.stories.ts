@@ -21,7 +21,7 @@ const meta = {
       description: 'The logo width in pixels',
       table: {
         defaultValue: {
-          summary: '571',
+          summary: '949',
         },
         type: {
           summary: 'number',
@@ -38,7 +38,7 @@ const meta = {
       description: 'The logo height in pixels',
       table: {
         defaultValue: {
-          summary: '491',
+          summary: '949',
         },
         type: {
           summary: 'number',
@@ -68,7 +68,7 @@ type Story = StoryObj<typeof meta>
 
 export const Logo: Story = {
   args: {
-    width: 571,
-    height: 491,
+    width: 949,
+    height: 949,
   },
 }
