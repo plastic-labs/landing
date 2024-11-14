@@ -2,11 +2,18 @@
 
 import { createGlobalStyle } from 'styled-components'
 import { departureMono, exo2, robotoMono } from './fonts'
-import { colorValues } from './palette'
-import type { ColorVar } from './palette'
+import { colorValues, neutralValues } from './palette'
+import type { ColorVar, NeutralVar } from './palette'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
+    ${Object.keys(neutralValues)
+      .map(
+        neutralKey =>
+          `${neutralKey}: ${neutralValues[neutralKey as NeutralVar]};`,
+      )
+      .join('\n')};
+
     ${Object.keys(colorValues)
       .map(colorKey => `${colorKey}: ${colorValues[colorKey as ColorVar]};`)
       .join('\n')};
