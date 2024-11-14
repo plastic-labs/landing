@@ -19,8 +19,8 @@ export const GlobalStyles = createGlobalStyle`
       .join('\n')};
 
     --font-family-departure-mono: ${departureMono.style.fontFamily}, monospace;
-    --font-family-exo2: '${exo2.style.fontFamily}';
-    --font-family-roboto-mono: '${robotoMono.style.fontFamily}', monospace;
+    --font-family-exo2: ${exo2.style.fontFamily};
+    --font-family-roboto-mono: ${robotoMono.style.fontFamily}, monospace;
 
     --scale-xxxs: 0.0625rem;
     --scale-xxs: 0.125rem;
@@ -39,8 +39,16 @@ export const GlobalStyles = createGlobalStyle`
     --ui-transition-speed: 144ms;
 
     --default-font-family: var(--font-family-roboto-mono);
-    --default-text-color: black;
-    --default-background-color: white;
+    --default-text-color: var(--neutral-black);
+    --default-background-color: var(--neutral-white);
+
+    ${({ theme: { palette } }) =>
+      Object.keys(palette)
+        .map(
+          themePaletteKey =>
+            `${themePaletteKey}: var(${palette[themePaletteKey]});`,
+        )
+        .join('\n')};
   }
 
   html,

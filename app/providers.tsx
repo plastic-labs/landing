@@ -3,7 +3,7 @@
 import posthog from 'posthog-js'
 import { PostHogProvider } from 'posthog-js/react'
 
-import { GlobalStyles } from '@/styles/global-styles'
+import { PlasticTheme, PlasticThemeProvider } from '@/contexts/plastic-theme'
 import { StyledComponentsRegistry } from '@/styles/registry'
 
 if (typeof window !== 'undefined') {
@@ -18,8 +18,9 @@ export const Providers: React.FC<{ children: React.ReactNode }> = ({
   return (
     <PostHogProvider client={posthog}>
       <StyledComponentsRegistry>
-        <GlobalStyles />
-        {children}
+        <PlasticThemeProvider>
+          <PlasticTheme>{children}</PlasticTheme>
+        </PlasticThemeProvider>
       </StyledComponentsRegistry>
     </PostHogProvider>
   )
