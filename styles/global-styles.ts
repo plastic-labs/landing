@@ -1,7 +1,7 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
-import { exo2 } from './fonts'
+import { departureMono, exo2, robotoMono } from './fonts'
 import { colorValues } from './palette'
 import type { ColorVar } from './palette'
 
@@ -11,7 +11,9 @@ export const GlobalStyles = createGlobalStyle`
       .map(colorKey => `${colorKey}: ${colorValues[colorKey as ColorVar]};`)
       .join('\n')};
 
-    --font-family-exo2: ${exo2.style.fontFamily};
+    --font-family-departure-mono: ${departureMono.style.fontFamily}, monospace;
+    --font-family-exo2: '${exo2.style.fontFamily}';
+    --font-family-roboto-mono: '${robotoMono.style.fontFamily}', monospace;
 
     --scale-xxxs: 0.0625rem;
     --scale-xxs: 0.125rem;
@@ -29,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
 
     --ui-transition-speed: 144ms;
 
-    --default-font-family: var(--font-family-exo2);
+    --default-font-family: var(--font-family-roboto-mono);
     --default-text-color: black;
     --default-background-color: white;
   }

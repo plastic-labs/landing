@@ -6,7 +6,7 @@ import { defaultTag } from './typography.constants'
 import { TypographyProps } from './typography.types'
 
 const sharedHeaderStyles = css`
-  font-family: var(--default-font-family);
+  font-family: var(--font-family-departure-mono);
   font-style: normal;
   font-weight: 600;
 `
