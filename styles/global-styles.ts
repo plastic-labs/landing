@@ -27,6 +27,9 @@ export const GlobalStyles = createGlobalStyle`
     --scale-xxxxl: 4rem;
     --scale-xxxxxl: 5rem;
 
+    --ui-transition-speed: 144ms;
+
+    --default-font-family: var(--font-family-exo2);
     --default-text-color: black;
     --default-background-color: white;
   }
@@ -42,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     min-height: 100vh;
-    font-family: var(--font-family-exo2);
+    font-family: var(--default-font-family);
 
     @supports (height: 100dvh) {
       min-height: 100dvh;
