@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "npm run lint:next && npm run lint:eslint && npm run lint:types",
     "lint:fix": "npm run lint:eslint:fix && npm run lint:next:fix && npm run lint:types",
     "lint:eslint": "eslint . --ext=.tsx,.ts",
