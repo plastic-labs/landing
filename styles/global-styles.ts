@@ -56,8 +56,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 100%; // 1rem = 16px
-    color: var(--default-text-color);
-    background-color: var(--default-background-color);
+    color: var(--color-primary-surface-contrast, var(--default-text-color));
+    background-color: var(--color-primary-surface, var(--default-background-color));
   }
 
   body {
@@ -67,5 +67,10 @@ export const GlobalStyles = createGlobalStyle`
     @supports (height: 100dvh) {
       min-height: 100dvh;
     }
+  }
+
+  // facilitates theme backgrounds in storybook
+  .docs-story {
+    background-color: var(--color-primary-surface, var(--default-background-color));
   }
 `
