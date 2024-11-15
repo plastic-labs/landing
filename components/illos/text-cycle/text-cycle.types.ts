@@ -13,3 +13,13 @@ export interface CharacterCellProps extends HTMLAttributes<HTMLSpanElement> {
   character: string
   cycle: Cycle
 }
+
+export type Character = {
+  character: string
+  cycle: Cycle
+  key: string
+}
+
+export interface StatementProps extends HTMLAttributes<HTMLParagraphElement> {
+  statement: string
+}

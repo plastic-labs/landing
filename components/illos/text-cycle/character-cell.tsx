@@ -2,10 +2,7 @@
 
 import styled, { css } from 'styled-components'
 import { cycleCharacter, cycleFlash } from './character-cell.keyframes'
-import {
-  CharacterCellStyleProps,
-  CharacterCellProps,
-} from './text-cycle.types'
+import { CharacterCellStyleProps, CharacterCellProps } from './text-cycle.types'
 
 const DURATION = 5 // seconds
 
