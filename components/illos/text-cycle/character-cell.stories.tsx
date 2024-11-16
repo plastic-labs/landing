@@ -1,4 +1,5 @@
 /* eslint-disable import/no-default-export */
+import { CSSProperties } from 'react'
 import { CharacterCell as CharacterCellUi } from './character-cell'
 import { cycles } from './text-cycle.types'
 import type { Meta, StoryObj } from '@storybook/react'
@@ -71,4 +72,11 @@ export const CharacterCell: Story = {
     cycle: 1,
     duration: 5,
   },
+  decorators: [
+    Story => (
+      <div style={{ '--cell-size': `${70 / 16}rem` } as CSSProperties}>
+        <Story />
+      </div>
+    ),
+  ],
 }

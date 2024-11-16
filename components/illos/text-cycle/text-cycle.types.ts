@@ -20,6 +20,15 @@ export type Character = {
   key: string
 }
 
+export interface NumberStyleProps {
+  $column: number
+  $cycle: Cycle
+  $duration: number
+  $left: number
+  $row: number
+  $top: number
+}
+
 export interface StatementProps extends HTMLAttributes<HTMLParagraphElement> {
   cellSize?: number
   duration?: number

@@ -50,3 +50,32 @@ export const cycleFlash = cycles.reduce(
   },
   {} as Record<Cycle, Keyframes>,
 )
+
+export const cycleNumber = cycles.reduce(
+  (acc, cycle) => {
+    return {
+      ...acc,
+      [cycle]: keyframes`
+        0% {
+          opacity: 0;
+        }
+        ${`${MAJORS[cycle] - 0.00001}%`} {
+          opacity: 0;
+        }
+        ${`${MAJORS[cycle]}%`} {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle] + SEGMENT / 3}%`} {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle] + SEGMENT / 3 + 0.00001}%`} {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      `,
+    }
+  },
+  {} as Record<Cycle, Keyframes>,
+)

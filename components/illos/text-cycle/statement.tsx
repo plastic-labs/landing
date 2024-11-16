@@ -52,8 +52,7 @@ export const TextCycle: React.FC<StatementProps> = ({
   return (
     <StyledTextCycle {...props} $cellSize={cellSize}>
       {characters.map(character => (
-        // eslint-disable-next-line react/jsx-key
-        <CharacterCell {...character} duration={duration} />
+        <CharacterCell {...character} duration={duration} key={character.key} />
       ))}
     </StyledTextCycle>
   )
