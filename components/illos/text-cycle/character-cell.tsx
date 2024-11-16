@@ -6,9 +6,9 @@ import { CharacterCellStyleProps, CharacterCellProps } from './text-cycle.types'
 
 const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   aspect-ratio: 1;
 
   ${({ $cellSize }) => css`
@@ -16,6 +16,10 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
     height: ${$cellSize / 16}rem;
     font-size: ${($cellSize / 16) * (13 / 14)}rem;
   `}
+
+  * {
+    z-index: 0;
+  }
 
   // character and background
   &::before {
@@ -38,7 +42,7 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
     animation-duration: ${({ $duration }) => $duration}s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    z-index: 0;
+    z-index: 1;
   }
 
   // flash
@@ -55,7 +59,7 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
     animation-duration: ${({ $duration }) => $duration}s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    z-index: 1;
+    z-index: 2;
   }
 `
 
