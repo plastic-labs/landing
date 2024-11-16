@@ -59,6 +59,23 @@ const meta = {
         },
       },
     },
+    duration: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 20,
+        step: 0.5,
+      },
+      description: 'The duration of the animation',
+      table: {
+        defaultValue: {
+          summary: '5',
+        },
+        type: {
+          summary: 'number',
+        },
+      },
+    },
   },
 } satisfies Meta<typeof CharacterCellUi>
 
@@ -70,5 +87,6 @@ export const CharacterCell: Story = {
     cellSize: 70,
     character: 'A',
     cycle: 1,
+    duration: 5,
   },
 }

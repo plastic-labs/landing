@@ -6,12 +6,14 @@ export type Cycle = (typeof cycles)[number]
 export interface CharacterCellStyleProps {
   $cellSize: number // pixels
   $cycle: Cycle
+  $duration: number
 }
 
 export interface CharacterCellProps extends HTMLAttributes<HTMLSpanElement> {
   cellSize?: number // pixels
   character: string
   cycle: Cycle
+  duration: number
 }
 
 export type Character = {
@@ -21,5 +23,6 @@ export type Character = {
 }
 
 export interface StatementProps extends HTMLAttributes<HTMLParagraphElement> {
+  duration?: number
   statement: string
 }

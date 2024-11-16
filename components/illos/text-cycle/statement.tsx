@@ -15,12 +15,11 @@ const StyledTextCycle = styled.h2`
 `
 
 const generateCharacters = (statement: string): Character[] => {
-  const characterCycles = shuffle(
-    Array(Math.ceil(statement.length / cycles.length))
-      .fill(cycles)
-      .flat()
-      .slice(0, statement.length),
-  )
+  const characterCycles = Array(Math.ceil(statement.length / cycles.length))
+    .fill(null)
+    .map(() => shuffle([...cycles]))
+    .flat()
+    .slice(0, statement.length)
 
   return characterCycles.map((cycle, index) => ({
     character: statement[index],
@@ -30,6 +29,7 @@ const generateCharacters = (statement: string): Character[] => {
 }
 
 export const TextCycle: React.FC<StatementProps> = ({
+  duration = 5,
   statement,
   ...props
 }) => {
@@ -50,7 +50,7 @@ export const TextCycle: React.FC<StatementProps> = ({
     <StyledTextCycle {...props}>
       {characters.map(character => (
         // eslint-disable-next-line react/jsx-key
-        <CharacterCell {...character} />
+        <CharacterCell {...character} duration={duration} />
       ))}
     </StyledTextCycle>
   )
