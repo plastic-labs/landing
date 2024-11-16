@@ -5,7 +5,7 @@ import { Cycle, cycles } from './text-cycle.types'
 const SEGMENT = 100 / (cycles.length + 2)
 const MAJORS = Array(cycles.length)
   .fill(null)
-  .map((_, index) => SEGMENT * (index + 2))
+  .map((_, index) => SEGMENT * (index + 2.5))
 const MINORS = MAJORS.map(major => major - SEGMENT / 2)
 
 export const cycleCharacter = cycles.reduce(
