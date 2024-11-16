@@ -68,6 +68,13 @@ export const Statement: Story = {
   args: {
     cellSize: 70,
     duration: 5,
-    statement: 'radically decentralizing alignment',
+    statement: 'radically     decentralizing alignment',
   },
+  decorators: [
+    Story => (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
