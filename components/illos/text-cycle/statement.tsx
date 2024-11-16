@@ -41,10 +41,10 @@ export const TextCycle: React.FC<StatementProps> = ({
     }
 
     reset()
-    const timer = setInterval(reset, 5000)
+    const timer = setInterval(reset, duration * 1000)
 
     return () => timer && clearInterval(timer)
-  }, [statement])
+  }, [duration, statement])
 
   return (
     <StyledTextCycle {...props}>
