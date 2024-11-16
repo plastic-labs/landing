@@ -30,7 +30,7 @@ export interface NumberStyleProps {
 }
 
 export interface StatementProps extends HTMLAttributes<HTMLParagraphElement> {
-  cellSize?: number
+  characterCount?: number
   duration?: number
   statement: string
 }

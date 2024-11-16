@@ -10,17 +10,17 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    cellSize: {
+    characterCount: {
       control: {
         type: 'range',
         min: 1,
-        max: 1000,
+        max: 30,
         step: 1,
       },
-      description: 'The cell size in pixels',
+      description: 'The characters to render in a single line',
       table: {
         defaultValue: {
-          summary: '70',
+          summary: '15',
         },
         type: {
           summary: 'number',
@@ -37,7 +37,7 @@ const meta = {
       description: 'The duration of the animation',
       table: {
         defaultValue: {
-          summary: '5',
+          summary: '3',
         },
         type: {
           summary: 'number',
@@ -66,9 +66,9 @@ type Story = StoryObj<typeof meta>
 
 export const Statement: Story = {
   args: {
-    cellSize: 70,
-    duration: 5,
-    statement: 'radically     decentralizing alignment',
+    characterCount: 15,
+    duration: 3,
+    statement: 'radically \ndecentralizing alignment',
   },
   decorators: [
     Story => (

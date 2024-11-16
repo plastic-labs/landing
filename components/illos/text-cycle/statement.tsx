@@ -1,7 +1,7 @@
 'use client'
 
 import { customAlphabet } from 'nanoid/non-secure'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { shuffle } from '@/utils/shuffle'
 import { CharacterCell } from './character-cell'
@@ -14,6 +14,11 @@ const StyledTextCycle = styled.h2<{ $cellSize: number }>`
 
   display: flex;
   flex-wrap: wrap;
+`
+
+const LineBreak = styled.span`
+  flex-basis: 100%;
+  height: 0;
 `
 
 const generateCharacters = (statement: string): Character[] => {
@@ -31,12 +36,20 @@ const generateCharacters = (statement: string): Character[] => {
 }
 
 export const TextCycle: React.FC<StatementProps> = ({
-  cellSize = 70,
-  duration = 5,
+  characterCount = 15,
+  duration = 3,
   statement,
   ...props
 }) => {
+  const illoRef = useRef<HTMLHeadingElement>(null)
   const [characters, setCharacters] = useState<Character[]>([])
+  const [headingWidth, setHeadingWidth] = useState<number>(Infinity)
+
+  useEffect(() => {
+    if (illoRef.current) {
+      setHeadingWidth(illoRef.current.getBoundingClientRect().width || 60)
+    }
+  }, [headingWidth])
 
   useEffect(() => {
     const reset = () => {
@@ -50,10 +63,23 @@ export const TextCycle: React.FC<StatementProps> = ({
   }, [duration, statement])
 
   return (
-    <StyledTextCycle {...props} $cellSize={cellSize}>
-      {characters.map(character => (
-        <CharacterCell {...character} duration={duration} key={character.key} />
-      ))}
+    <StyledTextCycle
+      {...props}
+      ref={illoRef}
+      $cellSize={headingWidth / characterCount}
+    >
+      {characters.map(character => {
+        if (character.character === '\n') {
+          return <LineBreak key={character.key} />
+        }
+        return (
+          <CharacterCell
+            {...character}
+            duration={duration}
+            key={character.key}
+          />
+        )
+      })}
     </StyledTextCycle>
   )
 }
