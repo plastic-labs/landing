@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 import { CharacterCell as CharacterCellUi } from './character-cell'
+import { cycles } from './text-cycle.types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -45,7 +46,7 @@ const meta = {
       control: {
         type: 'range',
         min: 1,
-        max: 3,
+        max: cycles.length,
         step: 1,
       },
       description: 'The cycle in which the character flashes and disappears',
@@ -54,7 +55,7 @@ const meta = {
           summary: '1',
         },
         type: {
-          summary: 'Cycle',
+          summary: `Cycle: any of: ${cycles.join(', ')}.`,
         },
       },
     },

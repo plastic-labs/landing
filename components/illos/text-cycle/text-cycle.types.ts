@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-export const cycles = [1, 2, 3] as const
+export const cycles = [1, 2, 3, 4] as const
 export type Cycle = (typeof cycles)[number]
 
 export interface CharacterCellStyleProps {
