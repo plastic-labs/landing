@@ -8,108 +8,45 @@ const MAJORS = Array(cycles.length)
   .map((_, index) => SEGMENT * (index + 2))
 const MINORS = MAJORS.map(major => major - SEGMENT / 2)
 
-export const cycleCharacter: Record<Cycle, Keyframes> = {
-  1: keyframes`
-      0% {
-        opacity: 1;
-      }
-      ${`${MAJORS[0] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[0]}%`} {
-        opacity: 0;
-      }
-    `,
-  2: keyframes`
-      0% {
-        opacity: 1;
-      }
-      ${`${MAJORS[1] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[1]}%`} {
-        opacity: 0;
-      }
-    `,
-  3: keyframes`
-      0% {
-        opacity: 1;
-      }
-      ${`${MAJORS[2] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[2]}%`} {
-        opacity: 0;
-      }
-    `,
-  4: keyframes`
-      0% {
-        opacity: 1;
-      }
-      ${`${MAJORS[3] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[3]}%`} {
-        opacity: 0;
-      }
-    `,
-}
+export const cycleCharacter = cycles.reduce(
+  (acc, cycle) => {
+    return {
+      ...acc,
+      [cycle]: keyframes`
+        0% {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle - 1] - 0.00001}%`} {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle - 1]}%`} {
+          opacity: 0;
+        }
+      `,
+    }
+  },
+  {} as Record<Cycle, Keyframes>,
+)
 
-export const cycleFlash: Record<Cycle, Keyframes> = {
-  1: keyframes`
-      ${`${MINORS[0] - 0.00001}%`} {
-        opacity: 0;
-      }
-      ${`${MINORS[0]}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[0] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[0]}%`} {
-        opacity: 0;
-      }
-    `,
-  2: keyframes`
-      ${`${MINORS[1] - 0.00001}%`} {
-        opacity: 0;
-      }
-      ${`${MINORS[1]}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[1] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[1]}%`} {
-        opacity: 0;
-      }
-    `,
-  3: keyframes`
-      ${`${MINORS[2] - 0.00001}%`} {
-        opacity: 0;
-      }
-      ${`${MINORS[2]}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[2] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[2]}%`} {
-        opacity: 0;
-      }
-    `,
-  4: keyframes`
-      ${`${MINORS[3] - 0.00001}%`} {
-        opacity: 0;
-      }
-      ${`${MINORS[3]}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[3] - 0.00001}%`} {
-        opacity: 1;
-      }
-      ${`${MAJORS[3]}%`} {
-        opacity: 0;
-      }
-    `,
-}
+export const cycleFlash = cycles.reduce(
+  (acc, cycle) => {
+    return {
+      ...acc,
+      [cycle]: keyframes`
+        ${`${MINORS[cycle - 1] - 0.00001}%`} {
+          opacity: 0;
+        }
+        ${`${MINORS[cycle - 1]}%`} {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle - 1] - 0.00001}%`} {
+          opacity: 1;
+        }
+        ${`${MAJORS[cycle - 1]}%`} {
+          opacity: 0;
+        }
+      `,
+    }
+  },
+  {} as Record<Cycle, Keyframes>,
+)
