@@ -9,7 +9,9 @@ import { Character, cycles, StatementProps } from './text-cycle.types'
 
 const nanoid = customAlphabet('1234567890abcdef', 6)
 
-const StyledTextCycle = styled.h2`
+const StyledTextCycle = styled.h2<{ $cellSize: number }>`
+  --cell-size: ${({ $cellSize }) => $cellSize / 16}rem;
+
   display: flex;
   flex-wrap: wrap;
 `
@@ -29,6 +31,7 @@ const generateCharacters = (statement: string): Character[] => {
 }
 
 export const TextCycle: React.FC<StatementProps> = ({
+  cellSize = 70,
   duration = 5,
   statement,
   ...props
@@ -47,7 +50,7 @@ export const TextCycle: React.FC<StatementProps> = ({
   }, [duration, statement])
 
   return (
-    <StyledTextCycle {...props}>
+    <StyledTextCycle {...props} $cellSize={cellSize}>
       {characters.map(character => (
         // eslint-disable-next-line react/jsx-key
         <CharacterCell {...character} duration={duration} />

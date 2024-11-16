@@ -1,6 +1,6 @@
 'use client'
 
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { cycleCharacter, cycleFlash } from './character-cell.keyframes'
 import { CharacterCellStyleProps, CharacterCellProps } from './text-cycle.types'
 
@@ -10,12 +10,8 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   aspect-ratio: 1;
-
-  ${({ $cellSize }) => css`
-    width: ${$cellSize / 16}rem;
-    height: ${$cellSize / 16}rem;
-    font-size: ${($cellSize / 16) * (13 / 14)}rem;
-  `}
+  width: var(--cell-size);
+  height: var(--cell-size);
 
   * {
     z-index: 0;
@@ -34,7 +30,7 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
     justify-content: center;
     color: var(--color-primary-surface-contrast);
     font-family: var(--font-family-departure-mono);
-    font-size: inherit;
+    font-size: calc(var(--cell-size) * 13 / 14);
     line-height: 1;
     background-color: var(--color-primary-surface);
     opacity: 0;
@@ -64,7 +60,6 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
 `
 
 export const CharacterCell: React.FC<CharacterCellProps> = ({
-  cellSize = 70,
   character,
   cycle,
   duration,
@@ -74,7 +69,6 @@ export const CharacterCell: React.FC<CharacterCellProps> = ({
     <StyledCharacterCell
       {...props}
       data-character={character.slice(0, 1).toUpperCase()}
-      $cellSize={cellSize}
       $cycle={cycle}
       $duration={duration}
     />

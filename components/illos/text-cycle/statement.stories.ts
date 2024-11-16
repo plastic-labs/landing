@@ -10,6 +10,23 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    cellSize: {
+      control: {
+        type: 'range',
+        min: 1,
+        max: 1000,
+        step: 1,
+      },
+      description: 'The cell size in pixels',
+      table: {
+        defaultValue: {
+          summary: '70',
+        },
+        type: {
+          summary: 'number',
+        },
+      },
+    },
     duration: {
       control: {
         type: 'range',
@@ -49,6 +66,7 @@ type Story = StoryObj<typeof meta>
 
 export const Statement: Story = {
   args: {
+    cellSize: 70,
     duration: 5,
     statement: 'radically decentralizing alignment',
   },

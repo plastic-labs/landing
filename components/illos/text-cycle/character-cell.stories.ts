@@ -11,23 +11,6 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    cellSize: {
-      control: {
-        type: 'range',
-        min: 1,
-        max: 1000,
-        step: 1,
-      },
-      description: 'The cell size in pixels',
-      table: {
-        defaultValue: {
-          summary: '70',
-        },
-        type: {
-          summary: 'number',
-        },
-      },
-    },
     character: {
       control: {
         type: 'text',
@@ -84,7 +67,6 @@ type Story = StoryObj<typeof meta>
 
 export const CharacterCell: Story = {
   args: {
-    cellSize: 70,
     character: 'A',
     cycle: 1,
     duration: 5,
