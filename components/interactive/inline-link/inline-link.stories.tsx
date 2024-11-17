@@ -4,8 +4,8 @@ import { fn } from '@storybook/test'
 import { MouseEvent } from 'react'
 import { Text } from '@/components/core/typography'
 import {
-  LinkState,
-  linkStates,
+  ButtonState,
+  buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
 import { InlineLink as InlineLinkUi } from './inline-link'
@@ -47,6 +47,20 @@ const meta = {
         },
       },
     },
+    inverse: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'Whether the theme colors should be inverted',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
   args: {
     onClick: (event: MouseEvent<HTMLAnchorElement>) => {
@@ -64,18 +78,21 @@ export const States: Story = {
   args: {
     children: 'Button',
     href: 'https://plasticlabs.ai',
+    inverse: false,
   },
   decorators: [
     (_, { args }) => {
       const story: React.FC<{ column: string; row: string }> = ({ row }) => {
         return (
           <Text variant="Body1">
-            <InlineLinkUi {...args} data-state={row as LinkState} />
+            <InlineLinkUi {...args} data-state={row as ButtonState} />
           </Text>
         )
       }
 
-      return <StatesGrid columns={['State']} rows={linkStates} Story={story} />
+      return (
+        <StatesGrid columns={['State']} rows={buttonStates} Story={story} />
+      )
     },
   ],
 }
@@ -89,6 +106,7 @@ export const InlineLink: Story = {
   args: {
     children: 'Inline Link',
     href: 'https://plasticlabs.ai',
+    inverse: false,
   },
   decorators: [
     (_, { args }) => {

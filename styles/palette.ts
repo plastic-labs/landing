@@ -8,7 +8,7 @@ export type NeutralVar = (typeof neutralVarNames)[number]
 
 export const neutralValues: Record<NeutralVar, string> = {
   '--neutral-black': '#000000',
-  '--neutral-dark-grey': '#555555',
+  '--neutral-dark-grey': '#4A4A4A',
   '--neutral-grey': '#888888',
   '--neutral-white': '#FFFFFF',
 }

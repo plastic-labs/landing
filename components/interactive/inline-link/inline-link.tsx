@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
+import { inverseThemePaletteVar } from '@/styles/themes'
 import { isInternalUrl } from '@/utils/url'
+import { SharedThemeStylesProps } from '../shared/theme.types'
 import { InlineLinkProps } from './inline-link.types'
 
-const linkStyles = css`
-  --underline-color-base: black;
-  --underline-color: var(--underline-color-base);
+const linkStyles = css<SharedThemeStylesProps>`
+  --color-base: var(--interactive-link-surface-contrast);
+  --accent-base: var(--interactive-link-accent);
 
   display: inline;
   font-family: inherit;
@@ -20,21 +22,27 @@ const linkStyles = css`
   // states
   &,
   &:visited {
-    color: currentColor;
-    text-decoration-color: var(--underline-color);
+    color: var(--color-base);
   }
 
   @media (hover: hover) {
-    --underline-color: hsl(from var(--underline-color-base) h s calc(l + 60));
-    --underline-color-hover: var(--underline-color-base);
+    --color-hover: var(--accent-base);
   }
 
   &:hover:not([href='']):not([href='#']):not([data-state]),
   &[data-state='hover'] {
-    text-decoration-color: var(
-      --underline-color-hover,
-      var(--underline-color, var(--underline-color-base))
-    );
+    color: var(--color-hover, var(--color-base));
+  }
+
+  &:active:not([href='']):not([href='#']):not([data-state]),
+  &:hover:active:not([href='']):not([href='#']):not([data-state]),
+  &[data-state='pressed'] {
+    color: var(--accent-base);
+    text-shadow:
+      -0.002rem -0.002rem 0 var(--accent-base),
+      0.002rem -0.002rem 0 var(--accent-base),
+      -0.002rem 0.002rem 0 var(--accent-base),
+      0.002rem 0.002rem 0 var(--accent-base);
   }
 
   &[href='']:not([data-state]),
@@ -42,14 +50,30 @@ const linkStyles = css`
   &[data-state='disabled'] {
     text-decoration: none;
     pointer-events: none;
+    cursor: default;
   }
+
+  ${({ $inverse, theme }) =>
+    $inverse
+      ? css`
+          --color-base: var(
+            ${inverseThemePaletteVar(
+              theme,
+              '--interactive-link-surface-contrast',
+            )}
+          );
+          --accent-base: var(
+            ${inverseThemePaletteVar(theme, '--interactive-link-accent')}
+          );
+        `
+      : ''}
 `
 
-const StyledNextLink = styled(Link)`
+const StyledNextLink = styled(Link)<SharedThemeStylesProps>`
   ${linkStyles}
 `
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a<SharedThemeStylesProps>`
   ${linkStyles}
 `
 
@@ -59,6 +83,7 @@ const StyledAnchor = styled.a`
 export const InlineLink: React.FC<InlineLinkProps> = ({
   children,
   href,
+  inverse,
   ...props
 }) => {
   if (!children) {
@@ -67,7 +92,7 @@ export const InlineLink: React.FC<InlineLinkProps> = ({
 
   if (isInternalUrl(href)) {
     return (
-      <StyledNextLink {...props} href={href}>
+      <StyledNextLink {...props} href={href} $inverse={inverse}>
         {children}
       </StyledNextLink>
     )
@@ -81,6 +106,7 @@ export const InlineLink: React.FC<InlineLinkProps> = ({
       href={href.toString()}
       rel="noopener"
       target="_blank"
+      $inverse={inverse}
     >
       {children}
     </StyledAnchor>

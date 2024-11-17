@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 import { departureMono, exo2, robotoMono } from './fonts'
 import { colorValues, neutralValues } from './palette'
 import type { ColorVar, NeutralVar } from './palette'
+import type { ThemePaletteName } from './themes'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -46,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
       Object.keys(palette)
         .map(
           themePaletteKey =>
-            `${themePaletteKey}: var(${palette[themePaletteKey]});`,
+            `${themePaletteKey}: var(${palette[themePaletteKey as ThemePaletteName]});`,
         )
         .join('\n')};
   }
