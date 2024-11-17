@@ -47,6 +47,20 @@ const meta = {
         },
       },
     },
+    inverse: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'Whether the theme colors should be inverted',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
     variant: {
       control: {
         type: 'select',
@@ -84,6 +98,7 @@ export const States: Story = {
   args: {
     children: 'Button',
     href: 'https://plasticlabs.ai',
+    inverse: false,
   },
   decorators: [
     (_, { args }) => {
@@ -116,6 +131,7 @@ export const ButtonLink: Story = {
   args: {
     children: 'Button',
     href: 'https://plasticlabs.ai',
+    inverse: false,
     variant: 'default',
   },
 }

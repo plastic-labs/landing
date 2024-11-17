@@ -16,6 +16,7 @@ const StyledButton = styled.button<SharedStylesButtonProps>`
 export const Button: React.FC<ButtonProps> = ({
   children,
   disabled = false,
+  inverse,
   onClick,
   variant = 'default',
   ...props
@@ -29,6 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
       disabled={disabled}
       onClick={onClick}
+      $inverse={inverse}
       $variant={variant}
     >
       <ButtonChildren>{children}</ButtonChildren>

@@ -22,6 +22,7 @@ const StyledAnchor = styled.a<SharedStylesButtonProps>`
 export const ButtonLink: React.FC<ButtonLinkProps> = ({
   children,
   href,
+  inverse,
   variant = 'default',
   ...props
 }) => {
@@ -31,7 +32,12 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
 
   if (isInternalUrl(href)) {
     return (
-      <StyledNextLink {...props} href={href} $variant={variant}>
+      <StyledNextLink
+        {...props}
+        href={href}
+        $inverse={inverse}
+        $variant={variant}
+      >
         <ButtonChildren>{children}</ButtonChildren>
       </StyledNextLink>
     )
@@ -45,6 +51,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
       href={href.toString()}
       rel="noopener"
       target="_blank"
+      $inverse={inverse}
       $variant={variant}
     >
       <ButtonChildren>{children}</ButtonChildren>

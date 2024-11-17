@@ -46,6 +46,20 @@ const meta = {
         },
       },
     },
+    inverse: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'Whether the theme colors should be inverted',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
     onClick: {
       control: false,
       description: 'The handler function for button presses/clicks',
@@ -92,6 +106,7 @@ export const States: Story = {
   },
   args: {
     children: 'Button',
+    inverse: false,
   },
   decorators: [
     (_, { args }) => {
@@ -124,6 +139,7 @@ export const Button: Story = {
   args: {
     children: 'Button',
     disabled: false,
+    inverse: false,
     variant: 'default',
   },
 }

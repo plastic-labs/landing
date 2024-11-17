@@ -8,7 +8,7 @@ import { SharedThemeStylesProps } from '../shared/theme.types'
 import { InlineLinkProps } from './inline-link.types'
 
 const linkStyles = css<SharedThemeStylesProps>`
-  --color-base: var(--interactive-link-surface-contrast);
+  --surface-contrast-base: var(--interactive-link-surface-contrast);
   --accent-base: var(--interactive-link-accent);
 
   display: inline;
@@ -22,7 +22,7 @@ const linkStyles = css<SharedThemeStylesProps>`
   // states
   &,
   &:visited {
-    color: var(--color-base);
+    color: var(--surface-contrast-base);
   }
 
   @media (hover: hover) {
@@ -31,7 +31,7 @@ const linkStyles = css<SharedThemeStylesProps>`
 
   &:hover:not([href='']):not([href='#']):not([data-state]),
   &[data-state='hover'] {
-    color: var(--color-hover, var(--color-base));
+    color: var(--color-hover, var(--surface-contrast-base));
   }
 
   &:active:not([href='']):not([href='#']):not([data-state]),
@@ -56,7 +56,7 @@ const linkStyles = css<SharedThemeStylesProps>`
   ${({ $inverse, theme }) =>
     $inverse
       ? css`
-          --color-base: var(
+          --surface-contrast-base: var(
             ${inverseThemePaletteVar(
               theme,
               '--interactive-link-surface-contrast',

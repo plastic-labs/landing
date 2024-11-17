@@ -2,6 +2,7 @@
 
 import { css } from 'styled-components'
 import { THIN_BREAKPOINT, WIDE_BREAKPOINT } from '@/styles/breakpoints'
+import { inverseThemePaletteVar } from '@/styles/themes'
 import { SharedStylesButtonProps } from './button.types'
 
 export const sharedButtonStyles = css<SharedStylesButtonProps>`
@@ -14,8 +15,12 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
   --font-size-base: 1rem;
   --font-size: calc(var(--font-size-base) / 8 * 7);
 
-  --color-base: var(--interactive-button-surface-contrast);
-  --background-base: var(--interactive-button-surface);
+  --surface-base: var(--interactive-button-surface);
+  --surface-contrast-base: var(--interactive-button-surface-contrast);
+  --accent-base: var(--interactive-button-accent);
+
+  --color-base: var(--surface-contrast-base);
+  --background-base: var(--surface-base);
   --border-color-base: transparent;
 
   --color-pressed: var(--color-black);
@@ -112,7 +117,7 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
 
   @media (hover: hover) {
     --color-hover: var(--color-black);
-    --background-hover: var(--interactive-button-accent);
+    --background-hover: var(--accent-base);
     --border-color-hover: var(--border-color-base);
   }
 
@@ -197,4 +202,22 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
         return ''
     }
   }}
+
+  ${({ $inverse, theme }) =>
+    $inverse
+      ? css`
+          --surface-base: var(
+            ${inverseThemePaletteVar(theme, '--interactive-button-surface')}
+          );
+          --surface-contrast-base: var(
+            ${inverseThemePaletteVar(
+              theme,
+              '--interactive-button-surface-contrast',
+            )}
+          );
+          --accent-base: var(
+            ${inverseThemePaletteVar(theme, '--interactive-button-accent')}
+          );
+        `
+      : ''}
 `
