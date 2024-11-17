@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import { ButtonChildren } from '../shared/button-children'
 import { sharedButtonStyles } from '../shared/button.styles'
 import { SharedStylesButtonProps } from '../shared/button.types'
 import { ButtonProps } from './button.types'
@@ -16,8 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   disabled = false,
   onClick,
-  size = 'medium',
-  variant = 'primary',
+  variant = 'default',
   ...props
 }) => {
   if (!children) {
@@ -29,10 +29,9 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
       disabled={disabled}
       onClick={onClick}
-      $size={size}
       $variant={variant}
     >
-      {children}
+      <ButtonChildren>{children}</ButtonChildren>
     </StyledButton>
   )
 }

@@ -1,8 +1,15 @@
-export const neutralVarNames = ['--neutral-black', '--neutral-white'] as const
+export const neutralVarNames = [
+  '--neutral-black',
+  '--neutral-dark-grey',
+  '--neutral-grey',
+  '--neutral-white',
+] as const
 export type NeutralVar = (typeof neutralVarNames)[number]
 
 export const neutralValues: Record<NeutralVar, string> = {
   '--neutral-black': '#000000',
+  '--neutral-dark-grey': '#555555',
+  '--neutral-grey': '#888888',
   '--neutral-white': '#FFFFFF',
 }
 

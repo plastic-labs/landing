@@ -6,11 +6,7 @@ import {
   buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
-import {
-  buttonSizeVariants,
-  buttonStyleVariants,
-  ButtonStyleVariant,
-} from '../shared/button.types'
+import { buttonStyleVariants, ButtonStyleVariant } from '../shared/button.types'
 import { Button as ButtonUi } from './button'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -62,26 +58,12 @@ const meta = {
         },
       },
     },
-    size: {
-      control: {
-        type: 'select',
-      },
-      description: 'The button size',
-      options: buttonSizeVariants,
-      table: {
-        defaultValue: {
-          summary: buttonSizeVariants[0],
-        },
-        type: {
-          summary: `Any of: ${buttonSizeVariants.join(', ')}`,
-        },
-      },
-    },
     variant: {
       control: {
         type: 'select',
       },
-      description: 'The button variant controlling coloration and styling',
+      description:
+        'The button variant controlling coloration, size and styling',
       options: buttonStyleVariants,
       table: {
         defaultValue: {
@@ -110,7 +92,6 @@ export const States: Story = {
   },
   args: {
     children: 'Button',
-    size: 'medium',
   },
   decorators: [
     (_, { args }) => {
@@ -143,7 +124,6 @@ export const Button: Story = {
   args: {
     children: 'Button',
     disabled: false,
-    size: 'medium',
-    variant: 'primary',
+    variant: 'default',
   },
 }

@@ -7,11 +7,7 @@ import {
   buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
-import {
-  buttonSizeVariants,
-  buttonStyleVariants,
-  ButtonStyleVariant,
-} from '../shared/button.types'
+import { buttonStyleVariants, ButtonStyleVariant } from '../shared/button.types'
 import { ButtonLink as ButtonLinkUi } from './button-link'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -48,21 +44,6 @@ const meta = {
         },
         type: {
           summary: 'string Url',
-        },
-      },
-    },
-    size: {
-      control: {
-        type: 'select',
-      },
-      description: 'The button size',
-      options: buttonSizeVariants,
-      table: {
-        defaultValue: {
-          summary: buttonSizeVariants[0],
-        },
-        type: {
-          summary: `Any of: ${buttonSizeVariants.join(', ')}`,
         },
       },
     },
@@ -103,7 +84,6 @@ export const States: Story = {
   args: {
     children: 'Button',
     href: 'https://plasticlabs.ai',
-    size: 'medium',
   },
   decorators: [
     (_, { args }) => {
@@ -136,7 +116,6 @@ export const ButtonLink: Story = {
   args: {
     children: 'Button',
     href: 'https://plasticlabs.ai',
-    size: 'medium',
-    variant: 'primary',
+    variant: 'default',
   },
 }

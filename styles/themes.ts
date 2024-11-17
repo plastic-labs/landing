@@ -5,6 +5,9 @@ export const themePaletteNames = [
   '--color-primary-surface-contrast',
   '--color-primary-accent',
   '--feature-text-cycle-flash',
+  '--interactive-button-surface',
+  '--interactive-button-surface-contrast',
+  '--interactive-button-accent',
 ] as const
 export type ThemePaletteName = (typeof themePaletteNames)[number]
 
@@ -23,6 +26,9 @@ export const lightTheme: Theme = {
     '--color-primary-surface-contrast': '--color-black',
     '--color-primary-accent': '--color-green',
     '--feature-text-cycle-flash': '--color-green',
+    '--interactive-button-surface': '--color-black',
+    '--interactive-button-surface-contrast': '--color-dusty-white',
+    '--interactive-button-accent': '--color-green',
   },
 }
 
@@ -32,6 +38,9 @@ export const darkTheme: Theme = {
     '--color-primary-surface-contrast': '--color-dusty-white',
     '--color-primary-accent': '--color-green',
     '--feature-text-cycle-flash': '--color-green',
+    '--interactive-button-surface': '--color-dusty-white',
+    '--interactive-button-surface-contrast': '--color-black',
+    '--interactive-button-accent': '--color-green',
   },
 }
 
