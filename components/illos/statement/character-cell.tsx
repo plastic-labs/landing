@@ -69,7 +69,7 @@ const StyledCharacterCell = styled.span<CharacterCellStyleProps>`
     right: 0;
     bottom: 0;
     left: 0;
-    background: var(--feature-text-cycle-flash);
+    background: var(--illos-statement-flash);
     opacity: 0;
     animation-name: ${({ $cycle }) => cycleFlash[$cycle]};
     animation-duration: ${({ $duration }) => $duration}s;
