@@ -1,10 +1,10 @@
 /* eslint-disable import/no-default-export */
-import { TextCycle as TextCycleUi } from './statement'
+import { Statement as StatementUi } from './statement'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Illos / Text Cycle / Statement',
-  component: TextCycleUi,
+  title: 'Illos / Statement / Statement',
+  component: StatementUi,
   parameters: {
     layout: 'centered',
   },
@@ -59,7 +59,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof TextCycleUi>
+} satisfies Meta<typeof StatementUi>
 
 export default meta
 type Story = StoryObj<typeof meta>

@@ -35,7 +35,7 @@ const generateCharacters = (statement: string): Character[] => {
   }))
 }
 
-export const TextCycle: React.FC<StatementProps> = ({
+export const Statement: React.FC<StatementProps> = ({
   characterCount = 15,
   duration = 3,
   statement,
