@@ -8,7 +8,7 @@ import { TypographyProps } from './typography.types'
 const sharedHeaderStyles = css`
   font-family: var(--font-family-departure-mono);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
 `
 
 const sharedBodyStyles = css`
@@ -18,7 +18,7 @@ const sharedBodyStyles = css`
 `
 
 const isHeaderFontFamily = (style: TypographyProps['variant']): boolean =>
-  ['Banner', 'H1', 'H2', 'H3', 'H5', 'H6'].includes(style)
+  ['Banner', 'Accent', 'H1', 'H3'].includes(style)
 
 const StyledText = styled.p<{
   $align: TypographyProps['align']
@@ -36,7 +36,6 @@ const StyledText = styled.p<{
     switch ($variant) {
       case 'Banner': // Giant text
         return css`
-          font-family: var(--font-family-departure-mono);
           font-size: 5.9rem;
           line-height: 1;
           letter-spacing: -0.01em;
@@ -48,7 +47,6 @@ const StyledText = styled.p<{
         `
       case 'Accent': // Still very large text
         return css`
-          font-family: var(--font-family-departure-mono);
           font-size: 2.1875rem;
           line-height: ${40 / 35};
           letter-spacing: -0.023em;
@@ -70,7 +68,6 @@ const StyledText = styled.p<{
         `
       case 'H2': // section titles, mirrors Body2
         return css`
-          font-family: var(--default-font-family);
           font-size: 0.875rem;
           line-height: ${22 / 14};
           letter-spacing: -0.01em;
@@ -83,7 +80,6 @@ const StyledText = styled.p<{
         `
       case 'H4': // Body1 lead
         return css`
-          font-family: var(--default-font-family);
           font-size: 1rem;
           font-weight: 600;
           line-height: 1.5;
@@ -91,7 +87,6 @@ const StyledText = styled.p<{
         `
       case 'H5': // Body2 lead
         return css`
-          font-family: var(--default-font-family);
           font-size: 0.875rem;
           font-weight: 600;
           line-height: ${22 / 14};
@@ -99,7 +94,6 @@ const StyledText = styled.p<{
         `
       case 'H6': // Body3 lead
         return css`
-          font-family: var(--default-font-family);
           font-size: 0.75rem;
           font-weight: 600;
           line-height: ${20 / 12};
