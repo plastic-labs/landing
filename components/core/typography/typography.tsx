@@ -23,6 +23,7 @@ const isHeaderFontFamily = (style: TypographyProps['variant']): boolean =>
 const StyledText = styled.p<{
   $align: TypographyProps['align']
   $color: TypographyProps['color']
+  $inverse: TypographyProps['inverse']
   $variant: TypographyProps['variant']
 }>`
   margin: 0;
@@ -123,9 +124,19 @@ const StyledText = styled.p<{
     }
   }}
 
-  ${({ $color }) => {
+  ${({ $color, $inverse }) => {
+    if ($color && $color.startsWith('--')) {
+      return css`
+        color: var(${$color});
+      `
+    }
+    if ($inverse) {
+      return css`
+        color: var(--color-primary-surface);
+      `
+    }
     return css`
-      color: ${$color === 'currentColor' ? 'currentColor' : `var(${$color})`};
+      color: currentColor;
     `
   }}
 
@@ -160,6 +171,7 @@ export const Text: React.FC<TypographyProps> = ({
   as,
   children,
   color = 'currentColor',
+  inverse,
   variant,
   ...props
 }) => {
@@ -168,6 +180,7 @@ export const Text: React.FC<TypographyProps> = ({
       {...props}
       $align={align}
       $color={color}
+      $inverse={inverse}
       $variant={variant}
       as={as || defaultTag[variant]}
     >

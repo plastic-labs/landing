@@ -5,8 +5,9 @@ import styled from 'styled-components'
 import { Logo } from '@/components/core/logo'
 import { simpleSecondaryButtonStyles } from '../shared/button.styles'
 import { ButtonLogoProps } from './button-logo.types'
+import type { SharedSimpleButtonStylesProps } from '../shared/button.types'
 
-const StyledNextLink = styled(Link)`
+const StyledNextLink = styled(Link)<SharedSimpleButtonStylesProps>`
   ${simpleSecondaryButtonStyles}
 
   position: relative;
@@ -23,10 +24,11 @@ const StyledNextLink = styled(Link)`
  */
 export const ButtonLogo: React.FC<ButtonLogoProps> = ({
   href = '/',
+  inverse,
   ...props
 }) => {
   return (
-    <StyledNextLink {...props} href={href}>
+    <StyledNextLink {...props} href={href} $inverse={inverse}>
       <Logo width={58} height={58} fill="transparent" />
     </StyledNextLink>
   )

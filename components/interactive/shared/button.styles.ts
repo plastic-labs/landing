@@ -3,9 +3,12 @@
 import { css } from 'styled-components'
 import { THIN_BREAKPOINT, WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { inverseThemePaletteVar } from '@/styles/themes'
-import { SharedStylesButtonProps } from './button.types'
+import {
+  SharedStylesButtonProps,
+  SharedSimpleButtonStylesProps,
+} from './button.types'
 
-export const simpleSecondaryButtonStyles = css`
+export const simpleSecondaryButtonStyles = css<SharedSimpleButtonStylesProps>`
   // vars
   --surface-base: var(--interactive-button-surface);
   --surface-contrast-base: var(--interactive-button-surface-contrast);
@@ -84,6 +87,24 @@ export const simpleSecondaryButtonStyles = css`
     color: hsl(from var(--surface-contrast-base) h s l / 0.5);
     background: var(--neutral-grey);
   }
+
+  ${({ $inverse, theme }) =>
+    $inverse
+      ? css`
+          --surface-base: var(
+            ${inverseThemePaletteVar(theme, '--interactive-button-surface')}
+          );
+          --surface-contrast-base: var(
+            ${inverseThemePaletteVar(
+              theme,
+              '--interactive-button-surface-contrast',
+            )}
+          );
+          --accent-base: var(
+            ${inverseThemePaletteVar(theme, '--interactive-button-accent')}
+          );
+        `
+      : ''}
 `
 
 export const sharedButtonStyles = css<SharedStylesButtonProps>`

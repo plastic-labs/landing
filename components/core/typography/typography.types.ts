@@ -49,5 +49,6 @@ export interface TypographyProps
   as?: TypographyTag
   children: string | string[] | React.ReactNode
   color?: Color
+  inverse?: boolean
   variant: TypographyVariant
 }

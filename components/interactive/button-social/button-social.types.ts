@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes, FunctionComponent, SVGProps } from 'react'
+import { SharedSimpleButtonProps } from '../shared/button.types'
 
 export const hrefOrigins = [
   'https://discord.gg',
@@ -17,6 +18,7 @@ export type HrefOriginIconMap = Record<
 export type Href = `${HrefOrigin}${string}`
 
 export interface ButtonSocialProps
-  extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    SharedSimpleButtonProps {
   href: Href
 }

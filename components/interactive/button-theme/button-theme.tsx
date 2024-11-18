@@ -2,11 +2,12 @@
 
 import styled, { useTheme } from 'styled-components'
 import { simpleSecondaryButtonStyles } from '../shared/button.styles'
-import { ButtonThemeProps } from './button-theme.types'
 import { IconMoon } from './icon-moon'
 import { IconSun } from './icon-sun'
+import type { ButtonThemeProps } from './button-theme.types'
+import type { SharedSimpleButtonStylesProps } from '../shared/button.types'
 
-const StyledButtonTheme = styled.button`
+const StyledButtonTheme = styled.button<SharedSimpleButtonStylesProps>`
   ${simpleSecondaryButtonStyles}
 
   position: relative;
@@ -23,13 +24,19 @@ const StyledButtonTheme = styled.button`
  */
 export const ButtonTheme: React.FC<ButtonThemeProps> = ({
   disabled = false,
+  inverse,
   onClick,
   ...props
 }) => {
   const theme = useTheme()
 
   return (
-    <StyledButtonTheme {...props} disabled={disabled} onClick={onClick}>
+    <StyledButtonTheme
+      {...props}
+      disabled={disabled}
+      onClick={onClick}
+      $inverse={inverse}
+    >
       {theme.name === 'light' ? (
         <IconSun height={24} width={24} />
       ) : (

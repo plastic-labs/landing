@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { simpleSecondaryButtonStyles } from '../shared/button.styles'
 import { hrefOriginIconMap } from './button-social.constants'
 import { ButtonSocialProps, HrefOrigin } from './button-social.types'
+import type { SharedSimpleButtonStylesProps } from '../shared/button.types'
 
-const StyledButtonSocial = styled.a`
+const StyledButtonSocial = styled.a<SharedSimpleButtonStylesProps>`
   ${simpleSecondaryButtonStyles}
 
   position: relative;
@@ -42,6 +43,7 @@ const StyledButtonSocial = styled.a`
  */
 export const ButtonSocial: React.FC<ButtonSocialProps> = ({
   href,
+  inverse,
   ...props
 }) => {
   if (!href) {
@@ -53,7 +55,13 @@ export const ButtonSocial: React.FC<ButtonSocialProps> = ({
   const Icon = hrefOriginIconMap[origin as HrefOrigin]
 
   return (
-    <StyledButtonSocial {...props} href={href}>
+    <StyledButtonSocial
+      {...props}
+      href={href}
+      target="_blank"
+      rel="noopener"
+      $inverse={inverse}
+    >
       <Icon />
     </StyledButtonSocial>
   )
