@@ -7,7 +7,7 @@ export interface SharedStylesButtonProps {
 }
 
 export interface SharedButtonProps {
-  inverse: boolean
+  inverse?: boolean
   variant?: ButtonStyleVariant
 }
 

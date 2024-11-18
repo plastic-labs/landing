@@ -13,7 +13,7 @@ const StyledSocials = styled.nav`
 
 export const Socials: React.FC<SocialsProps> = props => {
   return (
-    <StyledSocials {...props}>
+    <StyledSocials {...props} aria-label="Socials">
       <ButtonSocial href="https://discord.gg/plasticlabs" inverse />
       <ButtonSocial href="https://huggingface.co/plastic-labs" inverse />
       <ButtonSocial href="https://github.com/plastic-labs" inverse />

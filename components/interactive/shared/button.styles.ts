@@ -1,7 +1,6 @@
 'use client'
 
 import { css } from 'styled-components'
-import { THIN_BREAKPOINT, WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { inverseThemePaletteVar } from '@/styles/themes'
 import {
   SharedStylesButtonProps,
@@ -110,12 +109,8 @@ export const simpleSecondaryButtonStyles = css<SharedSimpleButtonStylesProps>`
 export const sharedButtonStyles = css<SharedStylesButtonProps>`
   // vars
   --padding: 2rem;
-
-  --height-base: 3rem;
-  --height: calc(var(--height-base) / 3 * 2);
-
-  --font-size-base: 1rem;
-  --font-size: calc(var(--font-size-base) / 8 * 7);
+  --height: 3rem;
+  --font-size: 1rem;
 
   --surface-base: var(--interactive-button-surface);
   --surface-contrast-base: var(--interactive-button-surface-contrast);
@@ -160,16 +155,6 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
 
   appearance: none;
   user-select: none;
-
-  // responsive size
-  @media (min-width: ${THIN_BREAKPOINT}rem) {
-    --height: calc(var(--height-base) / 6 * 5);
-    --font-size: var(--font-size-base);
-  }
-
-  @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    --height: var(--height-base);
-  }
 
   * {
     z-index: 2;
@@ -281,8 +266,7 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
       case 'navigation':
         return css`
           --padding: 0.5rem;
-
-          --height-base: 2rem;
+          --height: 2rem;
 
           --color-base: var(--interactive-button-surface);
           --background-base: transparent;
