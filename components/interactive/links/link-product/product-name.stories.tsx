@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { products } from './button-product.types'
+import { products } from './link-product.types'
 import { ProductName as ProductNameUi } from './product-name'
 import type { Meta, StoryObj } from '@storybook/react'
 

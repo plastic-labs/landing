@@ -7,13 +7,13 @@ import {
   buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
-import { ButtonProduct as ButtonProductUi } from './button-product'
-import { products } from './button-product.types'
+import { LinkProduct as LinkProductUi } from './link-product'
+import { products } from './link-product.types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Product',
-  component: ButtonProductUi,
+  title: 'Interactive / Links / Link Product',
+  component: LinkProductUi,
   parameters: {
     layout: 'centered',
   },
@@ -61,7 +61,7 @@ const meta = {
       fn()
     },
   },
-} satisfies Meta<typeof ButtonProductUi>
+} satisfies Meta<typeof LinkProductUi>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -77,7 +77,7 @@ export const States: Story = {
   decorators: [
     (_, { args }) => {
       const story: React.FC<{ column: string; row: string }> = ({ row }) => {
-        return <ButtonProductUi {...args} data-state={row as ButtonState} />
+        return <LinkProductUi {...args} data-state={row as ButtonState} />
       }
 
       return (
@@ -87,7 +87,7 @@ export const States: Story = {
   ],
 }
 
-export const ButtonProduct: Story = {
+export const LinkProduct: Story = {
   args: {
     href: 'https://github.com/plastic-labs',
     product: 'bloom',

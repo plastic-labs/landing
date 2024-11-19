@@ -3,7 +3,7 @@ import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
 export const products = ['bloom', 'honcho', 'yousim'] as const
 export type Product = (typeof products)[number]
 
-export interface ButtonProductProps
+export interface LinkProductProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
   inverse?: boolean
   product: Product

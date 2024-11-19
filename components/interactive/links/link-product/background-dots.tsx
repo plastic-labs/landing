@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { BackgroundDotsProps } from './button-product.types'
+import { BackgroundDotsProps } from './link-product.types'
 
 const StyledBackgroundDots = styled.div`
   position: relative;

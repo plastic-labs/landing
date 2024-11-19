@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { IconClose } from './icon-close'
-import type { TitleBarProps } from './button-product.types'
+import type { TitleBarProps } from './link-product.types'
 
 const StyledTitleBar = styled.div`
   display: grid;

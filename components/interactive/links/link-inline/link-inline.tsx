@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import { inverseThemePaletteVar } from '@/styles/themes'
 import { isInternalUrl } from '@/utils/url'
-import { SharedThemeStylesProps } from '../buttons/shared/theme.types'
-import { InlineLinkProps } from './inline-link.types'
+import { SharedThemeStylesProps } from '../../buttons/shared/theme.types'
+import type { LinkInlineProps } from './link-inline.types'
 
 const linkStyles = css<SharedThemeStylesProps>`
   --surface-contrast-base: var(--interactive-link-surface-contrast);
@@ -80,7 +80,7 @@ const StyledAnchor = styled.a<SharedThemeStylesProps>`
 /**
  * This component is for links which appear inline within text content.
  */
-export const InlineLink: React.FC<InlineLinkProps> = ({
+export const LinkInline: React.FC<LinkInlineProps> = ({
   children,
   href,
   inverse,

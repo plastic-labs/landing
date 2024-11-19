@@ -5,9 +5,9 @@ import { inverseThemePaletteVar } from '@/styles/themes'
 import { BackgroundDots } from './background-dots'
 import { ProductName } from './product-name'
 import { TitleBar } from './title-bar'
-import type { ButtonProductProps } from './button-product.types'
+import type { LinkProductProps } from './link-product.types'
 
-const StyledButtonProduct = styled.a<{ $inverse?: boolean }>`
+const StyledLinkProduct = styled.a<{ $inverse?: boolean }>`
   --surface-base: var(--interactive-product-surface);
   --surface-contrast-base: var(--interactive-product-surface-contrast);
   --accent-base: var(--interactive-product-accent);
@@ -59,7 +59,7 @@ const StyledButtonProduct = styled.a<{ $inverse?: boolean }>`
 /**
  * This component is used as an outbound link to a Plastic Labs product.
  */
-export const ButtonProduct: React.FC<ButtonProductProps> = ({
+export const LinkProduct: React.FC<LinkProductProps> = ({
   href,
   inverse,
   product,
@@ -70,7 +70,7 @@ export const ButtonProduct: React.FC<ButtonProductProps> = ({
   }
 
   return (
-    <StyledButtonProduct
+    <StyledLinkProduct
       {...props}
       href={href}
       target="_blank"
@@ -81,6 +81,6 @@ export const ButtonProduct: React.FC<ButtonProductProps> = ({
       <BackgroundDots>
         <ProductName product={product} />
       </BackgroundDots>
-    </StyledButtonProduct>
+    </StyledLinkProduct>
   )
 }

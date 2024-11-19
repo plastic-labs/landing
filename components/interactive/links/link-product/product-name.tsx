@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { IconBloom } from './icon-bloom'
 import { IconHoncho } from './icon-honcho'
 import { IconYousim } from './icon-yousim'
-import type { Product, ProductNameProps } from './button-product.types'
+import type { Product, ProductNameProps } from './link-product.types'
 
 const productNameMap: Record<Product, React.FC<SVGProps<SVGSVGElement>>> = {
   bloom: IconBloom,

@@ -8,12 +8,12 @@ import {
   buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
-import { InlineLink as InlineLinkUi } from './inline-link'
+import { LinkInline as LinkInlineUi } from './link-inline'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Inline Link',
-  component: InlineLinkUi,
+  title: 'Interactive / Links / Link Inline',
+  component: LinkInlineUi,
   parameters: {
     layout: 'centered',
   },
@@ -69,7 +69,7 @@ const meta = {
       fn()
     },
   },
-} satisfies Meta<typeof InlineLinkUi>
+} satisfies Meta<typeof LinkInlineUi>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -85,7 +85,7 @@ export const States: Story = {
       const story: React.FC<{ column: string; row: string }> = ({ row }) => {
         return (
           <Text variant="Body1">
-            <InlineLinkUi {...args} data-state={row as ButtonState} />
+            <LinkInlineUi {...args} data-state={row as ButtonState} />
           </Text>
         )
       }
@@ -97,7 +97,7 @@ export const States: Story = {
   ],
 }
 
-export const InlineLink: Story = {
+export const LinkInline: Story = {
   argTypes: {
     children: {
       control: false,
@@ -119,15 +119,15 @@ export const InlineLink: Story = {
             Extending this logic, one cannot separate costs from stelar
             hearings. A pruner of the spain is assumed to be an unwrapped
             headlight.{' '}
-            <InlineLinkUi {...rest}>The danger is a bush.</InlineLinkUi> A
+            <LinkInlineUi {...rest}>The danger is a bush.</LinkInlineUi> A
             enough motorcycle’s business comes with it the thought that the
             sightless moat is a cocoa.
           </Text>
           <Text align="right" variant="Body2">
             —{' '}
-            <InlineLinkUi href="http://metaphorpsum.com/">
+            <LinkInlineUi href="http://metaphorpsum.com/">
               Lorem Metaphorpsum
-            </InlineLinkUi>
+            </LinkInlineUi>
           </Text>
         </div>
       )
