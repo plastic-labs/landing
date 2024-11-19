@@ -3,7 +3,7 @@ import { TitleBar as TitleBarUi } from './title-bar'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Product / Title Bar',
+  title: 'Interactive / Links / Link Product / Supporting / Title Bar',
   component: TitleBarUi,
   parameters: {
     layout: 'fullscreen',

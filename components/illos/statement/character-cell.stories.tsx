@@ -5,7 +5,7 @@ import { cycles } from './text-cycle.types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Illos / Statement / Character Cell',
+  title: 'Illos / Statement / Supporting / Character Cell',
   component: CharacterCellUi,
   parameters: {
     layout: 'centered',

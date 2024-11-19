@@ -3,7 +3,7 @@ import { Statement as StatementUi } from './statement'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Illos / Statement / Statement',
+  title: 'Illos / Statement',
   component: StatementUi,
   parameters: {
     layout: 'centered',

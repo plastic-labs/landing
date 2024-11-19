@@ -4,7 +4,7 @@ import { ProductName as ProductNameUi } from './product-name'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Product / Product Name',
+  title: 'Interactive / Links / Link Product / Supporting / Product Name',
   component: ProductNameUi,
   parameters: {
     layout: 'centered',

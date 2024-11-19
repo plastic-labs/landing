@@ -3,7 +3,7 @@ import { BackgroundDots as BackgroundDotsUi } from './background-dots'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Product / Background Dots',
+  title: 'Interactive / Links / Link Product / Supporting / Background Dots',
   component: BackgroundDotsUi,
   parameters: {
     layout: 'centered',
