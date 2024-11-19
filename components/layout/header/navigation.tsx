@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { ButtonLink } from '@/components/interactive/button-link'
+import { ButtonLink } from '@/components/interactive/buttons/button-link'
 import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { NavigationProps } from './header.types'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { ButtonSocial } from '@/components/interactive/button-social'
+import { ButtonSocial } from '@/components/interactive/buttons/button-social'
 import { SocialsProps } from './footer.types'
 
 const StyledSocials = styled.nav`

@@ -1,8 +1,8 @@
 'use client'
 
 import styled from 'styled-components'
-import { ButtonLogo } from '@/components/interactive/button-logo'
-import { ButtonTheme } from '@/components/interactive/button-theme'
+import { ButtonLogo } from '@/components/interactive/buttons/button-logo'
+import { ButtonTheme } from '@/components/interactive/buttons/button-theme'
 import { usePlasticTheme } from '@/hooks/use-plastic-theme'
 import { Navigation } from './navigation'
 import { SiteTitle } from './site-title'

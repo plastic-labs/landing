@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import { inverseThemePaletteVar } from '@/styles/themes'
 import { isInternalUrl } from '@/utils/url'
-import { SharedThemeStylesProps } from '../shared/theme.types'
+import { SharedThemeStylesProps } from '../buttons/shared/theme.types'
 import { InlineLinkProps } from './inline-link.types'
 
 const linkStyles = css<SharedThemeStylesProps>`
