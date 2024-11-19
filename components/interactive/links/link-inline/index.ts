@@ -1,1 +1,1 @@
-export { InlineLink } from './link-inline'
+export { LinkInline } from './link-inline'

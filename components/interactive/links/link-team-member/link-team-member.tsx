@@ -2,8 +2,8 @@
 
 import styled from 'styled-components'
 import { Text } from '@/components/core/typography'
-import type { LinkTeamMemberProps } from './link-team-member.types'
 import { TEAM_MEMBERS } from './link-team-member.contstants'
+import type { LinkTeamMemberProps } from './link-team-member.types'
 
 const StyledLinkTeamMember = styled.a`
   display: grid;

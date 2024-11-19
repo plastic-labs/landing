@@ -8,8 +8,8 @@ import {
   StatesGrid,
 } from '@/components/helpers/states-grid'
 import { LinkTeamMember as LinkTeamMemberUi } from './link-team-member'
-import type { Meta, StoryObj } from '@storybook/react'
 import { teamMemberNames } from './link-team-member.types'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'Interactive / Links / Link Team Member',
