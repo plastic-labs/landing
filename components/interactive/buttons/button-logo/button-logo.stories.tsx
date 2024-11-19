@@ -11,7 +11,7 @@ import { ButtonLogo as ButtonLogoUi } from './button-logo'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Logo',
+  title: 'Interactive / Buttons / Button Logo',
   component: ButtonLogoUi,
   parameters: {
     layout: 'centered',

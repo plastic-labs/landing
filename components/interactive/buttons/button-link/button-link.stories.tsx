@@ -12,7 +12,7 @@ import { ButtonLink as ButtonLinkUi } from './button-link'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Link',
+  title: 'Interactive / Buttons / Button Link',
   component: ButtonLinkUi,
   parameters: {
     layout: 'centered',

@@ -10,7 +10,7 @@ import { ButtonTheme as ButtonThemeUi } from './button-theme'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Theme',
+  title: 'Interactive / Buttons / Button Theme',
   component: ButtonThemeUi,
   parameters: {
     layout: 'centered',

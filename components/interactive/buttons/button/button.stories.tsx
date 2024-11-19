@@ -11,7 +11,7 @@ import { Button as ButtonUi } from './button'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button',
+  title: 'Interactive / Buttons / Button',
   component: ButtonUi,
   parameters: {
     layout: 'centered',

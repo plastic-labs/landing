@@ -11,7 +11,7 @@ import { ButtonSocial as ButtonSocialUi } from './button-social'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Button Social',
+  title: 'Interactive / Buttons / Button Social',
   component: ButtonSocialUi,
   parameters: {
     layout: 'centered',
