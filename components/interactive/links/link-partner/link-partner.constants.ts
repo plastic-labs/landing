@@ -1,5 +1,7 @@
 import { Partner, PartnerName } from './link-partner.types'
 
+export const PARTNER_WIDTH = 18.75 // rem
+
 export const PARTNERS: Record<PartnerName, Partner> = {
   betaworks: {
     imageSrc: '/partner/betaworks.svg',

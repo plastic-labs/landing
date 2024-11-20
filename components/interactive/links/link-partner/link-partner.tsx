@@ -2,22 +2,25 @@
 
 import styled, { css } from 'styled-components'
 import { Text } from '@/components/core/typography'
+import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 import { PARTNERS } from './link-partner.constants'
 import type { LinkPartnerProps } from './link-partner.types'
 
 const StyledPartner = styled.a`
+  flex-shrink: 0;
   position: relative;
   display: grid;
   align-items: center;
   justify-items: center;
   grid-template-columns: 1fr;
-  width: min(100%, 18.75rem);
   aspect-ratio: 2 / 1;
   color: var(--color-primary-surface-contrast);
   background: var(--color-primary-surface);
-  border: 0.0625rem solid var(--color-primary-surface-contrast);
   text-decoration: none;
-  box-sizing: border-box;
+
+  @media (min-width: ${THIN_BREAKPOINT}rem) {
+    width: 18.75rem;
+  }
 
   * {
     z-index: 1;
@@ -47,14 +50,23 @@ const StyledPartner = styled.a`
     &::before {
       opacity: 1;
     }
+
+    img {
+      filter: none;
+    }
   }
 `
 
 const StyledImage = styled.img<{ $imageScale?: number }>`
-  display: block;
   width: 100%;
-  overflow: hidden;
-  object-fit: contain;
+  transition: filter var(--ui-transition-speed) ease;
+
+  ${({ theme }) =>
+    theme.name === 'dark'
+      ? css`
+          filter: invert(1);
+        `
+      : ''}
 
   ${({ $imageScale }) =>
     $imageScale
@@ -75,7 +87,9 @@ export const LinkPartner: React.FC<LinkPartnerProps> = ({
       {imageSrc ? (
         <StyledImage alt={name} src={imageSrc} $imageScale={imageScale} />
       ) : (
-        <Text variant="H3">{name}</Text>
+        <Text align="center" variant="H3">
+          {name}
+        </Text>
       )}
     </StyledPartner>
   )
