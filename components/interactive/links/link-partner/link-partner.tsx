@@ -15,7 +15,9 @@ const StyledPartner = styled.a`
   aspect-ratio: 2 / 1;
   color: var(--color-primary-surface-contrast);
   background: var(--color-primary-surface);
+  border: 0.0625rem solid var(--color-primary-surface-contrast);
   text-decoration: none;
+  box-sizing: border-box;
 
   * {
     z-index: 1;
