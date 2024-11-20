@@ -7,13 +7,13 @@ import {
   buttonStates,
   StatesGrid,
 } from '@/components/helpers/states-grid'
-import { LinkTeamMember as LinkTeamMemberUi } from './link-team-member'
-import { teamMemberNames } from './link-team-member.types'
+import { LinkPartner as LinkPartnerUi } from './link-partner'
+import { partnerNames } from './link-partner.types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Interactive / Links / Link Team Member',
-  component: LinkTeamMemberUi,
+  title: 'Interactive / Links / Link Partner',
+  component: LinkPartnerUi,
   parameters: {
     layout: 'centered',
   },
@@ -33,18 +33,18 @@ const meta = {
         },
       },
     },
-    teamMemberName: {
+    partnerName: {
       control: {
         type: 'select',
       },
-      description: 'The team member name',
-      options: teamMemberNames,
+      description: 'The partner name',
+      options: partnerNames,
       table: {
         defaultValue: {
-          summary: 'TeamMemberName',
+          summary: 'PartnerName',
         },
         type: {
-          summary: `Any of: ${teamMemberNames.join(', ')}`,
+          summary: `Any of: ${partnerNames.join(', ')}`,
         },
       },
     },
@@ -56,7 +56,7 @@ const meta = {
       fn()
     },
   },
-} satisfies Meta<typeof LinkTeamMemberUi>
+} satisfies Meta<typeof LinkPartnerUi>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -66,13 +66,23 @@ validStates.pop()
 
 export const States: Story = {
   args: {
-    href: 'https://x.com/courtlandleer',
-    teamMemberName: 'leer-courtland',
+    href: 'https://www.betaworks.com/',
+    partnerName: 'betaworks',
   },
   decorators: [
     (_, { args }) => {
       const story: React.FC<{ column: string; row: string }> = ({ row }) => {
-        return <LinkTeamMemberUi {...args} data-state={row as ButtonState} />
+        return (
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              minWidth: '300px',
+            }}
+          >
+            <LinkPartnerUi {...args} data-state={row as ButtonState} />
+          </div>
+        )
       }
 
       return (
@@ -82,9 +92,9 @@ export const States: Story = {
   ],
 }
 
-export const LinkTeamMember: Story = {
+export const LinkPartner: Story = {
   args: {
-    href: 'https://x.com/courtlandleer',
-    teamMemberName: 'leer-courtland',
+    href: 'https://www.betaworks.com/',
+    partnerName: 'betaworks',
   },
 }

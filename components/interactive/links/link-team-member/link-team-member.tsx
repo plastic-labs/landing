@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { Text } from '@/components/core/typography'
-import { TEAM_MEMBERS } from './link-team-member.contstants'
+import { TEAM_MEMBERS } from './link-team-member.constants'
 import type { LinkTeamMemberProps } from './link-team-member.types'
 
 const StyledLinkTeamMember = styled.a`
@@ -65,11 +65,11 @@ const StyledRoles = styled.div`
 `
 
 export const LinkTeamMember: React.FC<LinkTeamMemberProps> = ({
-  teamMember,
+  teamMemberName,
   ...props
 }) => {
   const { firstName, imageSrc, lastName, other, role } =
-    TEAM_MEMBERS[teamMember]
+    TEAM_MEMBERS[teamMemberName]
 
   return (
     <StyledLinkTeamMember {...props}>

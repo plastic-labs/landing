@@ -14,7 +14,7 @@ export type TeamMemberName = (typeof teamMemberNames)[number]
 export interface LinkTeamMemberProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
-  teamMember: TeamMemberName
+  teamMemberName: TeamMemberName
 }
 
 export interface TeamMember {
