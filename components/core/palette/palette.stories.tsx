@@ -1,6 +1,11 @@
 /* eslint-disable import/no-default-export */
 import { StatesGrid } from '@/components/helpers/states-grid'
-import { ColorVar, colorVarNames } from '@/styles/palette'
+import {
+  ColorVar,
+  colorVarNames,
+  NeutralVar,
+  neutralVarNames,
+} from '@/styles/palette'
 import { Palette } from './palette'
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -21,9 +26,27 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+export const Neutrals: Story = {
+  args: {
+    color: '--neutral-black',
+  },
+  decorators: [
+    (_, { args }) => {
+      const story: React.FC<{ column: string; row: string }> = ({ row }) => {
+        const { color, ...rest } = args
+        return <Palette {...rest} color={row as NeutralVar} />
+      }
+
+      return (
+        <StatesGrid columns={['Colors']} rows={neutralVarNames} Story={story} />
+      )
+    },
+  ],
+}
+
 export const Colors: Story = {
   args: {
-    color: '--color-blue',
+    color: '--color-black',
   },
   decorators: [
     (_, { args }) => {

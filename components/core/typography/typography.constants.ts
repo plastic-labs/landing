@@ -2,6 +2,7 @@ import { DefaultTagMap } from './typography.types'
 
 export const defaultTag: DefaultTagMap = {
   Banner: 'h2',
+  Accent: 'h3',
   H1: 'h1',
   H2: 'h2',
   H3: 'h3',
@@ -10,4 +11,5 @@ export const defaultTag: DefaultTagMap = {
   H6: 'h6',
   Body1: 'p',
   Body2: 'p',
+  Body3: 'p',
 }

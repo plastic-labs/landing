@@ -6,9 +6,9 @@ import { defaultTag } from './typography.constants'
 import { TypographyProps } from './typography.types'
 
 const sharedHeaderStyles = css`
-  font-family: var(--default-font-family);
+  font-family: var(--font-family-departure-mono);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
 `
 
 const sharedBodyStyles = css`
@@ -18,11 +18,12 @@ const sharedBodyStyles = css`
 `
 
 const isHeaderFontFamily = (style: TypographyProps['variant']): boolean =>
-  ['Banner', 'H1', 'H2', 'H3', 'H5', 'H6'].includes(style)
+  ['Banner', 'Accent', 'H1', 'H3'].includes(style)
 
 const StyledText = styled.p<{
   $align: TypographyProps['align']
   $color: TypographyProps['color']
+  $inverse: TypographyProps['inverse']
   $variant: TypographyProps['variant']
 }>`
   margin: 0;
@@ -34,78 +35,88 @@ const StyledText = styled.p<{
 
   ${({ $variant }) => {
     switch ($variant) {
-      case 'Banner':
+      case 'Banner': // Giant text
         return css`
-          font-size: 3rem;
-          line-height: 1.2;
+          font-size: 5.9rem;
+          line-height: 1;
+          letter-spacing: -0.01em;
+          text-transform: uppercase;
 
-          @media (min-width: ${WIDE_BREAKPOINT}rem) {
-            font-size: 5rem;
+          @media (min-width: ${THIN_BREAKPOINT}rem) {
+            font-size: 12.5rem;
           }
         `
-      case 'H1':
+      case 'Accent': // Still very large text
+        return css`
+          font-size: 2.1875rem;
+          line-height: ${40 / 35};
+          letter-spacing: -0.023em;
+          text-transform: uppercase;
+
+          @media (min-width: ${THIN_BREAKPOINT}rem) {
+            font-size: 2.8125rem;
+            line-height: ${55 / 45};
+          }
+        `
+      case 'H1': // Not visible
         return css`
           font-size: 2rem;
           line-height: 1.1;
-
-          @media (min-width: ${THIN_BREAKPOINT}rem) {
-            font-size: 2.5rem;
-          }
 
           @media (min-width: ${WIDE_BREAKPOINT}rem) {
             font-size: 3rem;
           }
         `
-      case 'H2':
+      case 'H2': // section titles, mirrors Body2
         return css`
-          font-size: 1.75rem;
-          line-height: 1.1;
-
-          @media (min-width: ${THIN_BREAKPOINT}rem) {
-            font-size: 2.25rem;
-          }
-
-          @media (min-width: ${WIDE_BREAKPOINT}rem) {
-            font-size: 2.75rem;
-          }
+          font-size: 0.875rem;
+          line-height: ${22 / 14};
+          letter-spacing: -0.01em;
         `
-      case 'H3':
-        return css`
-          font-size: 1.5rem;
-          line-height: 1.2;
-
-          @media (min-width: ${THIN_BREAKPOINT}rem) {
-            font-size: 2rem;
-          }
-
-          @media (min-width: ${WIDE_BREAKPOINT}rem) {
-            font-size: 2.5rem;
-          }
-        `
-      case 'H4':
+      case 'H3': // team member name
         return css`
           font-size: 1.25rem;
-          line-height: 1.35;
+          line-height: ${24 / 20};
+          text-transform: uppercase;
         `
-      case 'H5':
+      case 'H4': // Body1 lead
         return css`
           font-size: 1rem;
+          font-weight: 600;
           line-height: 1.5;
+          letter-spacing: -0.02em;
         `
-      case 'H6':
+      case 'H5': // Body2 lead
         return css`
-          font-size: 1rem;
-          line-height: 1.35;
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: ${22 / 14};
+          letter-spacing: -0.01em;
+        `
+      case 'H6': // Body3 lead
+        return css`
+          font-size: 0.75rem;
+          font-weight: 600;
+          line-height: ${20 / 12};
+          letter-spacing: -0.01em;
         `
       case 'Body1':
         return css`
           font-size: 1rem;
           line-height: 1.5;
+          letter-spacing: -0.02em;
         `
       case 'Body2':
         return css`
           font-size: 0.875rem;
-          line-height: 1.35;
+          line-height: ${22 / 14};
+          letter-spacing: -0.01em;
+        `
+      case 'Body3':
+        return css`
+          font-size: 0.75rem;
+          line-height: ${20 / 12};
+          letter-spacing: -0.01em;
         `
       default:
         // no default
@@ -113,9 +124,19 @@ const StyledText = styled.p<{
     }
   }}
 
-  ${({ $color }) => {
+  ${({ $color, $inverse }) => {
+    if ($color && $color.startsWith('--')) {
+      return css`
+        color: var(${$color});
+      `
+    }
+    if ($inverse) {
+      return css`
+        color: var(--color-primary-surface);
+      `
+    }
     return css`
-      color: ${$color === 'currentColor' ? 'currentColor' : `var(${$color})`};
+      color: currentColor;
     `
   }}
 
@@ -150,6 +171,7 @@ export const Text: React.FC<TypographyProps> = ({
   as,
   children,
   color = 'currentColor',
+  inverse,
   variant,
   ...props
 }) => {
@@ -158,6 +180,7 @@ export const Text: React.FC<TypographyProps> = ({
       {...props}
       $align={align}
       $color={color}
+      $inverse={inverse}
       $variant={variant}
       as={as || defaultTag[variant]}
     >

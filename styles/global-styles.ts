@@ -1,17 +1,27 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
-import { exo2 } from './fonts'
-import { colorValues } from './palette'
-import type { ColorVar } from './palette'
+import { departureMono, exo2, robotoMono } from './fonts'
+import { colorValues, neutralValues } from './palette'
+import type { ColorVar, NeutralVar } from './palette'
+import type { ThemePaletteName } from './themes'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
+    ${Object.keys(neutralValues)
+      .map(
+        neutralKey =>
+          `${neutralKey}: ${neutralValues[neutralKey as NeutralVar]};`,
+      )
+      .join('\n')};
+
     ${Object.keys(colorValues)
       .map(colorKey => `${colorKey}: ${colorValues[colorKey as ColorVar]};`)
       .join('\n')};
 
+    --font-family-departure-mono: ${departureMono.style.fontFamily}, monospace;
     --font-family-exo2: ${exo2.style.fontFamily};
+    --font-family-roboto-mono: ${robotoMono.style.fontFamily}, monospace;
 
     --scale-xxxs: 0.0625rem;
     --scale-xxs: 0.125rem;
@@ -29,9 +39,17 @@ export const GlobalStyles = createGlobalStyle`
 
     --ui-transition-speed: 144ms;
 
-    --default-font-family: var(--font-family-exo2);
-    --default-text-color: black;
-    --default-background-color: white;
+    --default-font-family: var(--font-family-roboto-mono);
+    --default-text-color: var(--neutral-black);
+    --default-background-color: var(--neutral-white);
+
+    ${({ theme: { palette } }) =>
+      Object.keys(palette)
+        .map(
+          themePaletteKey =>
+            `${themePaletteKey}: var(${palette[themePaletteKey as ThemePaletteName]});`,
+        )
+        .join('\n')};
   }
 
   html,
@@ -39,8 +57,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 100%; // 1rem = 16px
-    color: var(--default-text-color);
-    background-color: var(--default-background-color);
+    color: var(--color-primary-surface-contrast, var(--default-text-color));
+    background-color: var(--color-primary-surface, var(--default-background-color));
   }
 
   body {
@@ -50,5 +68,10 @@ export const GlobalStyles = createGlobalStyle`
     @supports (height: 100dvh) {
       min-height: 100dvh;
     }
+  }
+
+  // facilitates theme backgrounds in storybook
+  .docs-story {
+    background-color: var(--color-primary-surface, var(--default-background-color));
   }
 `

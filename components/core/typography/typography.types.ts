@@ -18,6 +18,7 @@ export type TypographyTag = (typeof typographyTags)[number]
 
 export const typographyVariants = [
   'Banner',
+  'Accent',
   'H1',
   'H2',
   'H3',
@@ -26,6 +27,7 @@ export const typographyVariants = [
   'H6',
   'Body1',
   'Body2',
+  'Body3',
 ] as const
 export type TypographyVariant = (typeof typographyVariants)[number]
 
@@ -47,5 +49,6 @@ export interface TypographyProps
   as?: TypographyTag
   children: string | string[] | React.ReactNode
   color?: Color
+  inverse?: boolean
   variant: TypographyVariant
 }
