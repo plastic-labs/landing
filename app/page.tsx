@@ -1,13 +1,14 @@
 /* eslint-disable import/no-default-export */
 
-import { Logo } from '@/components/core/logo'
+import { Section } from '@/components/layout/section'
+import { PartnersSection } from '@/components/sections/partners'
 
 const Page = () => {
   return (
-    <div>
-      <Logo height={100} width={100} />
-      <h1>Plastic Labs</h1>
-    </div>
+    <>
+      <PartnersSection />
+      <Section useViewport>HI</Section>
+    </>
   )
 }
 
