@@ -5,7 +5,6 @@ import {
   LinkTeamMember,
   teamMemberNames,
 } from '@/components/interactive/links/link-team-member'
-import { BREAKPOINT, EXTRA_WIDE_BREAKPOINT, THIN_BREAKPOINT } from '@/styles/breakpoints'
 import type { TeamProps } from './team.types'
 import type { TeamMemberName } from '@/components/interactive/links/link-team-member'
 

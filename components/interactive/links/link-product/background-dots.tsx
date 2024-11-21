@@ -8,7 +8,6 @@ const StyledBackgroundDots = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(calc(100vw - 2rem), 26.25rem);
   aspect-ratio: 420 / 200;
   background: var(--surface-base, var(--interactive-product-surface));
   border: 0.03125rem solid
