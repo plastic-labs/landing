@@ -8,7 +8,11 @@ import { ProductName } from './product-name'
 import { TitleBar } from './title-bar'
 import type { LinkProductProps } from './link-product.types'
 
-const StyledLinkProduct = styled.a<{ $inverse?: boolean; $left: number; $top: number }>`
+const StyledLinkProduct = styled.a<{
+  $inverse?: boolean
+  $left: number
+  $top: number
+}>`
   --surface-base: var(--interactive-product-surface);
   --surface-contrast-base: var(--interactive-product-surface-contrast);
   --accent-base: var(--interactive-product-accent);

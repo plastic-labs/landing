@@ -3,7 +3,7 @@ import { Theme, ThemeName } from '@/styles/themes'
 export type ThemeState = {
   themeName: ThemeName
   theme: Theme
-  toggledManually: boolean,
+  toggledManually: boolean
 }
 
 export interface IThemeContext extends ThemeState {

@@ -22,7 +22,11 @@ export const PlasticThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   const setWhenDifferent = useCallback(
     (themeName: ThemeName) => {
       if (!themeState.toggledManually && themeName !== themeState.themeName) {
-        setThemeState({ themeName, theme: themes[themeName], toggledManually: false })
+        setThemeState({
+          themeName,
+          theme: themes[themeName],
+          toggledManually: false,
+        })
       }
     },
     [themeState.themeName, themeState.toggledManually],

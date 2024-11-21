@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
-import { inverseThemePaletteVar } from '@/styles/themes'
+import { Text } from '@/components/core/typography'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
+import { inverseThemePaletteVar } from '@/styles/themes'
 import { isInternalUrl } from '@/utils/url'
 import { SharedThemeStylesProps } from '../../buttons/shared/theme.types'
 import { IconUpRightArrow } from './icon-up-right-arrow'
 import type { LinkGiantProps } from './link-giant.types'
-import { Text } from '@/components/core/typography'
 
 const linkStyles = css<SharedThemeStylesProps>`
   --surface-base: var(--color-primary-surface);
@@ -44,7 +44,7 @@ const linkStyles = css<SharedThemeStylesProps>`
 
     @media (min-width: ${THIN_BREAKPOINT}rem) {
       width: 2.5rem;
-      height: 2.5rem;;
+      height: 2.5rem;
     }
   }
 

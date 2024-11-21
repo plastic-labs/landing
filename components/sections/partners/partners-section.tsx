@@ -2,8 +2,8 @@
 
 import styled from 'styled-components'
 import { Partners } from '@/components/composed/partners'
-import { Text } from '@/components/core/typography'
 import { Title } from '@/components/core/title'
+import { Text } from '@/components/core/typography'
 import { Section } from '@/components/layout/section'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 

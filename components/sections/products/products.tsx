@@ -1,8 +1,8 @@
 'use client'
 
 import styled from 'styled-components'
+import { Products } from '@/components/composed/products'
 import { Title } from '@/components/core/title'
-import { LinkProduct } from '@/components/interactive/links/link-product'
 import { Section } from '@/components/layout/section'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 
@@ -37,6 +37,7 @@ export const ProductsSection: React.FC = () => {
     <StyledProductsSection>
       <StyledProductsInner>
         <Title title="Our Products" subItems={['Honcho', 'Bloom', 'Yousim']} />
+        <Products />
       </StyledProductsInner>
     </StyledProductsSection>
   )

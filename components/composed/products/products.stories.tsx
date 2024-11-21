@@ -16,6 +16,10 @@ type Story = StoryObj<typeof meta>
 
 export const Products: Story = {
   decorators: [
-    Story => <div style={{ background: 'var(--color-primary-surface-contrast)' }}><Story /></div>
-  ]
+    Story => (
+      <div style={{ background: 'var(--color-primary-surface-contrast)' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }

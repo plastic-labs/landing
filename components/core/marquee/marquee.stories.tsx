@@ -1,5 +1,4 @@
 /* eslint-disable import/no-default-export */
-import { Text } from '@/components/core/typography'
 import { Marquee as LinkInlineUi } from './marquee'
 import type { Meta, StoryObj } from '@storybook/react'
 
