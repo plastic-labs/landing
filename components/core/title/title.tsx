@@ -19,7 +19,7 @@ const blink = keyframes`
   }
 `
 
-const StyledTitleArea = styled.div`
+const StyledTitleArea = styled.div<{ $delay: number }>`
   display: flex;
   flex-direction: column;
 
@@ -39,6 +39,7 @@ const StyledTitleArea = styled.div`
 
     animation-name: ${blink};
     animation-duration: 2s;
+    animation-delay: ${({ $delay }) => $delay}ms;
     animation-timing-function: linear;
     animation-fill-mode: backwards;
     animation-iteration-count: infinite;
@@ -46,8 +47,10 @@ const StyledTitleArea = styled.div`
 `
 
 export const Title: React.FC<TitleProps> = ({ title, subItems, ...props }) => {
+  const delay = Math.random() * 500 // ms
+
   return (
-    <StyledTitleArea {...props}>
+    <StyledTitleArea {...props} $delay={delay}>
       <Text as="h2" variant="Body2">
         {title}
       </Text>
