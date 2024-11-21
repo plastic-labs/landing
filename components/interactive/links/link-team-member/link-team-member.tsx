@@ -8,7 +8,6 @@ import type { LinkTeamMemberProps } from './link-team-member.types'
 const StyledLinkTeamMember = styled.a`
   display: grid;
   grid-template-columns: 1fr;
-  width: min(100%, 11.625rem);
   color: var(--color-primary-surface-contrast);
   text-decoration: none;
 `
