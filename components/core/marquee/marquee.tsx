@@ -1,6 +1,7 @@
 'use client'
 
 import styled, { css, keyframes } from 'styled-components'
+import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 import { inverseThemePaletteVar } from '@/styles/themes'
 import { Text } from '../typography'
 import type { MarqueeProps } from './marquee.types'
@@ -19,8 +20,13 @@ const StyledMarqueeWrapper = styled.div<{ $inverse?: boolean }>`
 
   display: flex;
   justify-content: start;
+  padding: 5.125rem 0;
   overflow-x: hidden;
   color: var(--surface-contrast-base);
+
+  @media (min-width: ${THIN_BREAKPOINT}rem) {
+    padding: 5.75rem 0;
+  }
 
   ${({ $inverse, theme }) =>
     $inverse
@@ -45,7 +51,7 @@ const StyledMarquee = styled(Text)<{ $duration: number }>`
 
 export const Marquee: React.FC<MarqueeProps> = ({
   children,
-  duration = 20,
+  duration = 10,
   inverse,
   ...props
 }) => {

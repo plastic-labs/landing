@@ -35,7 +35,7 @@ const meta = {
       description: 'The duration of the scroll',
       table: {
         defaultValue: {
-          summary: '20',
+          summary: '10',
         },
         type: {
           summary: 'number',

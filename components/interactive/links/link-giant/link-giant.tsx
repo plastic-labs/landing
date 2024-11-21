@@ -30,6 +30,7 @@ const linkStyles = css<SharedThemeStylesProps>`
   @media (min-width: ${THIN_BREAKPOINT}rem) {
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr min-content;
+    padding: 2.5rem;
     min-height: 20.6875rem;
   }
 

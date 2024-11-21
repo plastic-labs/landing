@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 
+import { GetInTouchSection } from '@/components/sections/get-in-touch'
 import { PartnersSection } from '@/components/sections/partners'
 import { TeamSection } from '@/components/sections/team'
 
@@ -8,6 +9,7 @@ const Page = () => {
     <>
       <TeamSection />
       <PartnersSection />
+      <GetInTouchSection />
     </>
   )
 }
