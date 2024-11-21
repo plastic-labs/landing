@@ -27,6 +27,7 @@
     "posthog-js": "^1.184.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
