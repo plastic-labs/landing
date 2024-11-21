@@ -14,11 +14,24 @@ const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: min-content 0.0625rem 1fr 0.0625rem min-content;
   height: 4.375rem;
-  background: var(--color-primary-surface);
+  backdrop-filter: blur(0.25rem);
   border-width: 0.0625rem 0;
   border-style: solid;
   border-color: var(--color-primary-surface-contrast);
   box-sizing: border-box;
+  z-index: 100;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--color-primary-surface);
+    opacity: 0.8;
+    z-index: 0;
+  }
 `
 
 const Divider = styled.span`

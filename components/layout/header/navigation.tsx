@@ -11,7 +11,6 @@ const StyledNavigationWrapper = styled.div`
   justify-content: center;
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
-  background: var(--color-primary-surface);
   z-index: 1;
 
   @media (min-width: ${WIDE_BREAKPOINT}rem) {
