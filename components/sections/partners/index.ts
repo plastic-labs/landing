@@ -1,1 +1,1 @@
-export { PartnersSection } from './partners'
+export { PartnersSection } from './partners-section'
