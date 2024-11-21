@@ -64,7 +64,6 @@ const StyledPartners = styled.nav<{
   grid-gap: var(--line-width);
   min-width: 0; // triggers layout for children
   box-sizing: border-box;
-  transition: transform 100ms ease;
 
   @media (min-resolution: 192dpi) {
     --line-width: 0.03125rem;
