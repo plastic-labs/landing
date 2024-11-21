@@ -1,11 +1,11 @@
 'use client'
 
-import { HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { LinkGiant } from '@/components/interactive/links/link-giant'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
+import type { ContactProps } from './contact.types'
 
-const StyledOutboundLinks = styled.nav`
+const StyledContact = styled.nav`
   display: grid;
   grid-template-columns: 1fr;
   border-bottom: var(--line-width) solid var(--color-primary-surface);
@@ -26,9 +26,9 @@ const Divider = styled.span`
   }
 `
 
-export const OutboundLinks: React.FC<HTMLAttributes<HTMLElement>> = props => {
+export const Contact: React.FC<ContactProps> = props => {
   return (
-    <StyledOutboundLinks {...props}>
+    <StyledContact {...props} aria-label="Contact">
       <LinkGiant
         href="https://discord.gg/plasticlabs"
         inverse
@@ -44,6 +44,6 @@ export const OutboundLinks: React.FC<HTMLAttributes<HTMLElement>> = props => {
         text="hello@plasticlabs.ai"
         title="Questions"
       />
-    </StyledOutboundLinks>
+    </StyledContact>
   )
 }
