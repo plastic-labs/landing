@@ -19,7 +19,7 @@ const StyledAboutUs = styled.div`
 
 export const AboutUs: React.FC<AboutUsProps> = props => {
   return (
-    <StyledAboutUs>
+    <StyledAboutUs {...props}>
       <TextContent
         title="About Us"
         ctas={<ButtonLink href="https://blog.plasticlabs.ai/">Blog</ButtonLink>}

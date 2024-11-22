@@ -46,12 +46,6 @@ export const Statement: React.FC<StatementProps> = ({
   const [headingWidth, setHeadingWidth] = useState<number>(Infinity)
 
   useEffect(() => {
-    if (illoRef.current) {
-      setHeadingWidth(illoRef.current.getBoundingClientRect().width || 60)
-    }
-  }, [headingWidth])
-
-  useEffect(() => {
     const reset = () => {
       setCharacters(generateCharacters(statement))
     }
@@ -61,6 +55,12 @@ export const Statement: React.FC<StatementProps> = ({
 
     return () => timer && clearInterval(timer)
   }, [duration, statement])
+
+  useEffect(() => {
+    if (illoRef.current) {
+      setHeadingWidth(illoRef.current.getBoundingClientRect().width || 60)
+    }
+  }, [characterCount, headingWidth])
 
   return (
     <StyledTextCycle
