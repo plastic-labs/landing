@@ -1,18 +1,29 @@
 'use client'
 
-import styled, { css } from 'styled-components'
+import { MouseEvent, useEffect, useState } from 'react'
+import Draggable, {
+  DraggableData,
+  DraggableEvent,
+  DraggableEventHandler,
+} from 'react-draggable'
+import styled, { css, keyframes } from 'styled-components'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 import { inverseThemePaletteVar } from '@/styles/themes'
 import { BackgroundDots } from './background-dots'
 import { ProductName } from './product-name'
 import { TitleBar } from './title-bar'
-import type { LinkProductProps } from './link-product.types'
+import type { LinkProductProps, Position } from './link-product.types'
 
-const StyledLinkProduct = styled.a<{
-  $inverse?: boolean
-  $left: number
-  $top: number
-}>`
+const appear = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+const StyledLinkProduct = styled.a<{ $inverse?: boolean }>`
   --surface-base: var(--interactive-product-surface);
   --surface-contrast-base: var(--interactive-product-surface-contrast);
   --accent-base: var(--interactive-product-accent);
@@ -32,10 +43,19 @@ const StyledLinkProduct = styled.a<{
   box-sizing: border-box;
   isolation: isolate;
 
+  opacity: 0;
+  animation-name: ${appear};
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+
+  @media (max-width: ${THIN_BREAKPOINT - 0.0625}rem) {
+    transform: none !important;
+  }
+
   @media (min-width: ${THIN_BREAKPOINT}rem) {
     position: absolute;
-    top: ${({ $top }) => $top}px;
-    left: ${({ $left }) => $left}px;
     width: 100%;
   }
 
@@ -76,29 +96,64 @@ const StyledLinkProduct = styled.a<{
 export const LinkProduct: React.FC<LinkProductProps> = ({
   href,
   inverse,
-  left = 0,
+  isDraggable,
   product,
-  top = 0,
+  x = 0,
+  y = 0,
   ...props
 }) => {
+  const [previousPosition, setPreviousPosition] = useState<Position>({
+    x,
+    y,
+  })
+  const [wasDragging, setWasDragging] = useState<boolean>(false)
+
+  useEffect(() => {
+    setPreviousPosition({ x, y })
+  }, [x, y])
+
   if (!href) {
     return null
   }
 
+  const handleDragStop: DraggableEventHandler = (
+    _: DraggableEvent,
+    { lastX, lastY }: DraggableData,
+  ): void => {
+    if (lastX !== previousPosition.x || lastY !== previousPosition.y) {
+      setWasDragging(true)
+      setPreviousPosition({ x: lastX, y: lastY })
+    }
+  }
+
+  const handlePress = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (wasDragging) {
+      event.preventDefault()
+      setWasDragging(false)
+    }
+  }
+
   return (
-    <StyledLinkProduct
-      {...props}
-      href={href}
-      target="_blank"
-      rel="noopener"
-      $left={left}
-      $inverse={inverse}
-      $top={top}
+    <Draggable
+      bounds="parent"
+      disabled={!isDraggable}
+      onStop={handleDragStop}
+      position={previousPosition}
     >
-      <TitleBar>Enter</TitleBar>
-      <BackgroundDots>
-        <ProductName product={product} />
-      </BackgroundDots>
-    </StyledLinkProduct>
+      <StyledLinkProduct
+        {...props}
+        draggable="false"
+        href={href}
+        onClick={handlePress}
+        rel="noopener"
+        target="_blank"
+        $inverse={inverse}
+      >
+        <TitleBar>{`Enter ${product}`}</TitleBar>
+        <BackgroundDots>
+          <ProductName product={product} />
+        </BackgroundDots>
+      </StyledLinkProduct>
+    </Draggable>
   )
 }

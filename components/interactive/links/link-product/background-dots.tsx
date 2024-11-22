@@ -9,6 +9,7 @@ const StyledBackgroundDots = styled.div`
   align-items: center;
   justify-content: center;
   aspect-ratio: 420 / 200;
+  overflow: hidden;
   background: var(--surface-base, var(--interactive-product-surface));
   border: 0.03125rem solid
     var(--surface-contrast-base, var(--interactive-product-surface-contrast));

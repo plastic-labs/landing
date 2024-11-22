@@ -7,7 +7,6 @@ import { Section } from '@/components/layout/section'
 import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 
 const StyledProductsSection = styled(Section)`
-  position: relative;
   display: grid;
   grid-template-columns: 1fr;
 
@@ -17,6 +16,7 @@ const StyledProductsSection = styled(Section)`
 `
 
 const StyledProductsInner = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1.875rem;

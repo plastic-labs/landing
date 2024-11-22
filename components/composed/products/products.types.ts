@@ -1,3 +1,13 @@
 import { HTMLAttributes } from 'react'
 
-export interface ProductsProps extends HTMLAttributes<HTMLElement> {}
+export type Area = {
+  height: number
+  width: number
+}
+
+export type Range = {
+  low: number
+  high: number
+}
+
+export interface ProductsProps extends HTMLAttributes<HTMLDivElement> {}
