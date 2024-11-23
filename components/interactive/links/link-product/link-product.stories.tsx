@@ -38,6 +38,20 @@ const meta = {
         },
       },
     },
+    isDraggable: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'May the product be dragged?',
+      table: {
+        defaultValue: {
+          summary: '[required]',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
     product: {
       control: {
         type: 'select',
@@ -71,13 +85,26 @@ validStates.pop()
 
 export const States: Story = {
   args: {
-    href: 'https://github.com/plastic-labs',
+    href: 'https://bloombot.ai/',
+    isDraggable: false,
     product: 'bloom',
   },
   decorators: [
     (_, { args }) => {
       const story: React.FC<{ column: string; row: string }> = ({ row }) => {
-        return <LinkProductUi {...args} data-state={row as ButtonState} />
+        return (
+          <div
+            style={{
+              position: 'relative',
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              width: '24rem',
+              height: '12rem',
+            }}
+          >
+            <LinkProductUi {...args} data-state={row as ButtonState} />
+          </div>
+        )
       }
 
       return (
@@ -89,7 +116,23 @@ export const States: Story = {
 
 export const LinkProduct: Story = {
   args: {
-    href: 'https://github.com/plastic-labs',
+    href: 'https://bloombot.ai/',
+    isDraggable: false,
     product: 'bloom',
   },
+  decorators: [
+    Story => (
+      <div
+        style={{
+          position: 'relative',
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          width: '24rem',
+          height: '12rem',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

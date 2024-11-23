@@ -23,4 +23,9 @@ export const Header: Story = {
       </PlasticThemeProvider>
     ),
   ],
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 }

@@ -1,13 +1,21 @@
 /* eslint-disable import/no-default-export */
 
-import { Logo } from '@/components/core/logo'
+import { Main } from '@/components/layout/main'
+import { GetInTouchSection } from '@/components/sections/get-in-touch'
+import { HeroSection } from '@/components/sections/hero'
+import { PartnersSection } from '@/components/sections/partners'
+import { ProductsSection } from '@/components/sections/products'
+import { TeamSection } from '@/components/sections/team'
 
 const Page = () => {
   return (
-    <div>
-      <Logo height={100} width={100} />
-      <h1>Plastic Labs</h1>
-    </div>
+    <Main>
+      <HeroSection />
+      <ProductsSection />
+      <TeamSection />
+      <PartnersSection />
+      <GetInTouchSection />
+    </Main>
   )
 }
 

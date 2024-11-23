@@ -41,6 +41,7 @@ const StyledText = styled.p<{
           line-height: 1;
           letter-spacing: -0.01em;
           text-transform: uppercase;
+          text-wrap: pretty;
 
           @media (min-width: ${THIN_BREAKPOINT}rem) {
             font-size: 12.5rem;
@@ -52,6 +53,7 @@ const StyledText = styled.p<{
           line-height: ${40 / 35};
           letter-spacing: -0.023em;
           text-transform: uppercase;
+          text-wrap: balance;
 
           @media (min-width: ${THIN_BREAKPOINT}rem) {
             font-size: 2.8125rem;

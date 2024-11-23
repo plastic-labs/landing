@@ -8,12 +8,16 @@ import { CharacterCell } from './character-cell'
 import { Character, cycles, StatementProps } from './text-cycle.types'
 
 const nanoid = customAlphabet('1234567890abcdef', 6)
+const DEFAULT_WIDTH = 414
 
-const StyledTextCycle = styled.h2<{ $cellSize: number }>`
+const StyledStatement = styled.h2<{ $cellSize: number }>`
   --cell-size: ${({ $cellSize }) => $cellSize / 16}rem;
 
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
 `
 
 const LineBreak = styled.span`
@@ -43,13 +47,18 @@ export const Statement: React.FC<StatementProps> = ({
 }) => {
   const illoRef = useRef<HTMLHeadingElement>(null)
   const [characters, setCharacters] = useState<Character[]>([])
-  const [headingWidth, setHeadingWidth] = useState<number>(Infinity)
+  const [width, setWidth] = useState<number>(DEFAULT_WIDTH)
 
   useEffect(() => {
-    if (illoRef.current) {
-      setHeadingWidth(illoRef.current.getBoundingClientRect().width || 60)
+    const handleResize = () => {
+      setWidth(illoRef.current?.getBoundingClientRect().width || DEFAULT_WIDTH)
     }
-  }, [headingWidth])
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [statement])
 
   useEffect(() => {
     const reset = () => {
@@ -63,10 +72,10 @@ export const Statement: React.FC<StatementProps> = ({
   }, [duration, statement])
 
   return (
-    <StyledTextCycle
+    <StyledStatement
       {...props}
       ref={illoRef}
-      $cellSize={headingWidth / characterCount}
+      $cellSize={width / characterCount}
     >
       {characters.map(character => {
         if (character.character === '\n') {
@@ -80,6 +89,6 @@ export const Statement: React.FC<StatementProps> = ({
           />
         )
       })}
-    </StyledTextCycle>
+    </StyledStatement>
   )
 }

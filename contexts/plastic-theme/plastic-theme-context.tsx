@@ -6,6 +6,7 @@ import type { IThemeContext, ThemeState } from './plastic-theme.types'
 const initialState: ThemeState = {
   themeName: 'light',
   theme: themes['light'],
+  toggledManually: false,
 }
 
 export const PlasticThemeContext = createContext<IThemeContext>({
@@ -20,11 +21,15 @@ export const PlasticThemeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const setWhenDifferent = useCallback(
     (themeName: ThemeName) => {
-      if (themeName !== themeState.themeName) {
-        setThemeState({ themeName, theme: themes[themeName] })
+      if (!themeState.toggledManually && themeName !== themeState.themeName) {
+        setThemeState({
+          themeName,
+          theme: themes[themeName],
+          toggledManually: false,
+        })
       }
     },
-    [themeState.themeName],
+    [themeState.themeName, themeState.toggledManually],
   )
 
   useEffect(() => {
@@ -65,9 +70,17 @@ export const PlasticThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   const value = useMemo(() => {
     const toggleTheme = () => {
       if (themeState.themeName === 'light') {
-        setThemeState({ themeName: 'dark', theme: themes['dark'] })
+        setThemeState({
+          themeName: 'dark',
+          theme: themes['dark'],
+          toggledManually: true,
+        })
       } else {
-        setThemeState({ themeName: 'light', theme: themes['light'] })
+        setThemeState({
+          themeName: 'light',
+          theme: themes['light'],
+          toggledManually: true,
+        })
       }
     }
 

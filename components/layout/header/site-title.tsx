@@ -4,7 +4,8 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import styled from 'styled-components'
 import { Text } from '@/components/core/typography'
 import { Wordmark } from '@/components/core/wordmark'
-import { SiteTitleProps } from './header.types'
+import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
+import type { SiteTitleProps } from './header.types'
 
 const StyledSiteTitle = styled.div`
   position: absolute;
@@ -12,10 +13,14 @@ const StyledSiteTitle = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 0;
+
+  @media (min-width: ${WIDE_BREAKPOINT}rem) {
+    display: flex;
+  }
 `
 
 export const SiteTitle: React.FC<SiteTitleProps> = props => {
