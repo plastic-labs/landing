@@ -10,15 +10,16 @@ import { NavigationProps } from './header.types'
 const HEADER_HEIGHT = 4.375 * 16 - 1
 
 const StyledNavigationWrapper = styled.div`
+  justify-self: end;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
+  box-sizing: border-box;
   z-index: 1;
 
   @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    justify-self: end;
     border-left: 0.0625rem solid var(--color-primary-surface-contrast);
   }
 `
@@ -52,7 +53,7 @@ export const Navigation: React.FC<NavigationProps> = props => {
   }
 
   return (
-    <StyledNavigationWrapper {...props}>
+    <StyledNavigationWrapper {...props} id="main-navigation">
       <StyledNavigation aria-label="Main">
         <ButtonLink href="https://blog.plasticlabs.ai/" variant="navigation">
           Blog

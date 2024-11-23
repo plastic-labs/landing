@@ -1,5 +1,6 @@
 'use client'
 
+import { CSSProperties, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { AboutUs } from '@/components/composed/about-us'
 import { HeroStatement } from '@/components/composed/hero-statement'
@@ -9,13 +10,19 @@ import { Section } from '@/components/layout/section'
 import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { IconPlus } from './icon-plus'
 
+const DEFAULT_MAIN_NAVIGATION_WIDTH = 305 // pixels
+
 const StyledHeroSection = styled(Section)`
+  --main-navigation-width: ${DEFAULT_MAIN_NAVIGATION_WIDTH};
+
   display: grid;
   align-items: start;
   grid-template-columns: 1fr;
 
   @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    grid-template-columns: 1fr 0.0625rem 19.0625rem;
+    grid-template-columns: 1fr 0.0625rem calc(
+        var(--main-navigation-width) / 16 * 1rem
+      );
     grid-template-rows: 4.3125rem min-content 0.0625rem min-content 0.0625rem;
   }
 `
@@ -38,10 +45,12 @@ const StyledLeadRow = styled.span`
       var(--color-primary-surface-contrast) 4.25rem,
       var(--color-primary-surface-contrast) 4.3125rem,
       transparent 4.3125rem,
-      transparent calc(100% - 19.125rem),
-      var(--color-primary-surface-contrast) calc(100% - 19.125rem),
-      var(--color-primary-surface-contrast) calc(100% - 19.0625rem),
-      transparent calc(100% - 19.0625rem),
+      transparent calc(100% - (var(--main-navigation-width) + 1) / 16 * 1rem),
+      var(--color-primary-surface-contrast)
+        calc(100% - (var(--main-navigation-width) + 1) / 16 * 1rem),
+      var(--color-primary-surface-contrast)
+        calc(100% - var(--main-navigation-width) / 16 * 1rem),
+      transparent calc(100% - var(--main-navigation-width) / 16 * 1rem),
       transparent calc(100% - 4.3125rem),
       var(--color-primary-surface-contrast) calc(100% - 4.3125rem),
       var(--color-primary-surface-contrast) calc(100% - 4.25rem),
@@ -125,8 +134,27 @@ const Pluses: React.FC = () => {
 }
 
 export const HeroSection: React.FC = () => {
+  const [mainNavigationWidth, setMainNavigationWidth] = useState<number>(
+    DEFAULT_MAIN_NAVIGATION_WIDTH,
+  )
+
+  useEffect(() => {
+    const mainNavigationEl = document.getElementById('main-navigation')
+    if (mainNavigationEl) {
+      const { width } = mainNavigationEl.getBoundingClientRect()
+      if (width) {
+        setMainNavigationWidth(width + 68)
+      }
+    }
+  }, [])
+
   return (
-    <StyledHeroSection id="top">
+    <StyledHeroSection
+      id="top"
+      style={
+        { '--main-navigation-width': mainNavigationWidth } as CSSProperties
+      }
+    >
       <StyledLeadRow>
         <Pluses />
       </StyledLeadRow>

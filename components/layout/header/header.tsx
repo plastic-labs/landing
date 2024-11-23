@@ -1,6 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
+import { Divider } from '@/components/core/divider'
 import { ButtonLogo } from '@/components/interactive/buttons/button-logo'
 import { ButtonTheme } from '@/components/interactive/buttons/button-theme'
 import { usePlasticTheme } from '@/hooks/use-plastic-theme'
@@ -21,6 +22,10 @@ const StyledHeader = styled.header`
   box-sizing: border-box;
   z-index: 100;
 
+  * {
+    z-index: 101;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -32,10 +37,6 @@ const StyledHeader = styled.header`
     opacity: 0.8;
     z-index: 0;
   }
-`
-
-const Divider = styled.span`
-  background: var(--color-primary-surface-contrast);
 `
 
 export const Header: React.FC<HeaderProps> = props => {
