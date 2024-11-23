@@ -1,9 +1,13 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+import { MouseEvent } from 'react'
 import styled from 'styled-components'
 import { ButtonLink } from '@/components/interactive/buttons/button-link'
 import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { NavigationProps } from './header.types'
+
+const HEADER_HEIGHT = 4.375 * 16 - 1
 
 const StyledNavigationWrapper = styled.div`
   display: grid;
@@ -33,13 +37,31 @@ const StyledNavigation = styled.nav`
 `
 
 export const Navigation: React.FC<NavigationProps> = props => {
+  const router = useRouter()
+
+  const handleContactScroll = (event: MouseEvent<HTMLAnchorElement>) => {
+    const contactEl = document.getElementById('contact')
+    if (contactEl) {
+      const { top } = contactEl.getBoundingClientRect()
+      if (top > HEADER_HEIGHT) {
+        event.preventDefault()
+        window.scrollTo({ top: top - HEADER_HEIGHT, behavior: 'smooth' })
+        router.push('#contact', { scroll: false })
+      }
+    }
+  }
+
   return (
     <StyledNavigationWrapper {...props}>
       <StyledNavigation aria-label="Main">
         <ButtonLink href="https://blog.plasticlabs.ai/" variant="navigation">
           Blog
         </ButtonLink>
-        <ButtonLink href="/#contact-us" variant="navigation">
+        <ButtonLink
+          href="/#contact"
+          onClick={handleContactScroll}
+          variant="navigation"
+        >
           Contact us
         </ButtonLink>
       </StyledNavigation>
