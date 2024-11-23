@@ -126,7 +126,7 @@ const Pluses: React.FC = () => {
 
 export const HeroSection: React.FC = () => {
   return (
-    <StyledHeroSection>
+    <StyledHeroSection id="top">
       <StyledLeadRow>
         <Pluses />
       </StyledLeadRow>

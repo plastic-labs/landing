@@ -20,7 +20,7 @@ const StyledTeamSection = styled(Section)`
 
 export const TeamSection: React.FC = () => {
   return (
-    <StyledTeamSection>
+    <StyledTeamSection id="team">
       <Title title="Meet the Team" />
       <Team />
     </StyledTeamSection>

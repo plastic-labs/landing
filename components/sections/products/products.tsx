@@ -34,7 +34,7 @@ const StyledProductsInner = styled.div`
 
 export const ProductsSection: React.FC = () => {
   return (
-    <StyledProductsSection>
+    <StyledProductsSection id="products">
       <StyledProductsInner>
         <Title title="Our Products" subItems={['Honcho', 'Bloom', 'Yousim']} />
         <Products />

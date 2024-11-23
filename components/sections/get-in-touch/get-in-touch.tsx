@@ -23,7 +23,7 @@ const StyledGetInTouchSection = styled(Section)`
 
 export const GetInTouchSection: React.FC = () => {
   return (
-    <StyledGetInTouchSection>
+    <StyledGetInTouchSection id="contact">
       <Contact />
       <Marquee inverse>Get in Touch</Marquee>
     </StyledGetInTouchSection>

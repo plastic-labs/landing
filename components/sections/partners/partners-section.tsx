@@ -40,7 +40,7 @@ const StyledAccent = styled(Text)`
 
 export const PartnersSection: React.FC = () => {
   return (
-    <StyledPartnersSection>
+    <StyledPartnersSection id="partners">
       <StyledIntro>
         <Title title="Our Partners" />
         <StyledAccent variant="Accent">We are backed by</StyledAccent>
