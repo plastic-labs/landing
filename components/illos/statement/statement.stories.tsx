@@ -72,7 +72,9 @@ export const Statement: Story = {
   },
   decorators: [
     Story => (
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr', width: '24rem' }}>
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr', width: '24rem' }}
+      >
         <Story />
       </div>
     ),
