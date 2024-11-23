@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { Statement } from '@/components/illos/statement'
-import { BREAKPOINT } from '@/styles/breakpoints'
+import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import type { HeroStatementProps, StatementState } from './hero-statement.types'
 
 const StyledHeroStatement = styled.div`
@@ -12,7 +12,7 @@ const StyledHeroStatement = styled.div`
   grid-template-columns: 1fr;
   padding: 3.25rem 1rem;
 
-  @media (min-width: ${BREAKPOINT}rem) {
+  @media (min-width: ${WIDE_BREAKPOINT}rem) {
     align-items: start;
     padding: 0;
   }
@@ -38,12 +38,12 @@ export const HeroStatement: React.FC<HeroStatementProps> = props => {
   useEffect(() => {
     const handleResize = () => {
       if (
-        window.innerWidth < BREAKPOINT * 16 &&
+        window.innerWidth < WIDE_BREAKPOINT * 16 &&
         statementState.name === 'wide'
       ) {
         setStatementState(thinViewportState)
       } else if (
-        window.innerWidth >= BREAKPOINT * 16 &&
+        window.innerWidth >= WIDE_BREAKPOINT * 16 &&
         statementState.name === 'thin'
       ) {
         setStatementState(wideViewportState)

@@ -41,7 +41,7 @@ const StyledField = styled.p<{ $duration: number }>`
   display: grid;
   grid-template-columns: 1fr;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: max(1.75vw, 0.9rem);
   line-height: 1;
   object-position: left center;
 
@@ -52,7 +52,7 @@ const StyledField = styled.p<{ $duration: number }>`
   animation-iteration-count: infinite;
 
   @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    font-size: 1.1rem;
+    font-size: max(1.1vw, 1rem);
   }
 `
 
