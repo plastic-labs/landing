@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { THIN_BREAKPOINT } from '@/styles/breakpoints'
+import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { FIELD } from './ascii-field.constants'
 import { AsciiFieldProps } from './ascii-field.types'
 
@@ -51,8 +51,8 @@ const StyledField = styled.p<{ $duration: number }>`
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 
-  @media (min-width: ${THIN_BREAKPOINT}rem) {
-    font-size: 1.29113rem;
+  @media (min-width: ${WIDE_BREAKPOINT}rem) {
+    font-size: 1.1rem;
   }
 `
 
