@@ -9,11 +9,14 @@ import { Character, cycles, StatementProps } from './text-cycle.types'
 
 const nanoid = customAlphabet('1234567890abcdef', 6)
 
-const StyledTextCycle = styled.h2<{ $cellSize: number }>`
+const StyledStatement = styled.h2<{ $cellSize: number }>`
   --cell-size: ${({ $cellSize }) => $cellSize / 16}rem;
 
   display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
 `
 
 const LineBreak = styled.span`
@@ -63,7 +66,7 @@ export const Statement: React.FC<StatementProps> = ({
   }, [characterCount, headingWidth])
 
   return (
-    <StyledTextCycle
+    <StyledStatement
       {...props}
       ref={illoRef}
       $cellSize={headingWidth / characterCount}
@@ -80,6 +83,6 @@ export const Statement: React.FC<StatementProps> = ({
           />
         )
       })}
-    </StyledTextCycle>
+    </StyledStatement>
   )
 }

@@ -2,6 +2,7 @@
 
 import { CSSProperties, useEffect, useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { THIN_BREAKPOINT } from '@/styles/breakpoints'
 import { FIELD } from './ascii-field.constants'
 import { AsciiFieldProps } from './ascii-field.types'
 
@@ -18,24 +19,29 @@ const shift = keyframes`
 `
 
 const StyledAsciiField = styled.figure`
+  align-self: stretch;
+  justify-self: stretch;
+  position: relative;
   display: grid;
   align-items: center;
   justify-items: start;
   grid-template-columns: 1fr;
   margin: 0;
   padding: 0;
-  min-width: 0;
   overflow: hidden;
   box-sizing: border-box;
+  user-select: none;
+  pointer-events: none;
 `
 
 const StyledField = styled.p<{ $duration: number }>`
   --figure-width: 0;
 
+  position: absolute;
   display: grid;
   grid-template-columns: 1fr;
   margin: 0;
-  font-size: 1.29113rem;
+  font-size: 0.9rem;
   line-height: 1;
   object-position: left center;
 
@@ -44,6 +50,10 @@ const StyledField = styled.p<{ $duration: number }>`
   animation-timing-function: ease;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
+
+  @media (min-width: ${THIN_BREAKPOINT}rem) {
+    font-size: 1.29113rem;
+  }
 `
 
 const StyledRow = styled.span`

@@ -2,15 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import type { HeroStatementProps, StatementState } from './hero-statement.types'
-import { BREAKPOINT } from '@/styles/breakpoints'
 import { Statement } from '@/components/illos/statement'
+import { BREAKPOINT } from '@/styles/breakpoints'
+import type { HeroStatementProps, StatementState } from './hero-statement.types'
 
 const StyledHeroStatement = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
-  padding: 1rem 3.25rem;
+  padding: 3.25rem 1rem;
 
   @media (min-width: ${BREAKPOINT}rem) {
     align-items: start;
@@ -27,18 +27,25 @@ const thinViewportState: StatementState = {
 const wideViewportState: StatementState = {
   characterCount: 14,
   name: 'wide',
-  statement: 'Radically \nDecntralizing Alignment',
+  statement: 'Radically \nDecentralizing Alignment',
 }
 
 export const HeroStatement: React.FC<HeroStatementProps> = props => {
   const heroStatementRef = useRef<HTMLDivElement>(null)
-  const [statementState, setStatementState] = useState<StatementState>(thinViewportState)
+  const [statementState, setStatementState] =
+    useState<StatementState>(thinViewportState)
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < BREAKPOINT * 16 && statementState.name === 'wide') {
+      if (
+        window.innerWidth < BREAKPOINT * 16 &&
+        statementState.name === 'wide'
+      ) {
         setStatementState(thinViewportState)
-      } else if (window.innerWidth >= BREAKPOINT * 16 && statementState.name === 'thin') {
+      } else if (
+        window.innerWidth >= BREAKPOINT * 16 &&
+        statementState.name === 'thin'
+      ) {
         setStatementState(wideViewportState)
       }
     }

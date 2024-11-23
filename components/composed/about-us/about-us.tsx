@@ -3,9 +3,9 @@
 import styled from 'styled-components'
 import { Text } from '@/components/core/typography'
 import { ButtonLink } from '@/components/interactive/buttons/button-link'
+import { BREAKPOINT } from '@/styles/breakpoints'
 import { TextContent } from '../text-content'
 import type { AboutUsProps } from './about-us.types'
-import { BREAKPOINT } from '@/styles/breakpoints'
 
 const StyledAboutUs = styled.div`
   display: grid;
