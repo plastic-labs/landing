@@ -16,11 +16,12 @@ const StyledNavigationWrapper = styled.div`
   justify-content: center;
   grid-template-columns: 1fr;
   padding: 0 1.5rem;
+  border-left: 0.0625rem solid transparent;
   box-sizing: border-box;
   z-index: 1;
 
   @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    border-left: 0.0625rem solid var(--color-primary-surface-contrast);
+    border-color: var(--color-primary-surface-contrast);
   }
 `
 
@@ -30,11 +31,7 @@ const StyledNavigation = styled.nav`
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 0.75rem;
-
-  @media (min-width: ${WIDE_BREAKPOINT}rem) {
-    grid-gap: 1.25rem;
-  }
+  grid-gap: 1.25rem;
 `
 
 export const Navigation: React.FC<NavigationProps> = props => {
