@@ -68,11 +68,11 @@ export const Statement: Story = {
   args: {
     characterCount: 15,
     duration: 3,
-    statement: 'radically \ndecentralizing alignment',
+    statement: 'Radically \nDecentralizing Alignment',
   },
   decorators: [
     Story => (
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', width: '24rem' }}>
         <Story />
       </div>
     ),

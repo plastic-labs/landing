@@ -8,6 +8,7 @@ import { CharacterCell } from './character-cell'
 import { Character, cycles, StatementProps } from './text-cycle.types'
 
 const nanoid = customAlphabet('1234567890abcdef', 6)
+const DEFAULT_WIDTH = 414
 
 const StyledStatement = styled.h2<{ $cellSize: number }>`
   --cell-size: ${({ $cellSize }) => $cellSize / 16}rem;
@@ -46,18 +47,18 @@ export const Statement: React.FC<StatementProps> = ({
 }) => {
   const illoRef = useRef<HTMLHeadingElement>(null)
   const [characters, setCharacters] = useState<Character[]>([])
-  const [width, setWidth] = useState<number>(Infinity)
+  const [width, setWidth] = useState<number>(DEFAULT_WIDTH)
 
   useEffect(() => {
     const handleResize = () => {
-      setWidth(illoRef.current?.getBoundingClientRect().width || 60)
+      setWidth(illoRef.current?.getBoundingClientRect().width || DEFAULT_WIDTH)
     }
 
     window.addEventListener('resize', handleResize)
     handleResize()
 
     return () => window.removeEventListener('resize', handleResize)
-  }, [characterCount])
+  }, [statement])
 
   useEffect(() => {
     const reset = () => {
