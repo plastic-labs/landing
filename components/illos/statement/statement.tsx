@@ -46,7 +46,18 @@ export const Statement: React.FC<StatementProps> = ({
 }) => {
   const illoRef = useRef<HTMLHeadingElement>(null)
   const [characters, setCharacters] = useState<Character[]>([])
-  const [headingWidth, setHeadingWidth] = useState<number>(Infinity)
+  const [width, setWidth] = useState<number>(Infinity)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(illoRef.current?.getBoundingClientRect().width || 60)
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [characterCount])
 
   useEffect(() => {
     const reset = () => {
@@ -59,17 +70,11 @@ export const Statement: React.FC<StatementProps> = ({
     return () => timer && clearInterval(timer)
   }, [duration, statement])
 
-  useEffect(() => {
-    if (illoRef.current) {
-      setHeadingWidth(illoRef.current.getBoundingClientRect().width || 60)
-    }
-  }, [characterCount, headingWidth])
-
   return (
     <StyledStatement
       {...props}
       ref={illoRef}
-      $cellSize={headingWidth / characterCount}
+      $cellSize={width / characterCount}
     >
       {characters.map(character => {
         if (character.character === '\n') {
