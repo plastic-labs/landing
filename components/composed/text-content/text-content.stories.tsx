@@ -1,8 +1,8 @@
 /* eslint-disable import/no-default-export */
+import { Text } from '@/components/core/typography'
 import { ButtonLink } from '@/components/interactive/buttons/button-link'
 import { TextContent as TextContentUi } from './text-content'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Text } from '@/components/core/typography'
 
 const meta = {
   title: 'Composed / Text Content',

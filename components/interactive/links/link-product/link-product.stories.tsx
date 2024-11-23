@@ -38,6 +38,20 @@ const meta = {
         },
       },
     },
+    isDraggable: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'May the product be dragged?',
+      table: {
+        defaultValue: {
+          summary: '[required]',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
     product: {
       control: {
         type: 'select',
@@ -72,6 +86,7 @@ validStates.pop()
 export const States: Story = {
   args: {
     href: 'https://github.com/plastic-labs',
+    isDraggable: true,
     product: 'bloom',
   },
   decorators: [
@@ -90,6 +105,7 @@ export const States: Story = {
 export const LinkProduct: Story = {
   args: {
     href: 'https://github.com/plastic-labs',
+    isDraggable: true,
     product: 'bloom',
   },
 }

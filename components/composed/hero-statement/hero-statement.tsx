@@ -54,7 +54,7 @@ export const HeroStatement: React.FC<HeroStatementProps> = props => {
     handleResize()
 
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [statementState.name])
 
   const { name, ...statementProps } = statementState
 
