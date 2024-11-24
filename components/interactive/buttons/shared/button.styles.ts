@@ -319,7 +319,6 @@ export const sharedButtonStyles = css<SharedStylesButtonProps>`
           --background-under-disabled: var(--neutral-grey);
           --border-color-disabled: transparent;
         `
-        return ''
     }
   }}
 
