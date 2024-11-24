@@ -2,8 +2,8 @@
 
 import { createGlobalStyle } from 'styled-components'
 import { departureMono, exo2, robotoMono } from './fonts'
-import { colorValues, neutralValues } from './palette'
-import type { ColorVar, NeutralVar } from './palette'
+import { colorValues, gradientValues, neutralValues } from './palette'
+import type { ColorVar, GradientVar, NeutralVar } from './palette'
 import type { ThemePaletteName } from './themes'
 
 export const GlobalStyles = createGlobalStyle`
@@ -17,6 +17,13 @@ export const GlobalStyles = createGlobalStyle`
 
     ${Object.keys(colorValues)
       .map(colorKey => `${colorKey}: ${colorValues[colorKey as ColorVar]};`)
+      .join('\n')};
+
+    ${Object.keys(gradientValues)
+      .map(
+        gradientKey =>
+          `${gradientKey}: ${gradientValues[gradientKey as GradientVar]};`,
+      )
       .join('\n')};
 
     --font-family-departure-mono: ${departureMono.style.fontFamily}, monospace;

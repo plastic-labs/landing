@@ -14,7 +14,7 @@ export const neutralValues: Record<NeutralVar, string> = {
 }
 
 export const isNeutralVar = (
-  color: ColorVar | NeutralVar,
+  color: ColorVar | GradientVar | NeutralVar,
 ): color is NeutralVar => neutralVarNames.includes(color as NeutralVar)
 
 export const colorVarNames = [
@@ -30,8 +30,9 @@ export const colorValues: Record<ColorVar, string> = {
   '--color-green': '#C0FFE1',
 }
 
-export const isColorVar = (color: ColorVar | NeutralVar): color is ColorVar =>
-  colorVarNames.includes(color as ColorVar)
+export const isColorVar = (
+  color: ColorVar | GradientVar | NeutralVar,
+): color is ColorVar => colorVarNames.includes(color as ColorVar)
 
 export const colors = [
   'currentColor',
@@ -39,3 +40,12 @@ export const colors = [
   ...colorVarNames,
 ] as const
 export type Color = (typeof colors)[number]
+
+export const gradientVarNames = [] as const
+export type GradientVar = (typeof gradientVarNames)[number]
+
+export const gradientValues: Record<GradientVar, string> = {}
+
+export const isGradientVar = (
+  color: ColorVar | GradientVar | NeutralVar,
+): color is GradientVar => gradientVarNames.includes(color as GradientVar)

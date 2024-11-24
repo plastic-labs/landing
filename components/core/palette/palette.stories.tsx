@@ -3,6 +3,8 @@ import { StatesGrid } from '@/components/helpers/states-grid'
 import {
   ColorVar,
   colorVarNames,
+  GradientVar,
+  gradientVarNames,
   NeutralVar,
   neutralVarNames,
 } from '@/styles/palette'
@@ -38,7 +40,11 @@ export const Neutrals: Story = {
       }
 
       return (
-        <StatesGrid columns={['Colors']} rows={neutralVarNames} Story={story} />
+        <StatesGrid
+          columns={['Neutrals']}
+          rows={neutralVarNames}
+          Story={story}
+        />
       )
     },
   ],
@@ -57,6 +63,28 @@ export const Colors: Story = {
 
       return (
         <StatesGrid columns={['Colors']} rows={colorVarNames} Story={story} />
+      )
+    },
+  ],
+}
+
+export const Gradients: Story = {
+  args: {
+    color: '--color-black',
+  },
+  decorators: [
+    (_, { args }) => {
+      const story: React.FC<{ column: string; row: string }> = ({ row }) => {
+        const { color, ...rest } = args
+        return <Palette {...rest} color={row as GradientVar} />
+      }
+
+      return (
+        <StatesGrid
+          columns={['Gradients']}
+          rows={gradientVarNames}
+          Story={story}
+        />
       )
     },
   ],

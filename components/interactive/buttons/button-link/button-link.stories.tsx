@@ -132,6 +132,6 @@ export const ButtonLink: Story = {
     children: 'Button',
     href: 'https://plasticlabs.ai',
     inverse: false,
-    variant: 'default',
+    variant: 'primary',
   },
 }
