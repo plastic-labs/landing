@@ -23,7 +23,7 @@ export const ButtonLink: React.FC<ButtonLinkProps> = ({
   children,
   href,
   inverse,
-  variant = 'default',
+  variant = 'primary',
   ...props
 }) => {
   if (!children) {

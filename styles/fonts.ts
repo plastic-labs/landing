@@ -1,4 +1,4 @@
-import { Exo_2, Roboto_Mono } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const departureMono = localFont({
@@ -11,11 +11,6 @@ export const departureMono = localFont({
 })
 
 export const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-export const exo2 = Exo_2({
   subsets: ['latin'],
   display: 'swap',
 })

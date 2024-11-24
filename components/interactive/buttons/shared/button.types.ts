@@ -1,4 +1,8 @@
-export const buttonStyleVariants = ['default', 'navigation'] as const
+export const buttonStyleVariants = [
+  'primary',
+  'secondary',
+  'navigation',
+] as const
 export type ButtonStyleVariant = (typeof buttonStyleVariants)[number]
 
 export interface SharedStylesButtonProps {

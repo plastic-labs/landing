@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   inverse,
   onClick,
-  variant = 'default',
+  variant = 'primary',
   ...props
 }) => {
   if (!children) {

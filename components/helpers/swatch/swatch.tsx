@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import {
   colorValues,
   ColorVar,
+  GradientVar,
   isColorVar,
+  isGradientVar,
   isNeutralVar,
   neutralValues,
   NeutralVar,
@@ -17,10 +19,10 @@ const StyledSwatch = styled.div`
   grid-gap: 0.5rem;
 `
 
-const Chip = styled.div<{ $color: ColorVar | NeutralVar }>`
+const Chip = styled.div<{ $color: ColorVar | GradientVar | NeutralVar }>`
   width: 5rem;
   height: 5rem;
-  background-color: var(${({ $color }) => $color});
+  background: var(${({ $color }) => $color});
   border-radius: 0.5rem;
 `
 
@@ -29,13 +31,17 @@ const HexCode = styled.p`
   font-size: 0.8em;
 `
 
-const hexCode = (color: ColorVar | NeutralVar): string => {
+const hexCode = (color: ColorVar | GradientVar | NeutralVar): string => {
   if (isNeutralVar(color)) {
     return neutralValues[color]
   }
 
   if (isColorVar(color)) {
     return colorValues[color]
+  }
+
+  if (isGradientVar(color)) {
+    return 'gradient'
   }
 
   return '#unknown'
@@ -46,7 +52,7 @@ const hexCode = (color: ColorVar | NeutralVar): string => {
  * not expected to be used in the application/site proper.
  */
 export const Swatch: React.FC<{
-  color: ColorVar | NeutralVar
+  color: ColorVar | GradientVar | NeutralVar
   name: string
 }> = ({ color }) => {
   return (

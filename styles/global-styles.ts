@@ -1,9 +1,9 @@
 'use client'
 
 import { createGlobalStyle } from 'styled-components'
-import { departureMono, exo2, robotoMono } from './fonts'
-import { colorValues, neutralValues } from './palette'
-import type { ColorVar, NeutralVar } from './palette'
+import { departureMono, robotoMono } from './fonts'
+import { colorValues, gradientValues, neutralValues } from './palette'
+import type { ColorVar, GradientVar, NeutralVar } from './palette'
 import type { ThemePaletteName } from './themes'
 
 export const GlobalStyles = createGlobalStyle`
@@ -19,8 +19,14 @@ export const GlobalStyles = createGlobalStyle`
       .map(colorKey => `${colorKey}: ${colorValues[colorKey as ColorVar]};`)
       .join('\n')};
 
+    ${Object.keys(gradientValues)
+      .map(
+        gradientKey =>
+          `${gradientKey}: ${gradientValues[gradientKey as GradientVar]};`,
+      )
+      .join('\n')};
+
     --font-family-departure-mono: ${departureMono.style.fontFamily}, monospace;
-    --font-family-exo2: ${exo2.style.fontFamily};
     --font-family-roboto-mono: ${robotoMono.style.fontFamily}, monospace;
 
     --scale-xxxs: 0.0625rem;

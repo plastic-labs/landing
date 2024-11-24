@@ -140,6 +140,6 @@ export const Button: Story = {
     children: 'Button',
     disabled: false,
     inverse: false,
-    variant: 'default',
+    variant: 'primary',
   },
 }
