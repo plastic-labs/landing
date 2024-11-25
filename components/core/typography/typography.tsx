@@ -18,7 +18,9 @@ const sharedBodyStyles = css`
 `
 
 const isHeaderFontFamily = (style: TypographyProps['variant']): boolean =>
-  ['Banner', 'Accent', 'H1', 'H3'].includes(style)
+  ['Banner', 'Accent1', 'Accent2', 'Accent3', 'Accent4', 'H1', 'H3'].includes(
+    style,
+  )
 
 const StyledText = styled.p<{
   $align: TypographyProps['align']
@@ -47,7 +49,20 @@ const StyledText = styled.p<{
             font-size: 12.5rem;
           }
         `
-      case 'Accent': // Still very large text
+      case 'Accent1': // Very very large text
+        return css`
+          font-size: 3.75rem;
+          line-height: ${70 / 60};
+          letter-spacing: -0.023em;
+          text-transform: uppercase;
+          text-wrap: balance;
+
+          @media (min-width: ${THIN_BREAKPOINT}rem) {
+            font-size: 4.6875rem;
+            line-height: ${80 / 75};
+          }
+        `
+      case 'Accent2': // Very large text
         return css`
           font-size: 2.1875rem;
           line-height: ${40 / 35};
@@ -58,6 +73,32 @@ const StyledText = styled.p<{
           @media (min-width: ${THIN_BREAKPOINT}rem) {
             font-size: 2.8125rem;
             line-height: ${55 / 45};
+          }
+        `
+      case 'Accent3': // Large text
+        return css`
+          font-size: 1.5rem;
+          line-height: ${30 / 24};
+          letter-spacing: -0.023em;
+          text-transform: uppercase;
+          text-wrap: balance;
+
+          @media (min-width: ${THIN_BREAKPOINT}rem) {
+            font-size: 1.875rem;
+            line-height: ${35 / 30};
+          }
+        `
+      case 'Accent4':
+        return css`
+          font-size: 1rem;
+          line-height: ${18 / 16};
+          letter-spacing: -0.023em;
+          text-transform: uppercase;
+          text-wrap: balance;
+
+          @media (min-width: ${THIN_BREAKPOINT}rem) {
+            font-size: 1.25rem;
+            line-height: ${24 / 20};
           }
         `
       case 'H1': // Not visible

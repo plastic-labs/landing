@@ -18,7 +18,10 @@ export type TypographyTag = (typeof typographyTags)[number]
 
 export const typographyVariants = [
   'Banner',
-  'Accent',
+  'Accent1',
+  'Accent2',
+  'Accent3',
+  'Accent4',
   'H1',
   'H2',
   'H3',
