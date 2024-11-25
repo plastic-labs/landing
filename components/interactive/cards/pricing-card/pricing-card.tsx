@@ -19,12 +19,22 @@ const StyledPricingCard = styled.li<{ $inverse: boolean }>`
   margin: 0;
   padding: 1.25rem;
   max-width: 20.4375rem;
+
   color: var(--surface-contrast);
   background: var(--surface);
   border: 0.0625rem solid var(--surface-contrast);
   border-radius: 0.25rem;
   box-shadow: 0.25rem 0.25rem 0 0 var(--neutral-black);
+
   list-style-type: none;
+
+  transition: box-shadow var(--ui-transition-speed) ease;
+
+  // states
+  &:hover:not(:active):not([href='']):not([href='#']):not([data-state]),
+  &[data-state='hover'] {
+    box-shadow: 0.375rem 0.375rem 0 0 var(--neutral-black);
+  }
 
   ${({ $inverse, theme }) =>
     $inverse
@@ -44,7 +54,7 @@ const StyledPricing = styled.p`
   align-items: baseline;
   gap: 0.25rem;
   margin: 0;
-  color: var(--surface-contrast);
+  color: currentColor;
   text-transform: uppercase;
 `
 
@@ -53,7 +63,7 @@ const StyledDetails = styled.ul`
   flex-direction: column;
   margin: 1.5rem 0;
   padding: 0;
-  color: var(--surface-contrast);
+  color: currentColor;
   list-style-type: none;
 
   li {
@@ -69,7 +79,7 @@ const StyledDetails = styled.ul`
 
   li:not(:last-child) {
     padding-bottom: 0.3125rem;
-    border-bottom: 0.0625rem dotted var(--surface-contrast);
+    border-bottom: 0.0625rem dotted currentColor;
   }
 `
 
