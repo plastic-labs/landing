@@ -29,7 +29,7 @@ export const SiteTitle: React.FC<SiteTitleProps> = props => {
       <VisuallyHidden>
         <Text variant="H1">Plastic Labs</Text>
       </VisuallyHidden>
-      <Wordmark />
+      <Wordmark height={23} width={128} />
     </StyledSiteTitle>
   )
 }

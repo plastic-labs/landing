@@ -15,13 +15,13 @@ const meta = {
       control: {
         type: 'range',
         min: 1,
-        max: 1000,
+        max: 3000,
         step: 1,
       },
       description: 'The logo width in pixels',
       table: {
         defaultValue: {
-          summary: '123',
+          summary: '2484',
         },
         type: {
           summary: 'number',
@@ -38,7 +38,7 @@ const meta = {
       description: 'The logo height in pixels',
       table: {
         defaultValue: {
-          summary: '34',
+          summary: '443',
         },
         type: {
           summary: 'number',
@@ -68,7 +68,7 @@ type Story = StoryObj<typeof meta>
 
 export const Wordmark: Story = {
   args: {
-    width: 123,
-    height: 34,
+    width: 200,
+    height: 36,
   },
 }
