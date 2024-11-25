@@ -11,21 +11,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://plasticlabs.ai'),
   openGraph: {
     title: 'Plastic Labs',
-    description: 'Building at the intersection of Human and Machine Learning',
+    description: 'Radically Decentralizing Alignment',
     siteName: 'Plastic Labs',
     type: 'website',
     url: 'https://plasticlabs.ai',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Plastic Labs',
-      },
-    ],
     locale: 'en_US',
   },
-  description: 'Building at the intersection of Human and Machine Learning',
+  description: 'Radically Decentralizing Alignment',
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
