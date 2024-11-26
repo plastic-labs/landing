@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { Contact } from '@/components/composed/contact'
-import { Marquee } from '@/components/core/marquee'
+import { AsciiField } from '@/components/illos/ascii-field'
 import { Section } from '@/components/layout/section'
 
 const StyledGetInTouchSection = styled(Section)`
@@ -21,11 +21,15 @@ const StyledGetInTouchSection = styled(Section)`
   }
 `
 
+const StyledAsciiField = styled(AsciiField)`
+  min-height: 12rem;
+`
+
 export const GetInTouchSection: React.FC = () => {
   return (
     <StyledGetInTouchSection id="contact">
       <Contact />
-      <Marquee inverse>Get in Touch</Marquee>
+      <StyledAsciiField direction="vertical" inverse />
     </StyledGetInTouchSection>
   )
 }

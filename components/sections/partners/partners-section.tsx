@@ -43,7 +43,7 @@ export const PartnersSection: React.FC = () => {
     <StyledPartnersSection id="partners">
       <StyledIntro>
         <Title title="Our Partners" />
-        <StyledAccent variant="Accent2">We are backed by</StyledAccent>
+        <StyledAccent variant="Accent2">Backed by</StyledAccent>
       </StyledIntro>
       <Partners />
     </StyledPartnersSection>

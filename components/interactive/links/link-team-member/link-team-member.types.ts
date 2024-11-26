@@ -1,13 +1,13 @@
 import { AnchorHTMLAttributes } from 'react'
 
 export const teamMemberNames = [
-  'leer-courtland',
   'trost-vince',
   'voruganti-vineeth',
+  'leer-courtland',
   'balcells-dani',
   'lopata-ben',
-  'paul-ayush',
   'davis-lili',
+  'paul-ayush',
 ] as const
 export type TeamMemberName = (typeof teamMemberNames)[number]
 

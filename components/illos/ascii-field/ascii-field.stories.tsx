@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 import { AsciiField as AsciiFieldUi } from './ascii-field'
+import { directions } from './ascii-field.types'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -10,6 +11,21 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    direction: {
+      control: {
+        type: 'select',
+      },
+      description: 'The duration of the animation',
+      options: directions,
+      table: {
+        defaultValue: {
+          summary: 'undefined',
+        },
+        type: {
+          summary: `Direction: any of: ${directions.join(', ')}.`,
+        },
+      },
+    },
     duration: {
       control: {
         type: 'range',
@@ -27,6 +43,20 @@ const meta = {
         },
       },
     },
+    inverse: {
+      control: {
+        type: 'boolean',
+      },
+      description: 'Whether the theme colors should be inverted',
+      table: {
+        defaultValue: {
+          summary: 'false',
+        },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
 } satisfies Meta<typeof AsciiFieldUi>
 
@@ -35,7 +65,9 @@ type Story = StoryObj<typeof meta>
 
 export const AsciiField: Story = {
   args: {
+    direction: 'horizontal',
     duration: 20,
+    inverse: false,
   },
   decorators: [
     Story => (
