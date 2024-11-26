@@ -1,6 +1,6 @@
 'use client'
 
-import { MouseEvent, useEffect, useState } from 'react'
+import { MouseEvent, useEffect, useRef, useState } from 'react'
 import Draggable, {
   DraggableData,
   DraggableEvent,
@@ -102,6 +102,7 @@ export const LinkProduct: React.FC<LinkProductProps> = ({
   y = 0,
   ...props
 }) => {
+  const productRef = useRef<HTMLAnchorElement>(null)
   const [previousPosition, setPreviousPosition] = useState<Position>({
     x,
     y,
@@ -137,6 +138,7 @@ export const LinkProduct: React.FC<LinkProductProps> = ({
     <Draggable
       bounds="parent"
       disabled={!isDraggable}
+      nodeRef={productRef}
       onStop={handleDragStop}
       position={previousPosition}
     >
@@ -147,6 +149,7 @@ export const LinkProduct: React.FC<LinkProductProps> = ({
         onClick={handlePress}
         rel="noopener"
         target="_blank"
+        ref={productRef}
         $inverse={inverse}
       >
         <TitleBar>{`Enter ${product}`}</TitleBar>

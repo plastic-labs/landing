@@ -39,7 +39,7 @@ const initialArea: Area = { height: 0, width: 0 }
 export const Products: React.FC<ProductsProps> = props => {
   const productsRef = useRef<HTMLElement>(null)
   const [area, setArea] = useState<Area>(initialArea)
-  const [isDraggable, setIsDraggable] = useState<boolean>(false)
+  const [isDraggable, setIsDraggable] = useState<boolean>(true)
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,7 +56,7 @@ export const Products: React.FC<ProductsProps> = props => {
     }
 
     window.addEventListener('resize', handleResize)
-    handleResize()
+    setTimeout(handleResize, 100) // defer initial set
 
     return () => window.removeEventListener('resize', handleResize)
   }, [area, isDraggable])
