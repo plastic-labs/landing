@@ -71,7 +71,7 @@ export const LinkTeamMember: React.FC<LinkTeamMemberProps> = ({
     TEAM_MEMBERS[teamMemberName]
 
   return (
-    <StyledLinkTeamMember {...props}>
+    <StyledLinkTeamMember target="_blank" rel="noopener" {...props}>
       <StyledFigure>
         <StyledImage alt={`${firstName} ${lastName}`} src={imageSrc} />
         <StyledMemberDetails>
