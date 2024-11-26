@@ -25,13 +25,12 @@ export const AboutUs: React.FC<AboutUsProps> = props => {
         ctas={<ButtonLink href="https://blog.plasticlabs.ai/">Blog</ButtonLink>}
       >
         <Text variant="Body2">
-          Plastic Labs is a research-driven product company building at the
-          intersection of human and machine learning.
+          Plastic Labs is a research-driven company building at the intersection
+          of human and machine cognition.
         </Text>
         <Text variant="Body2">
-          Our mission is to eliminate the principal-agent problem in human-AI
-          interaction, powering a future of abundant, autonomous,
-          individually-aligned agents.
+          Our mission is to solve identity for the agentic world, accelerating a
+          future of abundant, dynamically-aligned synthetic intelligence.
         </Text>
       </TextContent>
     </StyledAboutUs>
