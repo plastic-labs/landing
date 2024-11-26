@@ -5,7 +5,7 @@ export const TEAM_MEMBERS: Record<TeamMemberName, TeamMember> = {
     firstName: 'Vince',
     imageSrc: '/team/trost-vince.png',
     lastName: 'Trost',
-    other: 'ML, Data Science',
+    other: 'ML, Crypto',
     role: 'Co-founder / CEO',
   },
   'voruganti-vineeth': {
@@ -33,7 +33,7 @@ export const TEAM_MEMBERS: Record<TeamMemberName, TeamMember> = {
     firstName: 'Ben',
     imageSrc: '/team/lopata-ben.png',
     lastName: 'Lopata',
-    other: 'Systems, DevOps',
+    other: 'Full Stack, DevOps',
     role: 'Founding Engineer',
   },
   'davis-lili': {
