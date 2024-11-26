@@ -83,7 +83,7 @@ export const LinkPartner: React.FC<LinkPartnerProps> = ({
   const { imageScale, imageSrc, name } = PARTNERS[partnerName]
 
   return (
-    <StyledPartner {...props}>
+    <StyledPartner target="_blank" rel="noopener" {...props}>
       {imageSrc ? (
         <StyledImage alt={name} src={imageSrc} $imageScale={imageScale} />
       ) : (
