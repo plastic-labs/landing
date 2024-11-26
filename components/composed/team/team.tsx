@@ -9,13 +9,13 @@ import type { TeamProps } from './team.types'
 import type { TeamMemberName } from '@/components/interactive/links/link-team-member'
 
 const teamMemberHref: Record<TeamMemberName, string> = {
-  'leer-courtland': 'https://x.com/courtlandleer',
   'trost-vince': 'https://x.com/vintrotweets',
   'voruganti-vineeth': 'https://x.com/TheMarshmalon',
+  'leer-courtland': 'https://x.com/courtlandleer',
   'balcells-dani': 'https://x.com/danibalcells',
   'lopata-ben': 'https://x.com/bengineer10',
-  'paul-ayush': 'https://x.com/hyusapx',
   'davis-lili': 'http://www.linkedin.com/in/lili-behumi-davis-a296b4156',
+  'paul-ayush': 'https://x.com/hyusapx',
 }
 
 const StyledTeam = styled.nav`
