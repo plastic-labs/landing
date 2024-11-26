@@ -18,7 +18,7 @@ const partnerHref: Record<PartnerName, string> = {
   differential: 'https://www.differential.vc/',
   algovera: 'https://www.algovera.ai/',
   'white-star-capital': 'https://whitestarcapital.com/digital-asset-fund/',
-  'seed-club-ventures': 'https://www.seedclub.xyz/getfunded/ventures',
+  'seed-club-ventures': 'https://seedclub.ventures/',
   'thomas-howell': 'https://x.com/seethomasowl',
 }
 
