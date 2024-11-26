@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { Contact } from '@/components/composed/contact'
 import { AsciiField } from '@/components/illos/ascii-field'
 import { Section } from '@/components/layout/section'
+import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 
-const StyledGetInTouchSection = styled(Section)`
+const StyledContactSection = styled(Section)`
   --line-width: 0.0625rem;
 
   display: grid;
@@ -22,14 +23,18 @@ const StyledGetInTouchSection = styled(Section)`
 `
 
 const StyledAsciiField = styled(AsciiField)`
-  min-height: 12rem;
+  min-height: 6rem;
+
+  @media (min-width: ${WIDE_BREAKPOINT}rem) {
+    min-height: 12rem;
+  }
 `
 
-export const GetInTouchSection: React.FC = () => {
+export const ContactSection: React.FC = () => {
   return (
-    <StyledGetInTouchSection id="contact">
+    <StyledContactSection id="contact">
       <Contact />
       <StyledAsciiField direction="vertical" inverse />
-    </StyledGetInTouchSection>
+    </StyledContactSection>
   )
 }

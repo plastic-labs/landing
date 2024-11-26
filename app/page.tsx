@@ -1,7 +1,7 @@
 /* eslint-disable import/no-default-export */
 
 import { Main } from '@/components/layout/main'
-import { GetInTouchSection } from '@/components/sections/get-in-touch'
+import { ContactSection } from '@/components/sections/contact'
 import { HeroSection } from '@/components/sections/hero'
 import { PartnersSection } from '@/components/sections/partners'
 import { ProductsSection } from '@/components/sections/products'
@@ -14,7 +14,7 @@ const Page = () => {
       <ProductsSection />
       <TeamSection />
       <PartnersSection />
-      <GetInTouchSection />
+      <ContactSection />
     </Main>
   )
 }
