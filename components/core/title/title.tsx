@@ -27,8 +27,13 @@ const StyledTitleArea = styled.div<{ $delay: number }>`
     text-transform: lowercase;
     white-space: nowrap;
 
-    &::before {
+    &:first-child:before {
       content: '>';
+      padding-right: 0.34em;
+    }
+
+    &:not(:first-child):before {
+      content: '-';
       padding-right: 0.34em;
     }
   }

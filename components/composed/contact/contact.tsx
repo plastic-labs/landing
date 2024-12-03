@@ -34,7 +34,7 @@ export const Contact: React.FC<ContactProps> = props => {
         inverse
         prompt="To connect with Plastic Labs"
         text="Join Discord"
-        title="Plastic Labs"
+        title="Contact"
       />
       <Divider />
       <LinkGiant
@@ -42,7 +42,7 @@ export const Contact: React.FC<ContactProps> = props => {
         inverse
         prompt="For other inquiries"
         text="hello@plasticlabs.ai"
-        title="Questions"
+        title="Inquire"
       />
     </StyledContact>
   )

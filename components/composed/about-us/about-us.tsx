@@ -22,7 +22,11 @@ export const AboutUs: React.FC<AboutUsProps> = props => {
     <StyledAboutUs {...props}>
       <TextContent
         title="About Us"
-        ctas={<ButtonLink href="https://blog.plasticlabs.ai/">Blog</ButtonLink>}
+        ctas={
+          <ButtonLink href="https://blog.plasticlabs.ai/">
+            Learn more
+          </ButtonLink>
+        }
       >
         <Text variant="Body2">
           Plastic Labs is a research-driven company building at the intersection
