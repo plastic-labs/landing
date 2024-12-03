@@ -10,7 +10,7 @@ import { Section } from '@/components/layout/section'
 import { WIDE_BREAKPOINT } from '@/styles/breakpoints'
 import { IconPlus } from './icon-plus'
 
-const DEFAULT_MAIN_NAVIGATION_WIDTH = 305 // pixels
+const DEFAULT_MAIN_NAVIGATION_WIDTH = 291 // pixels
 
 const StyledHeroSection = styled(Section)`
   --main-navigation-width: ${DEFAULT_MAIN_NAVIGATION_WIDTH};
