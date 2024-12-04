@@ -41,7 +41,7 @@ export const Contact: React.FC<ContactProps> = props => {
         href="mailto:hello@plasticlabs.ai"
         inverse
         prompt="For other inquiries"
-        text="hello@plasticlabs.ai"
+        text="Email hello@plasticlabs.ai"
         title="Inquire"
       />
     </StyledContact>
