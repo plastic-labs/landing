@@ -6,7 +6,7 @@ export interface LinkGiantProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
     LinkProps,
     SharedThemeProps {
-  prompt: string
+  prompt?: string
   text: string
   title: string
 }

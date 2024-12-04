@@ -54,7 +54,7 @@ const meta = {
       description: 'The link prompt',
       table: {
         defaultValue: {
-          summary: '[required]',
+          summary: 'undefined',
         },
         type: {
           summary: 'string',
@@ -131,7 +131,7 @@ export const LinkGiant: Story = {
   args: {
     href: 'https://plasticlabs.ai',
     inverse: false,
-    prompt: 'You very much want to click this',
+    prompt: '',
     text: 'Link Giant',
     title: 'This is a link',
   },

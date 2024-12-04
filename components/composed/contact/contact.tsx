@@ -32,7 +32,6 @@ export const Contact: React.FC<ContactProps> = props => {
       <LinkGiant
         href="https://discord.gg/plasticlabs"
         inverse
-        prompt="To connect with Plastic Labs"
         text="Join Discord"
         title="Contact"
       />
@@ -40,7 +39,6 @@ export const Contact: React.FC<ContactProps> = props => {
       <LinkGiant
         href="mailto:hello@plasticlabs.ai"
         inverse
-        prompt="For other inquiries"
         text="Email hello@plasticlabs.ai"
         title="Inquire"
       />
