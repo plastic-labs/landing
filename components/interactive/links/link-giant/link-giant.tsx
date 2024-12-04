@@ -147,7 +147,7 @@ export const LinkGiant: React.FC<LinkGiantProps> = ({
   title,
   ...props
 }) => {
-  if (!prompt || !text || !title) {
+  if (!text || !title) {
     return null
   }
 
@@ -156,7 +156,7 @@ export const LinkGiant: React.FC<LinkGiantProps> = ({
       <StyledTitle variant="Body1">{title}</StyledTitle>
       <IconUpRightArrow />
       <StyledDetails>
-        <StyledPrompt variant="Body1">{prompt}</StyledPrompt>
+        {prompt ? <StyledPrompt variant="Body1">{prompt}</StyledPrompt> : null}
         <Text variant="Body1">{text}</Text>
       </StyledDetails>
     </>
