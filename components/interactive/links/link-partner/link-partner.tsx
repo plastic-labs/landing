@@ -80,6 +80,10 @@ const StyledImage = styled.img<{
       : ''}
 `
 
+const StyledPartnerNameOnly = styled(Text)`
+  text-transform: none;
+`
+
 export const LinkPartner: React.FC<LinkPartnerProps> = ({
   partnerName,
   ...props
@@ -97,9 +101,9 @@ export const LinkPartner: React.FC<LinkPartnerProps> = ({
           $offsetY={offsetY}
         />
       ) : (
-        <Text align="center" variant="H3">
+        <StyledPartnerNameOnly align="center" variant="H3">
           {name}
-        </Text>
+        </StyledPartnerNameOnly>
       )}
     </StyledPartner>
   )

@@ -9,6 +9,7 @@ export const partnerNames = [
   'white-star-capital',
   'seed-club-ventures',
   'thomas-howell',
+  'nima-ashgari',
 ] as const
 export type PartnerName = (typeof partnerNames)[number]
 

@@ -43,4 +43,7 @@ export const PARTNERS: Record<PartnerName, Partner> = {
   'thomas-howell': {
     name: 'Thomas Howell',
   },
+  'nima-ashgari': {
+    name: 'NiMA Asghari',
+  },
 }
