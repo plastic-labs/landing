@@ -46,4 +46,9 @@ export const PARTNERS: Record<PartnerName, Partner> = {
   'nima-ashgari': {
     name: 'NiMA Asghari',
   },
+  triplicate: {
+    imageSrc: '/partner/triplicate.svg',
+    imageScale: 0.55,
+    name: 'Triplicate',
+  },
 }
