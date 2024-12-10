@@ -37,6 +37,8 @@ export const PARTNERS: Record<PartnerName, Partner> = {
     imageSrc: '/partner/seed-club-ventures.png',
     imageScale: 0.6,
     name: 'Seed Club Ventures',
+    offsetX: -5,
+    offsetY: -10,
   },
   'thomas-howell': {
     name: 'Thomas Howell',

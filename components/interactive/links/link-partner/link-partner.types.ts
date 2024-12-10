@@ -22,4 +22,6 @@ export interface Partner {
   imageSrc?: string
   imageScale?: number
   name: string
+  offsetX?: number // +/- integer percent
+  offsetY?: number // +/- integer percent
 }
