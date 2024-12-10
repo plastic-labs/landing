@@ -20,6 +20,8 @@ const partnerHref: Record<PartnerName, string> = {
   'white-star-capital': 'https://whitestarcapital.com/digital-asset-fund/',
   'seed-club-ventures': 'https://seedclub.ventures/',
   'thomas-howell': 'https://x.com/seethomasowl',
+  'nima-ashgari': 'https://x.com/insideNiMA',
+  triplicate: 'https://www.triplicate.xyz/',
 }
 
 const partnersScroll = keyframes`

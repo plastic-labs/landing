@@ -9,6 +9,8 @@ export const partnerNames = [
   'white-star-capital',
   'seed-club-ventures',
   'thomas-howell',
+  'nima-ashgari',
+  'triplicate',
 ] as const
 export type PartnerName = (typeof partnerNames)[number]
 
@@ -22,4 +24,6 @@ export interface Partner {
   imageSrc?: string
   imageScale?: number
   name: string
+  offsetX?: number // +/- integer percent
+  offsetY?: number // +/- integer percent
 }

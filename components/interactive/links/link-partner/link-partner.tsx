@@ -57,7 +57,11 @@ const StyledPartner = styled.a`
   }
 `
 
-const StyledImage = styled.img<{ $imageScale?: number }>`
+const StyledImage = styled.img<{
+  $imageScale?: number
+  $offsetX?: number
+  $offsetY?: number
+}>`
   width: 100%;
   transition: filter var(--ui-transition-speed) ease;
 
@@ -68,28 +72,38 @@ const StyledImage = styled.img<{ $imageScale?: number }>`
         `
       : ''}
 
-  ${({ $imageScale }) =>
-    $imageScale
+  ${({ $imageScale, $offsetX, $offsetY }) =>
+    $imageScale || $offsetX || $offsetY
       ? css`
-          transform: scale(${$imageScale});
+          transform: ${$imageScale ? `scale(${$imageScale}) ` : ''}${$offsetX || $offsetY ? `translate(${$offsetX || 0}%, ${$offsetY || 0}%)` : ''};
         `
       : ''}
+`
+
+const StyledPartnerNameOnly = styled(Text)`
+  text-transform: none;
 `
 
 export const LinkPartner: React.FC<LinkPartnerProps> = ({
   partnerName,
   ...props
 }) => {
-  const { imageScale, imageSrc, name } = PARTNERS[partnerName]
+  const { imageScale, imageSrc, name, offsetX, offsetY } = PARTNERS[partnerName]
 
   return (
     <StyledPartner target="_blank" rel="noopener" {...props}>
       {imageSrc ? (
-        <StyledImage alt={name} src={imageSrc} $imageScale={imageScale} />
+        <StyledImage
+          alt={name}
+          src={imageSrc}
+          $imageScale={imageScale}
+          $offsetX={offsetX}
+          $offsetY={offsetY}
+        />
       ) : (
-        <Text align="center" variant="H3">
+        <StyledPartnerNameOnly align="center" variant="H3">
           {name}
-        </Text>
+        </StyledPartnerNameOnly>
       )}
     </StyledPartner>
   )
