@@ -34,8 +34,8 @@ export const PARTNERS: Record<PartnerName, Partner> = {
     name: 'White Star Capital',
   },
   'seed-club-ventures': {
-    imageSrc: '/partner/seed-club-ventures.svg',
-    imageScale: 0.7,
+    imageSrc: '/partner/seed-club-ventures.png',
+    imageScale: 0.6,
     name: 'Seed Club Ventures',
   },
   'thomas-howell': {
