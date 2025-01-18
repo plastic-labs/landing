@@ -29,13 +29,6 @@ export const TEAM_MEMBERS: Record<TeamMemberName, TeamMember> = {
     other: 'Research, Evals',
     role: 'Founding ML Engineer',
   },
-  'lopata-ben': {
-    firstName: 'Ben',
-    imageSrc: '/team/lopata-ben.png',
-    lastName: 'Lopata',
-    other: 'Full Stack, DevOps',
-    role: 'Founding Engineer',
-  },
   'davis-lili': {
     firstName: 'Lili',
     imageSrc: '/team/davis-lili.png',

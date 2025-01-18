@@ -13,7 +13,6 @@ const teamMemberHref: Record<TeamMemberName, string> = {
   'voruganti-vineeth': 'https://x.com/TheMarshmalon',
   'leer-courtland': 'https://x.com/courtlandleer',
   'balcells-dani': 'https://x.com/danibalcells',
-  'lopata-ben': 'https://x.com/bengineer10',
   'davis-lili': 'http://www.linkedin.com/in/lili-behumi-davis-a296b4156',
   'paul-ayush': 'https://x.com/hyusapx',
 }

@@ -5,7 +5,6 @@ export const teamMemberNames = [
   'voruganti-vineeth',
   'leer-courtland',
   'balcells-dani',
-  'lopata-ben',
   'davis-lili',
   'paul-ayush',
 ] as const
