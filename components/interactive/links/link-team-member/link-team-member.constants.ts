@@ -43,4 +43,11 @@ export const TEAM_MEMBERS: Record<TeamMemberName, TeamMember> = {
     other: 'Dev/ML, Design',
     role: 'Engineering Intern',
   },
+  'tokens-novel': {
+    firstName: 'Novel',
+    imageSrc: '/team/tokens-novel.png',
+    lastName: 'Tokens',
+    other: 'Perception, Propagation',
+    role: 'Founding Memetic Engineer',
+  },
 }

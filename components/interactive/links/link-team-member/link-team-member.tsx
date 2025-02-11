@@ -61,6 +61,7 @@ const StyledName = styled(Text)`
 const StyledRoles = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  text-wrap: nowrap;
 `
 
 export const LinkTeamMember: React.FC<LinkTeamMemberProps> = ({

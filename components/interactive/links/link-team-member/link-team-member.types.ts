@@ -7,6 +7,7 @@ export const teamMemberNames = [
   'balcells-dani',
   'davis-lili',
   'paul-ayush',
+  'tokens-novel',
 ] as const
 export type TeamMemberName = (typeof teamMemberNames)[number]
 
