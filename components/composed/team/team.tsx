@@ -15,6 +15,7 @@ const teamMemberHref: Record<TeamMemberName, string> = {
   'balcells-dani': 'https://x.com/danibalcells',
   'davis-lili': 'http://www.linkedin.com/in/lili-behumi-davis-a296b4156',
   'paul-ayush': 'https://x.com/hyusapx',
+  'tokens-novel': 'https://x.com/noveltokens',
 }
 
 const StyledTeam = styled.nav`
