@@ -48,6 +48,6 @@ export const TEAM_MEMBERS: Record<TeamMemberName, TeamMember> = {
     imageSrc: '/team/tokens-novel.png',
     lastName: 'Tokens',
     other: 'Perception, Propagation',
-    role: 'Memetic Engineer',
+    role: 'Founding Memetic Engineer',
   },
 }
